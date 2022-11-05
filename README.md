@@ -1,4 +1,4 @@
-# Elektroniczne Przetwarzanie Informacji
+# Elektroniczne Przetwarzanie Informacji 🎓
 
 ## semester 1. (winter 2022)
 
