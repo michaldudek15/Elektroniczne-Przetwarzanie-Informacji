@@ -26,7 +26,7 @@ while True:
 
 print("now type the message you want to cipher:")
 message = input().lower()
-print("choose shift value")
+print("choose shift value:")
 shift_value = int(input())
 
 if option == "1":
