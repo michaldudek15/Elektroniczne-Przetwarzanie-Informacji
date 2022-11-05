@@ -1,2 +1,1 @@
 # Elektroniczne Przetwarzanie Informacji
- 
