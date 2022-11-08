@@ -1,7 +1,7 @@
-import heapq
 import string
+import heapq
 
-ALPHABET = string.ascii_lowercase
+ALPHABET = string.ascii_letters
 message = input()
 
 
