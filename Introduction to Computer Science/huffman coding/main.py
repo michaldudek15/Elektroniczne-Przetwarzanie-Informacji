@@ -1,5 +1,5 @@
-import string
 import heapq
+import string
 
 ALPHABET = string.ascii_letters
 message = input()
