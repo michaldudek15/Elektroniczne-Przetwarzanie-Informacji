@@ -16,8 +16,7 @@ def shift(text, move, alphabet):
 
 
 while True:
-    option = input('choose your alphabet, type 1 for latin or 2 for polish:\n')
-
+    option = input('choose your alphabet, type 1 for latin or 2 for polish: ')
     if len(option) == 1 and (option == "1" or option == "2"):
         break
     else:
@@ -26,8 +25,7 @@ while True:
 
 print("now type the message you want to cipher:")
 message = input().lower()
-print("choose shift value:")
-shift_value = int(input())
+shift_value = int(input("choose shift value: "))
 
 if option == "1":
     shift(message, shift_value, string.ascii_lowercase)
