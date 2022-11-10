@@ -23,8 +23,7 @@ while True:
         print('\033[93m' + 'please type either 1 or 2 to continue\n' + '\033[0m')
         continue
 
-print("now type the message you want to cipher:")
-message = input().lower()
+message = input("now type the message you want to cipher:\n").lower()
 shift_value = int(input("choose shift value: "))
 
 if option == "1":
