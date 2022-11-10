@@ -1,5 +1,3 @@
-import string
-
 while True:
     inputBase = int(input('choose the base of the system for your input number ( [2, 16] ): '))
     if 1 < inputBase < 17:
