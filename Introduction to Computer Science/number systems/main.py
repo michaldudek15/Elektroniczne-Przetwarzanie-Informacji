@@ -4,6 +4,8 @@
 # DONE converting from decimal to outputBase
 # DONE check if the number is max A for base 11, B for base 12 ... F for base 16
 
+# TO DO make sure converting to binary works fine
+
 # 2  -> {0, 1}                                              -> {48, 49}
 # 3  -> {0, 1, 2}                                           -> {48,49, 50}
 # 4  -> {0, 1, 2, 3}
@@ -98,16 +100,16 @@ for i in range(1, length):
 # 2. remainder is the youngest digit
 # 3. keep doing that until your number is 0
 
-
+# does not work for binary output base yet
 while decimalNumber > 0:
-    nextDigit = (decimalNumber % int(outputBase))
+    nextDigit = (float(decimalNumber) % int(outputBase))
     if (decimalNumber % int(outputBase)) > 9:
-        nextDigit = chr(nextDigit+55)
-    decimalNumber = int(decimalNumber) // int(outputBase)
+        nextDigit = chr(int(nextDigit)+55)
+    decimalNumber = decimalNumber / int(outputBase)
 
-    # print("next digit: " + str(nextDigit))
-    # print("remainder: " + str(int(decimalNumber)))
+    print("next digit: " + str(nextDigit))
+    print("remainder: " + str(decimalNumber))
 
     outputNumber = str(nextDigit) + str(outputNumber)
 
-print("output number: " + '\033[93m' + outputNumber + '\033[0m')
+print("converted number: " + '\033[93m' + outputNumber + '\033[0m')
