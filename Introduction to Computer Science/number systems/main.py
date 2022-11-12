@@ -1,8 +1,21 @@
 # DONE input check
 # DONE converting to decimal
 # DONE function that checks if the base is correct
-# TO DO check if the number is max A for base 11, B for base 12 ... F for base 16
-# TO DO converting from decimal to outputBase
+# DONE converting from decimal to outputBase
+# DONE check if the number is max A for base 11, B for base 12 ... F for base 16
+
+# 2  -> {0, 1}                                              -> {48, 49}
+# 3  -> {0, 1, 2}                                           -> {48,49, 50}
+# 4  -> {0, 1, 2, 3}
+...
+# 10 -> {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}                      -> {48, 49, 50, 51, 52, 53, 54, 55, 56, 57}
+# 11 -> {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A}                   -> {48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 65}
+...
+# 15 -> {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E}       -> {48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 65, 66, 67,
+#                                                               68, 69}
+# 16 -> {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F}    -> {48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 65,
+#                                                               66, 67, 68, 69, 70} 54 + 16
+
 
 def baseCheck(base):
     control_flag = True
@@ -29,6 +42,14 @@ def valueCheck(value):
         if (ord(value[j]) > 70 or ord(value[j]) < 48) or (57 < ord(value[j]) < 65):
             print("this character is not allowed: " + "\033[91m" + str(value[j]) + "\033[0m")
             control_flag = False
+        elif int(inputBase) < 10:
+            if ord(value[j]) < 48 or ord(value[j]) > (47 + int(inputBase)):
+                print("this character is not allowed for this input base: " + "\033[91m" + str(value[j]) + "\033[0m")
+                control_flag = False
+        elif int(inputBase) >= 10:
+            if ord(value[j]) < 48 or ord(value[j]) > (54 + int(inputBase)):
+                print("this character is not allowed for this input base: " + "\033[91m" + str(value[j]) + "\033[0m")
+                control_flag = False
     return control_flag
 
 
@@ -38,7 +59,6 @@ while True:
         break
 
 while True:
-    flag = True
     inputNumber = input('what number do you want to convert? ')
     if valueCheck(inputNumber):
         break
@@ -50,7 +70,6 @@ while True:
 
 outputNumber = ''
 length = len(inputNumber)
-decimalNumber = 0
 
 if 64 < ord(inputNumber[length - 1]) < 71:
     currentDigit = ord(inputNumber[length - 1]) - 55
@@ -59,6 +78,7 @@ elif 47 < ord(inputNumber[length - 1]) < 58:
     currentDigit = int(inputNumber[length - 1])
     decimalNumber = currentDigit * pow(int(inputBase), 0)
 else:
+    decimalNumber = 0
     exit()
 
 for i in range(1, length):
@@ -72,4 +92,22 @@ for i in range(1, length):
         currentDigit = int(chr(currentDigit - 55))
         decimalNumber += currentDigit * pow(int(inputBase), i)
 
-print("decimal value of your number: " + str(decimalNumber))
+# print("decimal value of your number: " + str(decimalNumber))
+
+# 1. divide by base
+# 2. remainder is the youngest digit
+# 3. keep doing that until your number is 0
+
+
+while decimalNumber > 0:
+    nextDigit = (decimalNumber % int(outputBase))
+    if (decimalNumber % int(outputBase)) > 9:
+        nextDigit = chr(nextDigit+55)
+    decimalNumber = int(decimalNumber) // int(outputBase)
+
+    # print("next digit: " + str(nextDigit))
+    # print("remainder: " + str(int(decimalNumber)))
+
+    outputNumber = str(nextDigit) + str(outputNumber)
+
+print("output number: " + '\033[93m' + outputNumber + '\033[0m')
