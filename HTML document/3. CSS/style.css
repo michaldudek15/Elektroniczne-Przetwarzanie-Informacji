@@ -1,0 +1,90 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background: #C7CEDB;
+    margin-left: 50px;
+    margin-right: 50px;
+    font-size: 20px;
+}
+h1 {
+    background: #EDAE49;
+    text-align: center;
+    font-size: 45px;
+    color: #BC2C1A;
+}
+
+h2 {
+    color: #BC2C1A;
+    font-size: 35px;
+}
+
+p {
+    color: #280004;
+    text-align: left;
+    font-size: 20px;
+}
+
+dl dt {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+dl dd {
+    margin-left: 0;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    color: #280004;
+}
+
+.name {
+    font-style: italic;
+}
+
+ul {
+    font-size: 20px;
+    list-style-type: "🍎";
+}
+
+ul li {
+    padding: 15px;
+}
+
+#wartosci {
+    text-align: center;
+}
+
+table {
+    margin: 50px auto 20px;
+    padding: 20px;
+    background-color: #7E9181;
+    font-size: 20px;
+    text-align: justify;
+    width: 400px;
+}
+
+caption {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+q {
+    font-style: italic;
+}
+
+a {
+    text-decoration: none;
+    color: #8b008b;
+    font-size: 20px;
+}
+
+a:hover {
+    color:  #5a005a;
+}
+
+a:visited {
+    color: #236f3f;
+}
+
+a:visited:hover {
+    color: #105c2a;
+}
