@@ -1,8 +1,11 @@
 import heapq
 import string
 
+# example message from class: ToXToooTTXXooooX
+
 ALPHABET = string.ascii_letters
-message = input()
+message = input("type in your message: ")
+value_table = []
 
 
 class Node:
@@ -22,7 +25,6 @@ class Node:
 def printNodes(node, val=''):
     # huffman code for current node
     new_value = val + str(node.direction)
-
     # if not an edge node, traverse inside it
     if node.left:
         printNodes(node.left, new_value)
@@ -32,6 +34,7 @@ def printNodes(node, val=''):
     # display the code for an edge node
     if not node.left and not node.right:
         print(f"{node.symbol} -> {new_value}")
+        value_table.append(new_value)
 
 
 letterCount = {}
@@ -42,7 +45,7 @@ for i in range(len(ALPHABET)):
 
 sortedCount = sorted(letterCount.items(), key=lambda z: z[1])
 
-print(sortedCount)
+print("number of recurring characters: " + str(sortedCount))
 chars = []
 freq = []
 
@@ -76,3 +79,11 @@ while len(nodes) > 1:
 
 # Huffman Tree is ready!
 printNodes(nodes[0])
+
+dic = {}
+
+for i in range(len(nodes[0].symbol)):
+    dic[nodes[0].symbol[i]] = value_table[i]
+
+table = message.maketrans(dic)
+print("coded message: " + '\033[94m' + message.translate(table) + '\033[0m')
