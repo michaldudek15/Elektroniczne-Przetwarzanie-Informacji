@@ -11,7 +11,6 @@ def shift(text, move, alphabet):
     move %= len(alphabet)
     shifted_alphabet = alphabet[move:] + alphabet[:move]
     table = str.maketrans(alphabet, shifted_alphabet)
-    print(table)
     shifted = text.translate(table)
     print("shifted message: " + '\033[94m' + shifted + '\033[0m')
 
