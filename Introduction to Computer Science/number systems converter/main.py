@@ -3,8 +3,9 @@
 # DONE function that checks if the base is correct
 # DONE converting from decimal to outputBase
 # DONE check if the number is max A for base 11, B for base 12 ... F for base 16
+# DONE make sure converting to binary works fine
 
-# TO DO make sure converting to binary works fine
+# TO DO add global string variable and update it with convert()
 # TO DO add fractions
 
 # 2  -> {0, 1}                                              -> {48, 49}
@@ -14,6 +15,8 @@
 # 10 -> {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}                      -> {48, 49, 50, 51, 52, 53, 54, 55, 56, 57}
 # 11 -> {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A}                   -> {48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 65}
 ...
+
+
 # 15 -> {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E}       -> {48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 65, 66, 67,
 #                                                               68, 69}
 # 16 -> {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F}    -> {48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 65,
@@ -71,7 +74,6 @@ while True:
     if baseCheck(outputBase):
         break
 
-outputNumber = ''
 length = len(inputNumber)
 
 if 64 < ord(inputNumber[length - 1]) < 71:
@@ -95,6 +97,7 @@ for i in range(1, length):
         currentDigit = int(chr(currentDigit - 55))
         decimalNumber += currentDigit * pow(int(inputBase), i)
 
+
 # print("decimal value of your number: " + str(decimalNumber))
 
 # 1. divide by base
@@ -102,15 +105,14 @@ for i in range(1, length):
 # 3. keep doing that until your number is 0
 
 # does not work for binary output base yet
-while decimalNumber > 0:
-    nextDigit = (float(decimalNumber) % int(outputBase))
-    if (decimalNumber % int(outputBase)) > 9:
-        nextDigit = chr(int(nextDigit)+55)
-    decimalNumber = decimalNumber / int(outputBase)
 
-    print("next digit: " + str(nextDigit))
-    print("remainder: " + str(decimalNumber))
 
-    outputNumber = str(nextDigit) + str(outputNumber)
+def convert(dec):
+    if dec >= 1:
+        convert(dec // int(outputBase))
+    next_digit = str(dec % int(outputBase))
+    print(next_digit, end='')
 
-print("converted number: " + '\033[93m' + outputNumber + '\033[0m')
+
+convert(decimalNumber)
+# print("converted number: " + '\033[93m' + outputNumber + '\033[0m')
