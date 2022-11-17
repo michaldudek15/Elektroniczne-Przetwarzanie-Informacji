@@ -2,8 +2,9 @@ import heapq
 import string
 
 # example message from class: ToXToooTTXXooooX
+# another example from class: .....@@@@@@@$$.$.$.$$........@
 
-ALPHABET = string.ascii_letters
+ALPHABET = string.printable
 message = input("type in your message: ")
 value_table = []
 
@@ -77,7 +78,6 @@ while len(nodes) > 1:
 
     heapq.heappush(nodes, newNode)
 
-# Huffman Tree is ready!
 printNodes(nodes[0])
 
 dic = {}
