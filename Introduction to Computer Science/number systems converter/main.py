@@ -5,8 +5,8 @@
 # DONE check if the number is max A for base 11, B for base 12 ... F for base 16
 # DONE make sure converting to binary works fine
 
-# TO DO add global string variable and update it with convert()
 # TO DO add fractions
+
 
 # 2  -> {0, 1}                                              -> {48, 49}
 # 3  -> {0, 1, 2}                                           -> {48,49, 50}
@@ -59,14 +59,47 @@ def valueCheck(value):
     return control_flag
 
 
+outputNumber = ""
+
+
+def convert(dec):
+    global outputNumber
+    if dec >= 1:
+        convert(dec // int(outputBase))
+    next_digit = str(dec % int(outputBase))
+    outputNumber += next_digit
+
+
+outputFraction = ""
+precision = 10
+
+
+def convertFraction(frac):
+    global precision, outputFraction
+    while precision:
+        frac *= 2
+        bit = int(frac)
+        if bit == 1:
+            frac -= bit
+            outputFraction += '1'
+        else:
+            outputFraction += '0'
+        precision -= 1
+
+
 while True:
     inputBase = input('choose the base of the system for your input number: ')
     if baseCheck(inputBase):
         break
 
 while True:
-    inputNumber = input('what number do you want to convert? ')
+    inputNumber = input('type the integer value of the number you want to convert: ')
     if valueCheck(inputNumber):
+        break
+
+while True:
+    inputFraction = input('type the fractional value of the number you want to convert: ')
+    if valueCheck(inputFraction):
         break
 
 while True:
@@ -97,22 +130,30 @@ for i in range(1, length):
         currentDigit = int(chr(currentDigit - 55))
         decimalNumber += currentDigit * pow(int(inputBase), i)
 
+fractionLength = len(inputFraction)
 
-# print("decimal value of your number: " + str(decimalNumber))
+if 64 < ord(inputFraction[0]) < 71:
+    currentDigit = ord(inputFraction[0]) - 55
+    fractionalPart = currentDigit * pow(int(inputBase), -1)
+elif 47 < ord(inputFraction[0]) < 58:
+    currentDigit = int(inputFraction[0])
+    fractionalPart = currentDigit * pow(int(inputBase), -1)
+else:
+    fractionalPart = 0
+    exit()
 
-# 1. divide by base
-# 2. remainder is the youngest digit
-# 3. keep doing that until your number is 0
-
-# does not work for binary output base yet
-
-
-def convert(dec):
-    if dec >= 1:
-        convert(dec // int(outputBase))
-    next_digit = str(dec % int(outputBase))
-    print(next_digit, end='')
-
+for i in range(1, fractionLength):
+    if ord(inputFraction[i]) > 64:
+        currentDigit = ord(inputFraction[i]) - 55
+    else:
+        currentDigit = int(inputFraction[i])
+    if chr(currentDigit) < '65':
+        fractionalPart += currentDigit * pow(int(inputBase), -(i + 1))
+    else:
+        currentDigit = int(chr(currentDigit - 55))
+        fractionalPart += currentDigit * pow(int(inputBase), -(i + 1))
 
 convert(decimalNumber)
-# print("converted number: " + '\033[93m' + outputNumber + '\033[0m')
+convertFraction(fractionalPart)
+print("output fraction: " + str(outputFraction))
+print("converted number: " + '\033[93m' + outputNumber[1:] + str(fractionalPart)[1:10] + '\033[0m')
