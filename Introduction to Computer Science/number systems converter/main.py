@@ -67,7 +67,10 @@ def convert(dec):
     if dec >= 1:
         convert(dec // int(outputBase))
     next_digit = str(dec % int(outputBase))
-    outputNumber += next_digit
+    if 0 <= int(next_digit) <= 9:
+        outputNumber += next_digit
+    elif 10 <= int(next_digit) <= 16:
+        outputNumber += chr(int(next_digit) + 55)
 
 
 outputFraction = ""
