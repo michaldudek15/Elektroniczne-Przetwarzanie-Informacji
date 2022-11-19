@@ -1,13 +1,13 @@
 import math
+
 # DONE input check
 # DONE converting to decimal
 # DONE function that checks if the base is correct
 # DONE converting from decimal to outputBase
 # DONE check if the number is max A for base 11, B for base 12 ... F for base 16
 # DONE make sure converting to binary works fine
-
-# TO DO add fractions
-# TO DO check if fraction is 0 and if int is 0
+# DONE add fractions
+# DONE check if fraction is 0 and if int is 0
 
 
 # 2  -> {0, 1}                                              -> {48, 49}
@@ -27,7 +27,10 @@ import math
 
 def baseCheck(base):
     control_flag = True
-    if len(str(base)) == 1:
+    if int(base) > 16:
+        print("the base of the system can only be a number from range " + '\033[94m' + "[2, 16]" + '\033[0m')
+        control_flag = False
+    elif len(str(base)) == 1:
         if ord(str(base)[0]) < 50 or ord(str(base)[0]) > 57:
             print("the base of the system can only be a number from range " + '\033[94m' + "[2, 16]" + '\033[0m')
             control_flag = False
@@ -66,7 +69,7 @@ outputNumber = ""
 
 def convert(dec):
     global outputNumber
-    if int(inputNumber) == 0:
+    if inputNumber == "0":
         print("integer was 0 from beginning")
         outputNumber = "00"
         return
