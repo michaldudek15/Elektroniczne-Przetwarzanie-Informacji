@@ -138,6 +138,7 @@ while True:
     if baseCheck(outputBase):
         break
 
+# convert input values to decimal
 length = len(inputNumber)
 
 if 64 < ord(inputNumber[length - 1]) < 71:
