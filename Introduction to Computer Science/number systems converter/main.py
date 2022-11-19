@@ -1,29 +1,6 @@
 # for floor function
 import math
 
-# DONE input check
-# DONE converting to decimal
-# DONE function that checks if the base is correct
-# DONE converting from decimal to outputBase
-# DONE check if the number is max A for base 11, B for base 12 ... F for base 16
-# DONE make sure converting to binary works fine
-# DONE add fractions
-# DONE check if fraction is 0 and if int is 0
-
-
-# 2  -> {0, 1}                                              -> {48, 49}
-# 3  -> {0, 1, 2}                                           -> {48,49, 50}
-# 4  -> {0, 1, 2, 3}
-...
-# 10 -> {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}                      -> {48, 49, 50, 51, 52, 53, 54, 55, 56, 57}
-# 11 -> {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A}                   -> {48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 65}
-...
-
-# 15 -> {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E}       -> {48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 65, 66, 67,
-#                                                               68, 69}
-# 16 -> {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F}    -> {48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 65,
-#                                                               66, 67, 68, 69, 70} 54 + 16
-
 
 def baseCheck(base):
     control_flag = True
