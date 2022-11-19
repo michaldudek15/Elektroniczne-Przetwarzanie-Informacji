@@ -1,3 +1,4 @@
+import math
 # DONE input check
 # DONE converting to decimal
 # DONE function that checks if the base is correct
@@ -6,6 +7,7 @@
 # DONE make sure converting to binary works fine
 
 # TO DO add fractions
+# TO DO check if fraction is 0 and if int is 0
 
 
 # 2  -> {0, 1}                                              -> {48, 49}
@@ -64,7 +66,11 @@ outputNumber = ""
 
 def convert(dec):
     global outputNumber
-    if dec >= 1:
+    if int(inputNumber) == 0:
+        print("integer was 0 from beginning")
+        outputNumber = "00"
+        return
+    elif dec >= 1:
         convert(dec // int(outputBase))
     next_digit = str(dec % int(outputBase))
     if 0 <= int(next_digit) <= 9:
@@ -79,15 +85,34 @@ precision = 10
 
 def convertFraction(frac):
     global precision, outputFraction
+    if frac == 0:
+        outputFraction = "0"
+        return
     while precision:
-        frac *= 2
-        bit = int(frac)
-        if bit == 1:
-            frac -= bit
-            outputFraction += '1'
+        if frac == 0:
+            break
         else:
-            outputFraction += '0'
-        precision -= 1
+            # print(frac * int(outputBase))
+            floor = math.floor(frac * int(outputBase))
+            if floor < 10:
+                next_digit = floor
+            else:
+                next_digit = chr(int(floor) + 55)
+            outputFraction += str(next_digit)
+            # print("floor: " + str(floor))
+            remainder = (frac * int(outputBase)) - floor
+            # print("remainder: " + str(remainder))
+            frac = remainder
+            precision -= 1
+
+
+# 0.194     -> 0.31A9FBE76C8B4395810
+# 0.194 * 16    -> 3  r 104
+# 0.104 * 16    -> 1  r 664
+# 0.664 * 16    -> A r 624
+
+# 0.5       ->
+# 0.5 * 16      -> 8 r 0
 
 
 while True:
@@ -158,5 +183,6 @@ for i in range(1, fractionLength):
 
 convert(decimalNumber)
 convertFraction(fractionalPart)
-print("output fraction: " + str(outputFraction))
-print("converted number: " + '\033[93m' + outputNumber[1:] + str(fractionalPart)[1:10] + '\033[0m')
+# print("output integer: " + str(outputNumber))
+# print("output fraction: " + str(outputFraction))
+print("converted number: " + '\033[93m' + outputNumber[1:] + "." + outputFraction + '\033[0m')
