@@ -1,3 +1,4 @@
+# for floor function
 import math
 
 # DONE input check
@@ -115,15 +116,6 @@ def convertFraction(frac):
             # print("remainder: " + str(remainder))
             frac = remainder
             precision -= 1
-
-
-# 0.194     -> 0.31A9FBE76C8B4395810
-# 0.194 * 16    -> 3  r 104
-# 0.104 * 16    -> 1  r 664
-# 0.664 * 16    -> A r 624
-
-# 0.5       ->
-# 0.5 * 16      -> 8 r 0
 
 
 while True:
