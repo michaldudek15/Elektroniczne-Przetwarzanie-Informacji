@@ -27,10 +27,7 @@ import math
 
 def baseCheck(base):
     control_flag = True
-    if int(base) > 16:
-        print("the base of the system can only be a number from range " + '\033[94m' + "[2, 16]" + '\033[0m')
-        control_flag = False
-    elif len(str(base)) == 1:
+    if len(str(base)) == 1:
         if ord(str(base)[0]) < 50 or ord(str(base)[0]) > 57:
             print("the base of the system can only be a number from range " + '\033[94m' + "[2, 16]" + '\033[0m')
             control_flag = False
@@ -41,6 +38,9 @@ def baseCheck(base):
         elif ord(str(base)[1]) < 48 or ord(str(base)[1]) > 54:
             print("the base of the system can only be a number from range " + '\033[94m' + "[2, 16]" + '\033[0m')
             control_flag = False
+    elif int(base) > 16:
+        print("the base of the system can only be a number from range " + '\033[94m' + "[2, 16]" + '\033[0m')
+        control_flag = False
     else:
         print("the base of the system can only be a number from range " + '\033[94m' + "[2, 16]" + '\033[0m')
         control_flag = False
@@ -65,15 +65,17 @@ def valueCheck(value):
 
 
 outputNumber = ""
+first_time = True
 
 
 def convert(dec):
-    global outputNumber
-    if inputNumber == "0":
+    global outputNumber, first_time
+    if dec == 0 and first_time:
         print("integer was 0 from beginning")
         outputNumber = "00"
         return
     elif dec >= 1:
+        first_time = False
         convert(dec // int(outputBase))
     next_digit = str(dec % int(outputBase))
     if 0 <= int(next_digit) <= 9:
@@ -186,6 +188,8 @@ for i in range(1, fractionLength):
 
 convert(decimalNumber)
 convertFraction(fractionalPart)
+
 # print("output integer: " + str(outputNumber))
 # print("output fraction: " + str(outputFraction))
+
 print("converted number: " + '\033[93m' + outputNumber[1:] + "." + outputFraction + '\033[0m')
