@@ -26,7 +26,10 @@ import math
 
 def baseCheck(base):
     control_flag = True
-    if len(str(base)) == 1:
+    if len(str(base)) == 0:
+        print("the base of the system can only be a number from range " + '\033[94m' + "[2, 16]" + '\033[0m')
+        control_flag = False
+    elif len(str(base)) == 1:
         if ord(str(base)[0]) < 50 or ord(str(base)[0]) > 57:
             print("the base of the system can only be a number from range " + '\033[94m' + "[2, 16]" + '\033[0m')
             control_flag = False
@@ -48,18 +51,22 @@ def baseCheck(base):
 
 def valueCheck(value):
     control_flag = True
-    for j in range(len(value)):
-        if (ord(value[j]) > 70 or ord(value[j]) < 48) or (57 < ord(value[j]) < 65):
-            print("this character is not allowed: " + "\033[91m" + str(value[j]) + "\033[0m")
-            control_flag = False
-        elif int(inputBase) < 10:
-            if ord(value[j]) < 48 or ord(value[j]) > (47 + int(inputBase)):
-                print("this character is not allowed for this input base: " + "\033[91m" + str(value[j]) + "\033[0m")
+    if len(str(value)) == 0:
+        print("input was empty")
+        control_flag = False
+    else:
+        for j in range(len(value)):
+            if (ord(value[j]) > 70 or ord(value[j]) < 48) or (57 < ord(value[j]) < 65):
+                print("this character is not allowed: " + "\033[91m" + str(value[j]) + "\033[0m")
                 control_flag = False
-        elif int(inputBase) >= 10:
-            if ord(value[j]) < 48 or ord(value[j]) > (54 + int(inputBase)):
-                print("this character is not allowed for this input base: " + "\033[91m" + str(value[j]) + "\033[0m")
-                control_flag = False
+            elif int(inputBase) < 10:
+                if ord(value[j]) < 48 or ord(value[j]) > (47 + int(inputBase)):
+                    print("this character is not allowed for this input base: " + "\033[91m" + str(value[j]) + "\033[0m")
+                    control_flag = False
+            elif int(inputBase) >= 10:
+                if ord(value[j]) < 48 or ord(value[j]) > (54 + int(inputBase)):
+                    print("this character is not allowed for this input base: " + "\033[91m" + str(value[j]) + "\033[0m")
+                    control_flag = False
     return control_flag
 
 
