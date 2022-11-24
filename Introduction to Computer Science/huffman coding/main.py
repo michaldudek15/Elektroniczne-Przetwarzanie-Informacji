@@ -1,8 +1,11 @@
 import heapq
 import string
 
-# example message from class: ToXToooTTXXooooX
-# another example from class: .....@@@@@@@$$.$.$.$$........@
+# example messages from class:
+# ToXToooTTXXooooX
+# .....@@@@@@@$$.$.$.$$........@
+# ABCDEFGHIJKLMNOPRSTUWVXYZ
+# 112210101211013101110213331001203100100123300
 
 ALPHABET = string.printable
 message = input("type in your message: ")
