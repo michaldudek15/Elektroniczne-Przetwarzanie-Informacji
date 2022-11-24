@@ -39,11 +39,13 @@ def valueCheck(value):
                 control_flag = False
             elif int(inputBase) < 10:
                 if ord(value[j]) < 48 or ord(value[j]) > (47 + int(inputBase)):
-                    print("this character is not allowed for this input base: " + "\033[91m" + str(value[j]) + "\033[0m")
+                    print("this character is not allowed for this input base: " + "\033[91m" + str(value[j])
+                          + "\033[0m")
                     control_flag = False
             elif int(inputBase) >= 10:
                 if ord(value[j]) < 48 or ord(value[j]) > (54 + int(inputBase)):
-                    print("this character is not allowed for this input base: " + "\033[91m" + str(value[j]) + "\033[0m")
+                    print("this character is not allowed for this input base: " + "\033[91m" + str(value[j])
+                          + "\033[0m")
                     control_flag = False
     return control_flag
 
