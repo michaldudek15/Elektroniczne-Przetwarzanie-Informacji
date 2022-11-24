@@ -1,6 +1,8 @@
 # for floor function
 import math
 
+fraction_precision = 10
+
 
 def baseCheck(base):
     control_flag = True
@@ -71,15 +73,14 @@ def convert(dec):
 
 
 outputFraction = ""
-precision = 10
 
 
 def convertFraction(frac):
-    global precision, outputFraction
+    global fraction_precision, outputFraction
     if frac == 0:
         outputFraction = "0"
         return
-    while precision:
+    while fraction_precision:
         if frac == 0:
             break
         else:
@@ -94,7 +95,7 @@ def convertFraction(frac):
             remainder = (frac * int(outputBase)) - floor
             # print("remainder: " + str(remainder))
             frac = remainder
-            precision -= 1
+            fraction_precision -= 1
 
 
 while True:
