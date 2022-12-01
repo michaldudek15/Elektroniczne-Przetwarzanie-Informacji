@@ -1,6 +1,8 @@
 # for floor function
 import math
 
+# 4 points
+
 fraction_precision = 10
 
 
