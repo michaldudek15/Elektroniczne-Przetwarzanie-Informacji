@@ -1,6 +1,8 @@
 import heapq
 import string
 
+# 3 points
+
 # example messages from class:
 # ToXToooTTXXooooX
 # .....@@@@@@@$$.$.$.$$........@
