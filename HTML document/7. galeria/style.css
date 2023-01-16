@@ -1,0 +1,52 @@
+#miniatury {
+    display: flex;
+}
+
+#miniatury img {
+    display: flex;
+    width: 300px;
+    height: 300px;
+}
+
+#duzy {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    height: 80%;
+    width: 80%;
+
+}
+
+#powiekszony {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background-color: rgba(0,0,0,0.8);
+    backdrop-filter: blur(10px);
+    display: none;
+
+}
+
+#obrazek1:active {
+    position: fixed;
+    width: 1000px;
+    height: 1000px;
+}
+
+#obrazek2:active {
+    position: fixed;
+    width: 1000px;
+    height: 1000px;
+}
+
+#obrazek3:active {
+    position: fixed;
+    width: 1000px;
+    height: 1000px;
+}

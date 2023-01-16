@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>galeria</title>
+
+</head>
+<body>
+    <div id="miniatury">
+        <img id="m1" src="1.jpeg">
+        <img id="m2" src="2.jpeg">
+        <img id="m3" src="3.jpeg">
+    </div>
+
+    <div id="powiekszony">
+        <img id="duzy" src="1.jpeg">
+    </div>
+
+<script type="text/javascript">
+    $('#m1').click(function() {
+        $('#powiekszony').show();
+        $('#duzy').attr('src','1.jpeg');
+    });
+
+    $('#m2').click(function() {
+        $('#powiekszony').show();
+        $('#duzy').attr('src','2.jpeg');
+    });
+
+    $('#m3').click(function() {
+        $('#powiekszony').show();
+        $('#duzy').attr('src','3.jpeg');
+    });
+
+    $('#powiekszony').click(function() {
+        $('#powiekszony').hide();
+
+    });
+
+</script>
+
+</body>
+</html>
