@@ -1,35 +1,226 @@
 <!DOCTYPE html>
 <html lang="pl">
+
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
-          integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
-          crossorigin=""/>
-    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
-            integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
-            crossorigin=""></script>
-    <title>Krakowski Kazimierz</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="">
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+    <title>krakowski Kazimierz</title>
 </head>
+
 <body>
-    <header>wycieczka po krakowskim kazimierzu - naglowek</header>
-    <nav>STRONA GŁÓWNA | O PROJEKCIE | KONTAKT</nav>
-    <div id="uklad">
-        <div id="lewyPanel">
-            <h2>Krakowski Kazimierz</h2>
-            <article>
-            jest to dzielnica krakowa bardzo ładna
-                <div id="galeria">
-                    tu by były zdjęcia
+    <div id="background">
+
+        <div id="centrum">
+
+            <header>
+                <h1>DZIEŃ NA KRAKOWSKIM KAZIMIERZU</h1>
+                <div id="projekt">
+                    Strona została przygotowana w ramach projektu zaliczeniowego na przedmiot Dokument Hipertekstowy na kierunku Elektroniczne Przetwarzanie Informacji. Strona ma postać blogu podróżniczego, w którym przedstawione zostały atrakcje Krakowskiego Kazimierza, które warto odwiedzić w ramach jednodniowej wycieczki. Wszystkie grafiki użyte zostały znalezione w sieci.
                 </div>
-            </article>
+                <nav>
+                    <h2>plan wycieczki</h2>
+                    <ol>
+                        <li><a id='link1' href="#wstep">wstęp </a></li>
+                        <li><a id='link2' href="#rannyPtaszek">Ranny Ptaszek</a></li>
+                        <li><a id='link3' href="#bazylikaNaSkalce">Bazylika Na Skałce</a></li>
+                        <li><a id='link4' href="#balonWidokowy">balon widokowy</a></li>
+                        <li><a id='link5' href="#losGorditos">Los Gorditos</a></li>
+                        <li><a id='link6' href="#kosciolBozegoCiala">Kościół Bożego Ciała</a></li>
+                        <li><a id='link7' href="#muzeum">Muzeum Inżynierii i Techniki</a></li>
+                        <li><a id='link8' href="#cytatCafe">Cytat Café</a></li>
+                        <li><a id='link9' href="#ulicaSzeroka">ulica Szeroka</a></li>
+                        <li><a id='link10' href="#staraSynagoga">Stara Synagoga</a></li>
+                        <li><a id='link11' href="#okraglak">Okrąglak</a></li>
+                        <li><a id='link12' href="#lesCouleurs">Les Couleurs</a></li>
+                        <li><a id='link13' href="#map">mapa</a></li>
+                    </ol>
+                </nav>
+            </header>
+
+            <main>
+
+                <div class="content" id="wstep">
+                    <article>
+                        <h2>WSTĘP</h2>
+                        Od założenia w 1335 roku przez króla Kazimierza Wielkiego, do przełomu XVIII i XIX wieku Kazimierz był samodzielnym miastem położonym na południe od Krakowa. W roku 1495 z powodów politycznych i ekonomicznych, na terenie dawnej wsi Bawół zostało utworzone tzw. miasto żydowskie, gdzie wygnano mieszkających wtedy w Krakowie Żydów. Doprowadziło to do rozwoju kultury żydowskiej na tamtych terenach. Powstały liczne synagogi, 7 z nich wciąż istnieje.  Kazimierz leży niemal w centrum Krakowa, w zakolu Wisły, około 15 minut drogi od Wawelu. Jest to niezwykle ciekawa dzielnica, która swoim klimatem i bogactwem zabytków przyciąga wielu turystów. Na każdym kroku możemy podziwiać piękne kamienice, stare synagogi, szyldy starych sklepów, piękne murale i ogródki licznych lokali gastronomicznych. Najlepszym momentem na przyjazd tutaj będzie zdecydowanie koniec czerwca, kiedy odbywa się coroczny Festiwal Kultury Żydowskiej.
+                    </article>
+                    <div class="galeria">
+                        <img src="images/wstep1.jpg" alt="TODO">
+                        <img src="images/wstep2.jpg" alt="TODO">
+                        <img src="images/wstep3.jpg" alt="TODO">
+                        <img src="images/wstep4.jpg" alt="TODO">
+                    </div>
+                </div>
+
+                <div class="content" id="rannyPtaszek">
+                    <article>
+                        <h2>RANNY PTASZEK</h2>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In augue mi, convallis in mauris vestibulum, viverra feugiat lorem. Ut id accumsan nunc, ac feugiat ante. Phasellus efficitur mi vitae odio vestibulum consectetur. Mauris aliquam enim eu ultricies varius. Phasellus ac vestibulum libero, in imperdiet elit. Mauris dictum elit vel mauris efficitur accumsan. Pellentesque quis risus bibendum, ullamcorper lectus nec, efficitur ipsum. Fusce consectetur, risus quis luctus rutrum, leo neque maximus sem, vel pellentesque sem urna et mauris.
+                        Nunc luctus faucibus purus quis consectetur. Nunc id lectus ut diam vulputate vehicula finibus quis nisi. Fusce aliquam scelerisque diam, ut malesuada magna accumsan at. Donec euismod nisi in lacinia semper. Nulla eget libero id justo auctor molestie elementum in sem. Maecenas et pharetra ex. Suspendisse ac ultrices purus. Aliquam rutrum turpis commodo libero efficitur mattis.
+                    </article>
+                    <div class="galeria">
+                        <img src="images/rannyPtaszek1.jpg" alt="TODO">
+                        <img src="images/rannyPtaszek2.jpeg" alt="TODO">
+                        <img src="images/rannyPtaszek3.jpg" alt="TODO">
+                        <img src="images/rannyPtaszek4.jpg" alt="TODO">
+                    </div>
+                </div>
+
+                <div class="content" id="bazylikaNaSkalce">
+                    <article>
+                        <h2>BAZYLIKA NA SKAŁCE</h2>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In augue mi, convallis in mauris vestibulum, viverra feugiat lorem. Ut id accumsan nunc, ac feugiat ante. Phasellus efficitur mi vitae odio vestibulum consectetur. Mauris aliquam enim eu ultricies varius. Phasellus ac vestibulum libero, in imperdiet elit. Mauris dictum elit vel mauris efficitur accumsan. Pellentesque quis risus bibendum, ullamcorper lectus nec, efficitur ipsum. Fusce consectetur, risus quis luctus rutrum, leo neque maximus sem, vel pellentesque sem urna et mauris.
+                        Nunc luctus faucibus purus quis consectetur. Nunc id lectus ut diam vulputate vehicula finibus quis nisi. Fusce aliquam scelerisque diam, ut malesuada magna accumsan at. Donec euismod nisi in lacinia semper. Nulla eget libero id justo auctor molestie elementum in sem. Maecenas et pharetra ex. Suspendisse ac ultrices purus. Aliquam rutrum turpis commodo libero efficitur mattis.
+                    </article>
+                    <div class="galeria">
+                        <img src="images/skalka1.jpeg" alt="TODO">
+                        <img src="images/skalka2.jpeg" alt="TODO">
+                        <img src="images/skalka3.jpeg" alt="TODO">
+                        <img src="images/skalka4.jpeg" alt="TODO">
+                    </div>
+                </div>
+
+                <div class="content" id="balonWidokowy">
+                    <article>
+                        <h2>BALON WIDOKOWY</h2>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In augue mi, convallis in mauris vestibulum, viverra feugiat lorem. Ut id accumsan nunc, ac feugiat ante. Phasellus efficitur mi vitae odio vestibulum consectetur. Mauris aliquam enim eu ultricies varius. Phasellus ac vestibulum libero, in imperdiet elit. Mauris dictum elit vel mauris efficitur accumsan. Pellentesque quis risus bibendum, ullamcorper lectus nec, efficitur ipsum. Fusce consectetur, risus quis luctus rutrum, leo neque maximus sem, vel pellentesque sem urna et mauris.
+                        Nunc luctus faucibus purus quis consectetur. Nunc id lectus ut diam vulputate vehicula finibus quis nisi. Fusce aliquam scelerisque diam, ut malesuada magna accumsan at. Donec euismod nisi in lacinia semper. Nulla eget libero id justo auctor molestie elementum in sem. Maecenas et pharetra ex. Suspendisse ac ultrices purus. Aliquam rutrum turpis commodo libero efficitur mattis.
+                    </article>
+                    <div class="galeria">
+                        <img src="images/balon1.jpeg" alt="TODO">
+                        <img src="images/balon2.jpeg" alt="TODO">
+                        <img src="images/balon3.jpeg" alt="TODO">
+                        <img src="images/balon4.jpeg" alt="TODO">
+                    </div>
+                </div>
+
+                <div class="content" id="losGorditos">
+                    <article>
+                        <h2>LOS GORDITOS</h2>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In augue mi, convallis in mauris vestibulum, viverra feugiat lorem. Ut id accumsan nunc, ac feugiat ante. Phasellus efficitur mi vitae odio vestibulum consectetur. Mauris aliquam enim eu ultricies varius. Phasellus ac vestibulum libero, in imperdiet elit. Mauris dictum elit vel mauris efficitur accumsan. Pellentesque quis risus bibendum, ullamcorper lectus nec, efficitur ipsum. Fusce consectetur, risus quis luctus rutrum, leo neque maximus sem, vel pellentesque sem urna et mauris.
+                        Nunc luctus faucibus purus quis consectetur. Nunc id lectus ut diam vulputate vehicula finibus quis nisi. Fusce aliquam scelerisque diam, ut malesuada magna accumsan at. Donec euismod nisi in lacinia semper. Nulla eget libero id justo auctor molestie elementum in sem. Maecenas et pharetra ex. Suspendisse ac ultrices purus. Aliquam rutrum turpis commodo libero efficitur mattis.
+                    </article>
+                    <div class="galeria">
+                        <img src="images/gorditos1.jpeg" alt="TODO">
+                        <img src="images/gorditos2.jpeg" alt="TODO">
+                        <img src="images/gorditos3.png" alt="TODO">
+                        <img src="images/gorditos4.png" alt="TODO">
+                    </div>
+                </div>
+
+                <div class="content" id="kosciolBozegoCiala">
+                    <article>
+                        <h2>KOŚCIÓŁ BOŻEGO CIAŁA</h2>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In augue mi, convallis in mauris vestibulum, viverra feugiat lorem. Ut id accumsan nunc, ac feugiat ante. Phasellus efficitur mi vitae odio vestibulum consectetur. Mauris aliquam enim eu ultricies varius. Phasellus ac vestibulum libero, in imperdiet elit. Mauris dictum elit vel mauris efficitur accumsan. Pellentesque quis risus bibendum, ullamcorper lectus nec, efficitur ipsum. Fusce consectetur, risus quis luctus rutrum, leo neque maximus sem, vel pellentesque sem urna et mauris.
+                        Nunc luctus faucibus purus quis consectetur. Nunc id lectus ut diam vulputate vehicula finibus quis nisi. Fusce aliquam scelerisque diam, ut malesuada magna accumsan at. Donec euismod nisi in lacinia semper. Nulla eget libero id justo auctor molestie elementum in sem. Maecenas et pharetra ex. Suspendisse ac ultrices purus. Aliquam rutrum turpis commodo libero efficitur mattis.
+                    </article>
+                    <div class="galeria">
+                        <img src="images/bozego1.png" alt="TODO">
+                        <img src="images/bozego2.jpeg" alt="TODO">
+                        <img src="images/bozego3.jpeg" alt="TODO">
+                        <img src="images/bozego4.jpeg" alt="TODO">
+                    </div>
+                </div>
+
+                <div class="content" id="muzeum">
+                    <article>
+                        <h2>MUZEUM INŻYNIERII I TECHNIKI</h2>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In augue mi, convallis in mauris vestibulum, viverra feugiat lorem. Ut id accumsan nunc, ac feugiat ante. Phasellus efficitur mi vitae odio vestibulum consectetur. Mauris aliquam enim eu ultricies varius. Phasellus ac vestibulum libero, in imperdiet elit. Mauris dictum elit vel mauris efficitur accumsan. Pellentesque quis risus bibendum, ullamcorper lectus nec, efficitur ipsum. Fusce consectetur, risus quis luctus rutrum, leo neque maximus sem, vel pellentesque sem urna et mauris.
+                        Nunc luctus faucibus purus quis consectetur. Nunc id lectus ut diam vulputate vehicula finibus quis nisi. Fusce aliquam scelerisque diam, ut malesuada magna accumsan at. Donec euismod nisi in lacinia semper. Nulla eget libero id justo auctor molestie elementum in sem. Maecenas et pharetra ex. Suspendisse ac ultrices purus. Aliquam rutrum turpis commodo libero efficitur mattis.
+                    </article>
+                    <div class="galeria">
+                        <img src="images/mit1.jpeg" alt="TODO">
+                        <img src="images/mit2.jpeg" alt="TODO">
+                        <img src="images/mit3.jpeg" alt="TODO">
+                        <img src="images/mit4.jpeg" alt="TODO">
+                    </div>
+                </div>
+
+                <div class="content" id="cytatCafe">
+                    <article>
+                        <h2>CYTAT CAFÉ</h2>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In augue mi, convallis in mauris vestibulum, viverra feugiat lorem. Ut id accumsan nunc, ac feugiat ante. Phasellus efficitur mi vitae odio vestibulum consectetur. Mauris aliquam enim eu ultricies varius. Phasellus ac vestibulum libero, in imperdiet elit. Mauris dictum elit vel mauris efficitur accumsan. Pellentesque quis risus bibendum, ullamcorper lectus nec, efficitur ipsum. Fusce consectetur, risus quis luctus rutrum, leo neque maximus sem, vel pellentesque sem urna et mauris.
+                        Nunc luctus faucibus purus quis consectetur. Nunc id lectus ut diam vulputate vehicula finibus quis nisi. Fusce aliquam scelerisque diam, ut malesuada magna accumsan at. Donec euismod nisi in lacinia semper. Nulla eget libero id justo auctor molestie elementum in sem. Maecenas et pharetra ex. Suspendisse ac ultrices purus. Aliquam rutrum turpis commodo libero efficitur mattis.
+                    </article>
+                    <div class="galeria">
+                        <img src="images/cytat1.jpeg" alt="TODO">
+                        <img src="images/cytat2.jpeg" alt="TODO">
+                        <img src="images/cytat3.jpeg" alt="TODO">
+                        <img src="images/cytat4.jpeg" alt="TODO">
+                    </div>
+                </div>
+
+                <div class="content" id="ulicaSzeroka">
+                    <article>
+                        <h2>ULICA SZEROKA</h2>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In augue mi, convallis in mauris vestibulum, viverra feugiat lorem. Ut id accumsan nunc, ac feugiat ante. Phasellus efficitur mi vitae odio vestibulum consectetur. Mauris aliquam enim eu ultricies varius. Phasellus ac vestibulum libero, in imperdiet elit. Mauris dictum elit vel mauris efficitur accumsan. Pellentesque quis risus bibendum, ullamcorper lectus nec, efficitur ipsum. Fusce consectetur, risus quis luctus rutrum, leo neque maximus sem, vel pellentesque sem urna et mauris.
+                        Nunc luctus faucibus purus quis consectetur. Nunc id lectus ut diam vulputate vehicula finibus quis nisi. Fusce aliquam scelerisque diam, ut malesuada magna accumsan at. Donec euismod nisi in lacinia semper. Nulla eget libero id justo auctor molestie elementum in sem. Maecenas et pharetra ex. Suspendisse ac ultrices purus. Aliquam rutrum turpis commodo libero efficitur mattis.
+                    </article>
+                    <div class="galeria">
+                        <img src="images/szeroka1.jpeg" alt="TODO">
+                        <img src="images/szeroka2.jpeg" alt="TODO">
+                        <img src="images/szeroka3.jpeg" alt="TODO">
+                        <img src="images/szeroka4.jpeg" alt="TODO">
+                    </div>
+                </div>
+
+                <div class="content" id="staraSynagoga">
+                    <article>
+                        <h2>STARA SYNAGOGA</h2>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In augue mi, convallis in mauris vestibulum, viverra feugiat lorem. Ut id accumsan nunc, ac feugiat ante. Phasellus efficitur mi vitae odio vestibulum consectetur. Mauris aliquam enim eu ultricies varius. Phasellus ac vestibulum libero, in imperdiet elit. Mauris dictum elit vel mauris efficitur accumsan. Pellentesque quis risus bibendum, ullamcorper lectus nec, efficitur ipsum. Fusce consectetur, risus quis luctus rutrum, leo neque maximus sem, vel pellentesque sem urna et mauris.
+                        Nunc luctus faucibus purus quis consectetur. Nunc id lectus ut diam vulputate vehicula finibus quis nisi. Fusce aliquam scelerisque diam, ut malesuada magna accumsan at. Donec euismod nisi in lacinia semper. Nulla eget libero id justo auctor molestie elementum in sem. Maecenas et pharetra ex. Suspendisse ac ultrices purus. Aliquam rutrum turpis commodo libero efficitur mattis.
+                    </article>
+                    <div class="galeria">
+                        <img src="images/synagoga1.jpeg" alt="TODO">
+                        <img src="images/synagoga2.jpeg" alt="TODO">
+                        <img src="images/synagoga3.jpeg" alt="TODO">
+                        <img src="images/synagoga4.jpeg" alt="TODO">
+                    </div>
+                </div>
+
+                <div class="content" id="okraglak">
+                    <article>
+                        <h2>OKRĄGLAK</h2>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In augue mi, convallis in mauris vestibulum, viverra feugiat lorem. Ut id accumsan nunc, ac feugiat ante. Phasellus efficitur mi vitae odio vestibulum consectetur. Mauris aliquam enim eu ultricies varius. Phasellus ac vestibulum libero, in imperdiet elit. Mauris dictum elit vel mauris efficitur accumsan. Pellentesque quis risus bibendum, ullamcorper lectus nec, efficitur ipsum. Fusce consectetur, risus quis luctus rutrum, leo neque maximus sem, vel pellentesque sem urna et mauris.
+                        Nunc luctus faucibus purus quis consectetur. Nunc id lectus ut diam vulputate vehicula finibus quis nisi. Fusce aliquam scelerisque diam, ut malesuada magna accumsan at. Donec euismod nisi in lacinia semper. Nulla eget libero id justo auctor molestie elementum in sem. Maecenas et pharetra ex. Suspendisse ac ultrices purus. Aliquam rutrum turpis commodo libero efficitur mattis.
+                    </article>
+                    <div class="galeria">
+                        <img src="images/okraglak1.jpeg" alt="TODO">
+                        <img src="images/okraglak2.jpeg" alt="TODO">
+                        <img src="images/okraglak3.jpeg" alt="TODO">
+                        <img src="images/okraglak4.jpeg" alt="TODO">
+                    </div>
+                </div>
+
+                <div class="content" id="lesCouleurs">
+                    <article>
+                        <h2>LES COULEURS</h2>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In augue mi, convallis in mauris vestibulum, viverra feugiat lorem. Ut id accumsan nunc, ac feugiat ante. Phasellus efficitur mi vitae odio vestibulum consectetur. Mauris aliquam enim eu ultricies varius. Phasellus ac vestibulum libero, in imperdiet elit. Mauris dictum elit vel mauris efficitur accumsan. Pellentesque quis risus bibendum, ullamcorper lectus nec, efficitur ipsum. Fusce consectetur, risus quis luctus rutrum, leo neque maximus sem, vel pellentesque sem urna et mauris.
+                        Nunc luctus faucibus purus quis consectetur. Nunc id lectus ut diam vulputate vehicula finibus quis nisi. Fusce aliquam scelerisque diam, ut malesuada magna accumsan at. Donec euismod nisi in lacinia semper. Nulla eget libero id justo auctor molestie elementum in sem. Maecenas et pharetra ex. Suspendisse ac ultrices purus. Aliquam rutrum turpis commodo libero efficitur mattis.
+                    </article>
+                    <div class="galeria">
+                        <img src="images/kolorki1.png" alt="TODO">
+                        <img src="images/kolorki2.png" alt="TODO">
+                        <img src="images/kolorki3.png" alt="TODO">
+                        <img src="images/kolorki4.png" alt="TODO">
+                    </div>
+                </div>
+
+            </main>
+
+            <div id="map"></div>
+            <script src="scripts.js"></script>
+
         </div>
-        <div id="map"></div>
+        <footer>Michał Dudek, student pierwszego roku Elektronicznego Przetwarzania Informacji na Uniwersytecie Jagiellońskim w Krakowie, 2023</footer>
+
     </div>
+    <a href="index.html"><img alt="symbol of an arrow facing up" src="images/arrow2.png" id="fixed-button"></a>
 
-    <script src="scripts.js"></script>
 
 
-<footer> dodam potem </footer>
 </body>
+
 </html>
