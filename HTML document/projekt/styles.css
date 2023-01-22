@@ -70,7 +70,13 @@ header {
     gap: var(--gap);
 }
 
-.galeria > img {
+.galeria a {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.galeria img {
     width: 100%;
     height: 100%;
     object-fit: cover;

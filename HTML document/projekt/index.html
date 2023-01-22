@@ -6,10 +6,51 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="">
     <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+    <link rel="stylesheet" href="css/blueimp-gallery.min.css" />
     <title>krakowski Kazimierz</title>
 </head>
 
 <body>
+
+    <!-- The Gallery as lightbox dialog, should be a document body child element -->
+    <div
+            id="blueimp-gallery"
+            class="blueimp-gallery"
+            aria-label="image gallery"
+            aria-modal="true"
+            role="dialog"
+    >
+        <div class="slides" aria-live="polite"></div>
+        <h3 class="title"></h3>
+        <a
+                class="prev"
+                aria-controls="blueimp-gallery"
+                aria-label="previous slide"
+                aria-keyshortcuts="ArrowLeft"
+        ></a>
+        <a
+                class="next"
+                aria-controls="blueimp-gallery"
+                aria-label="next slide"
+                aria-keyshortcuts="ArrowRight"
+        ></a>
+        <a
+                class="close"
+                aria-controls="blueimp-gallery"
+                aria-label="close"
+                aria-keyshortcuts="Escape"
+        ></a>
+        <a
+                class="play-pause"
+                aria-controls="blueimp-gallery"
+                aria-label="play slideshow"
+                aria-keyshortcuts="Space"
+                aria-pressed="false"
+                role="button"
+        ></a>
+        <ol class="indicator"></ol>
+    </div>
+
     <div id="background">
 
         <div id="centrum">
@@ -46,12 +87,22 @@
                         <h2>WSTĘP</h2>
                         Od założenia w 1335 roku przez króla Kazimierza Wielkiego, do przełomu XVIII i XIX wieku Kazimierz był samodzielnym miastem położonym na południe od Krakowa. W roku 1495 z powodów politycznych i ekonomicznych, na terenie dawnej wsi Bawół zostało utworzone tzw. miasto żydowskie, gdzie wygnano mieszkających wtedy w Krakowie Żydów. Doprowadziło to do rozwoju kultury żydowskiej na tamtych terenach. Powstały liczne synagogi, 7 z nich wciąż istnieje.  Kazimierz leży niemal w centrum Krakowa, w zakolu Wisły, około 15 minut drogi od Wawelu. Jest to niezwykle ciekawa dzielnica, która swoim klimatem i bogactwem zabytków przyciąga wielu turystów. Na każdym kroku możemy podziwiać piękne kamienice, stare synagogi, szyldy starych sklepów, piękne murale i ogródki licznych lokali gastronomicznych. Najlepszym momentem na przyjazd tutaj będzie zdecydowanie koniec czerwca, kiedy odbywa się coroczny Festiwal Kultury Żydowskiej.
                     </article>
-                    <div class="galeria">
-                        <img src="images/wstep1.jpg" alt="TODO">
-                        <img src="images/wstep2.jpg" alt="TODO">
-                        <img src="images/wstep3.jpg" alt="TODO">
-                        <img src="images/wstep4.jpg" alt="TODO">
+
+                    <div id="links0" class="galeria">
+                        <a href="images/wstep1.jpg" title="Banana">
+                            <img src="miniatury/wstep1.jpg" alt="Banana" />
+                        </a>
+                        <a href="images/wstep2.jpg" title="Apple">
+                            <img src="miniatury/wstep2.jpg" alt="Apple" />
+                        </a>
+                        <a href="images/wstep3.jpg" title="Orange">
+                            <img src="miniatury/wstep3.jpg" alt="Orange" />
+                        </a>
+                        <a href="images/wstep4.jpg" title="Orange">
+                            <img src="miniatury/wstep4.jpg" alt="Orange" />
+                        </a>
                     </div>
+
                 </div>
 
                 <div class="content" id="rannyPtaszek">
@@ -60,11 +111,19 @@
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. In augue mi, convallis in mauris vestibulum, viverra feugiat lorem. Ut id accumsan nunc, ac feugiat ante. Phasellus efficitur mi vitae odio vestibulum consectetur. Mauris aliquam enim eu ultricies varius. Phasellus ac vestibulum libero, in imperdiet elit. Mauris dictum elit vel mauris efficitur accumsan. Pellentesque quis risus bibendum, ullamcorper lectus nec, efficitur ipsum. Fusce consectetur, risus quis luctus rutrum, leo neque maximus sem, vel pellentesque sem urna et mauris.
                         Nunc luctus faucibus purus quis consectetur. Nunc id lectus ut diam vulputate vehicula finibus quis nisi. Fusce aliquam scelerisque diam, ut malesuada magna accumsan at. Donec euismod nisi in lacinia semper. Nulla eget libero id justo auctor molestie elementum in sem. Maecenas et pharetra ex. Suspendisse ac ultrices purus. Aliquam rutrum turpis commodo libero efficitur mattis.
                     </article>
-                    <div class="galeria">
-                        <img src="images/rannyPtaszek1.jpg" alt="TODO">
-                        <img src="images/rannyPtaszek2.jpeg" alt="TODO">
-                        <img src="images/rannyPtaszek3.jpg" alt="TODO">
-                        <img src="images/rannyPtaszek4.jpg" alt="TODO">
+                    <div id="links1" class="galeria">
+                        <a href="images/rannyPtaszek1.jpg" title="Banana">
+                            <img src="miniatury/rannyPtaszek1.jpg" alt="Banana" />
+                        </a>
+                        <a href="images/rannyPtaszek2.jpeg" title="Apple">
+                            <img src="miniatury/rannyPtaszek2.jpeg" alt="Apple" />
+                        </a>
+                        <a href="images/rannyPtaszek3.jpg" title="Orange">
+                            <img src="miniatury/rannyPtaszek3.jpg" alt="Orange" />
+                        </a>
+                        <a href="images/rannyPtaszek4.jpg" title="Orange">
+                            <img src="miniatury/rannyPtaszek4.jpg" alt="Orange" />
+                        </a>
                     </div>
                 </div>
 
@@ -74,11 +133,19 @@
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. In augue mi, convallis in mauris vestibulum, viverra feugiat lorem. Ut id accumsan nunc, ac feugiat ante. Phasellus efficitur mi vitae odio vestibulum consectetur. Mauris aliquam enim eu ultricies varius. Phasellus ac vestibulum libero, in imperdiet elit. Mauris dictum elit vel mauris efficitur accumsan. Pellentesque quis risus bibendum, ullamcorper lectus nec, efficitur ipsum. Fusce consectetur, risus quis luctus rutrum, leo neque maximus sem, vel pellentesque sem urna et mauris.
                         Nunc luctus faucibus purus quis consectetur. Nunc id lectus ut diam vulputate vehicula finibus quis nisi. Fusce aliquam scelerisque diam, ut malesuada magna accumsan at. Donec euismod nisi in lacinia semper. Nulla eget libero id justo auctor molestie elementum in sem. Maecenas et pharetra ex. Suspendisse ac ultrices purus. Aliquam rutrum turpis commodo libero efficitur mattis.
                     </article>
-                    <div class="galeria">
-                        <img src="images/skalka1.jpeg" alt="TODO">
-                        <img src="images/skalka2.jpeg" alt="TODO">
-                        <img src="images/skalka3.jpeg" alt="TODO">
-                        <img src="images/skalka4.jpeg" alt="TODO">
+                    <div id="links2" class="galeria">
+                        <a href="images/skalka1.jpeg" title="Banana">
+                            <img src="miniatury/skalka1.jpeg" alt="Banana" />
+                        </a>
+                        <a href="images/skalka2.jpeg" title="Apple">
+                            <img src="miniatury/skalka2.jpeg" alt="Apple" />
+                        </a>
+                        <a href="images/skalka3.jpeg" title="Orange">
+                            <img src="miniatury/skalka3.jpeg" alt="Orange" />
+                        </a>
+                        <a href="images/skalka4.jpeg" title="Orange">
+                            <img src="miniatury/skalka4.jpeg" alt="Orange" />
+                        </a>
                     </div>
                 </div>
 
@@ -88,11 +155,19 @@
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. In augue mi, convallis in mauris vestibulum, viverra feugiat lorem. Ut id accumsan nunc, ac feugiat ante. Phasellus efficitur mi vitae odio vestibulum consectetur. Mauris aliquam enim eu ultricies varius. Phasellus ac vestibulum libero, in imperdiet elit. Mauris dictum elit vel mauris efficitur accumsan. Pellentesque quis risus bibendum, ullamcorper lectus nec, efficitur ipsum. Fusce consectetur, risus quis luctus rutrum, leo neque maximus sem, vel pellentesque sem urna et mauris.
                         Nunc luctus faucibus purus quis consectetur. Nunc id lectus ut diam vulputate vehicula finibus quis nisi. Fusce aliquam scelerisque diam, ut malesuada magna accumsan at. Donec euismod nisi in lacinia semper. Nulla eget libero id justo auctor molestie elementum in sem. Maecenas et pharetra ex. Suspendisse ac ultrices purus. Aliquam rutrum turpis commodo libero efficitur mattis.
                     </article>
-                    <div class="galeria">
-                        <img src="images/balon1.jpeg" alt="TODO">
-                        <img src="images/balon2.jpeg" alt="TODO">
-                        <img src="images/balon3.jpeg" alt="TODO">
-                        <img src="images/balon4.jpeg" alt="TODO">
+                    <div id="links3" class="galeria">
+                        <a href="images/balon1.jpeg" title="Banana">
+                            <img src="miniatury/balon1.jpeg" alt="Banana" />
+                        </a>
+                        <a href="images/balon2.jpeg" title="Apple">
+                            <img src="miniatury/balon2.jpeg" alt="Apple" />
+                        </a>
+                        <a href="images/balon3.jpeg" title="Orange">
+                            <img src="miniatury/balon3.jpeg" alt="Orange" />
+                        </a>
+                        <a href="images/balon4.jpeg" title="Orange">
+                            <img src="miniatury/balon4.jpeg" alt="Orange" />
+                        </a>
                     </div>
                 </div>
 
@@ -102,11 +177,19 @@
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. In augue mi, convallis in mauris vestibulum, viverra feugiat lorem. Ut id accumsan nunc, ac feugiat ante. Phasellus efficitur mi vitae odio vestibulum consectetur. Mauris aliquam enim eu ultricies varius. Phasellus ac vestibulum libero, in imperdiet elit. Mauris dictum elit vel mauris efficitur accumsan. Pellentesque quis risus bibendum, ullamcorper lectus nec, efficitur ipsum. Fusce consectetur, risus quis luctus rutrum, leo neque maximus sem, vel pellentesque sem urna et mauris.
                         Nunc luctus faucibus purus quis consectetur. Nunc id lectus ut diam vulputate vehicula finibus quis nisi. Fusce aliquam scelerisque diam, ut malesuada magna accumsan at. Donec euismod nisi in lacinia semper. Nulla eget libero id justo auctor molestie elementum in sem. Maecenas et pharetra ex. Suspendisse ac ultrices purus. Aliquam rutrum turpis commodo libero efficitur mattis.
                     </article>
-                    <div class="galeria">
-                        <img src="images/gorditos1.jpeg" alt="TODO">
-                        <img src="images/gorditos2.jpeg" alt="TODO">
-                        <img src="images/gorditos3.png" alt="TODO">
-                        <img src="images/gorditos4.png" alt="TODO">
+                    <div id="links4" class="galeria">
+                        <a href="images/gorditos1.jpeg" title="Banana">
+                            <img src="miniatury/gorditos1.jpeg" alt="Banana" />
+                        </a>
+                        <a href="images/gorditos2.jpeg" title="Apple">
+                            <img src="miniatury/gorditos2.jpeg" alt="Apple" />
+                        </a>
+                        <a href="images/gorditos3.png" title="Orange">
+                            <img src="miniatury/gorditos3.png" alt="Orange" />
+                        </a>
+                        <a href="images/gorditos4.png" title="Orange">
+                            <img src="miniatury/gorditos4.png" alt="Orange" />
+                        </a>
                     </div>
                 </div>
 
@@ -116,11 +199,19 @@
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. In augue mi, convallis in mauris vestibulum, viverra feugiat lorem. Ut id accumsan nunc, ac feugiat ante. Phasellus efficitur mi vitae odio vestibulum consectetur. Mauris aliquam enim eu ultricies varius. Phasellus ac vestibulum libero, in imperdiet elit. Mauris dictum elit vel mauris efficitur accumsan. Pellentesque quis risus bibendum, ullamcorper lectus nec, efficitur ipsum. Fusce consectetur, risus quis luctus rutrum, leo neque maximus sem, vel pellentesque sem urna et mauris.
                         Nunc luctus faucibus purus quis consectetur. Nunc id lectus ut diam vulputate vehicula finibus quis nisi. Fusce aliquam scelerisque diam, ut malesuada magna accumsan at. Donec euismod nisi in lacinia semper. Nulla eget libero id justo auctor molestie elementum in sem. Maecenas et pharetra ex. Suspendisse ac ultrices purus. Aliquam rutrum turpis commodo libero efficitur mattis.
                     </article>
-                    <div class="galeria">
-                        <img src="images/bozego1.png" alt="TODO">
-                        <img src="images/bozego2.jpeg" alt="TODO">
-                        <img src="images/bozego3.jpeg" alt="TODO">
-                        <img src="images/bozego4.jpeg" alt="TODO">
+                    <div id="links5" class="galeria">
+                        <a href="images/bozego1.png" title="Banana">
+                            <img src="miniatury/bozego1.png" alt="Banana" />
+                        </a>
+                        <a href="images/bozego2.jpeg" title="Apple">
+                            <img src="miniatury/bozego2.jpeg" alt="Apple" />
+                        </a>
+                        <a href="images/bozego3.jpeg" title="Orange">
+                            <img src="miniatury/bozego3.jpeg" alt="Orange" />
+                        </a>
+                        <a href="images/bozego4.jpeg" title="Orange">
+                            <img src="miniatury/bozego4.jpeg" alt="Orange" />
+                        </a>
                     </div>
                 </div>
 
@@ -130,11 +221,19 @@
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. In augue mi, convallis in mauris vestibulum, viverra feugiat lorem. Ut id accumsan nunc, ac feugiat ante. Phasellus efficitur mi vitae odio vestibulum consectetur. Mauris aliquam enim eu ultricies varius. Phasellus ac vestibulum libero, in imperdiet elit. Mauris dictum elit vel mauris efficitur accumsan. Pellentesque quis risus bibendum, ullamcorper lectus nec, efficitur ipsum. Fusce consectetur, risus quis luctus rutrum, leo neque maximus sem, vel pellentesque sem urna et mauris.
                         Nunc luctus faucibus purus quis consectetur. Nunc id lectus ut diam vulputate vehicula finibus quis nisi. Fusce aliquam scelerisque diam, ut malesuada magna accumsan at. Donec euismod nisi in lacinia semper. Nulla eget libero id justo auctor molestie elementum in sem. Maecenas et pharetra ex. Suspendisse ac ultrices purus. Aliquam rutrum turpis commodo libero efficitur mattis.
                     </article>
-                    <div class="galeria">
-                        <img src="images/mit1.jpeg" alt="TODO">
-                        <img src="images/mit2.jpeg" alt="TODO">
-                        <img src="images/mit3.jpeg" alt="TODO">
-                        <img src="images/mit4.jpeg" alt="TODO">
+                    <div id="links6" class="galeria">
+                        <a href="images/mit1.jpeg" title="Banana">
+                            <img src="miniatury/mit1.jpeg" alt="Banana" />
+                        </a>
+                        <a href="images/mit2.jpeg" title="Apple">
+                            <img src="miniatury/mit2.jpeg" alt="Apple" />
+                        </a>
+                        <a href="images/mit3.jpeg" title="Orange">
+                            <img src="miniatury/mit3.jpeg" alt="Orange" />
+                        </a>
+                        <a href="images/mit4.jpeg" title="Orange">
+                            <img src="miniatury/mit4.jpeg" alt="Orange" />
+                        </a>
                     </div>
                 </div>
 
@@ -144,11 +243,19 @@
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. In augue mi, convallis in mauris vestibulum, viverra feugiat lorem. Ut id accumsan nunc, ac feugiat ante. Phasellus efficitur mi vitae odio vestibulum consectetur. Mauris aliquam enim eu ultricies varius. Phasellus ac vestibulum libero, in imperdiet elit. Mauris dictum elit vel mauris efficitur accumsan. Pellentesque quis risus bibendum, ullamcorper lectus nec, efficitur ipsum. Fusce consectetur, risus quis luctus rutrum, leo neque maximus sem, vel pellentesque sem urna et mauris.
                         Nunc luctus faucibus purus quis consectetur. Nunc id lectus ut diam vulputate vehicula finibus quis nisi. Fusce aliquam scelerisque diam, ut malesuada magna accumsan at. Donec euismod nisi in lacinia semper. Nulla eget libero id justo auctor molestie elementum in sem. Maecenas et pharetra ex. Suspendisse ac ultrices purus. Aliquam rutrum turpis commodo libero efficitur mattis.
                     </article>
-                    <div class="galeria">
-                        <img src="images/cytat1.jpeg" alt="TODO">
-                        <img src="images/cytat2.jpeg" alt="TODO">
-                        <img src="images/cytat3.jpeg" alt="TODO">
-                        <img src="images/cytat4.jpeg" alt="TODO">
+                    <div id="links7" class="galeria">
+                        <a href="images/cytat1.jpeg" title="Banana">
+                            <img src="miniatury/cytat1.jpeg" alt="Banana" />
+                        </a>
+                        <a href="images/cytat2.jpeg" title="Apple">
+                            <img src="miniatury/cytat2.jpeg" alt="Apple" />
+                        </a>
+                        <a href="images/cytat3.jpeg" title="Orange">
+                            <img src="miniatury/cytat3.jpeg" alt="Orange" />
+                        </a>
+                        <a href="images/cytat4.jpeg" title="Orange">
+                            <img src="miniatury/cytat4.jpeg" alt="Orange" />
+                        </a>
                     </div>
                 </div>
 
@@ -158,11 +265,19 @@
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. In augue mi, convallis in mauris vestibulum, viverra feugiat lorem. Ut id accumsan nunc, ac feugiat ante. Phasellus efficitur mi vitae odio vestibulum consectetur. Mauris aliquam enim eu ultricies varius. Phasellus ac vestibulum libero, in imperdiet elit. Mauris dictum elit vel mauris efficitur accumsan. Pellentesque quis risus bibendum, ullamcorper lectus nec, efficitur ipsum. Fusce consectetur, risus quis luctus rutrum, leo neque maximus sem, vel pellentesque sem urna et mauris.
                         Nunc luctus faucibus purus quis consectetur. Nunc id lectus ut diam vulputate vehicula finibus quis nisi. Fusce aliquam scelerisque diam, ut malesuada magna accumsan at. Donec euismod nisi in lacinia semper. Nulla eget libero id justo auctor molestie elementum in sem. Maecenas et pharetra ex. Suspendisse ac ultrices purus. Aliquam rutrum turpis commodo libero efficitur mattis.
                     </article>
-                    <div class="galeria">
-                        <img src="images/szeroka1.jpeg" alt="TODO">
-                        <img src="images/szeroka2.jpeg" alt="TODO">
-                        <img src="images/szeroka3.jpeg" alt="TODO">
-                        <img src="images/szeroka4.jpeg" alt="TODO">
+                    <div id="links8" class="galeria">
+                        <a href="images/szeroka1.jpeg" title="Banana">
+                            <img src="miniatury/szeroka1.jpeg" alt="Banana" />
+                        </a>
+                        <a href="images/szeroka2.jpeg" title="Apple">
+                            <img src="miniatury/szeroka2.jpeg" alt="Apple" />
+                        </a>
+                        <a href="images/szeroka3.jpeg" title="Orange">
+                            <img src="miniatury/szeroka3.jpeg" alt="Orange" />
+                        </a>
+                        <a href="images/szeroka4.jpeg" title="Orange">
+                            <img src="miniatury/szeroka4.jpeg" alt="Orange" />
+                        </a>
                     </div>
                 </div>
 
@@ -172,11 +287,19 @@
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. In augue mi, convallis in mauris vestibulum, viverra feugiat lorem. Ut id accumsan nunc, ac feugiat ante. Phasellus efficitur mi vitae odio vestibulum consectetur. Mauris aliquam enim eu ultricies varius. Phasellus ac vestibulum libero, in imperdiet elit. Mauris dictum elit vel mauris efficitur accumsan. Pellentesque quis risus bibendum, ullamcorper lectus nec, efficitur ipsum. Fusce consectetur, risus quis luctus rutrum, leo neque maximus sem, vel pellentesque sem urna et mauris.
                         Nunc luctus faucibus purus quis consectetur. Nunc id lectus ut diam vulputate vehicula finibus quis nisi. Fusce aliquam scelerisque diam, ut malesuada magna accumsan at. Donec euismod nisi in lacinia semper. Nulla eget libero id justo auctor molestie elementum in sem. Maecenas et pharetra ex. Suspendisse ac ultrices purus. Aliquam rutrum turpis commodo libero efficitur mattis.
                     </article>
-                    <div class="galeria">
-                        <img src="images/synagoga1.jpeg" alt="TODO">
-                        <img src="images/synagoga2.jpeg" alt="TODO">
-                        <img src="images/synagoga3.jpeg" alt="TODO">
-                        <img src="images/synagoga4.jpeg" alt="TODO">
+                    <div id="links9" class="galeria">
+                        <a href="images/synagoga1.jpeg" title="Banana">
+                            <img src="miniatury/synagoga1.jpeg" alt="Banana" />
+                        </a>
+                        <a href="images/synagoga2.jpeg" title="Apple">
+                            <img src="miniatury/synagoga2.jpeg" alt="Apple" />
+                        </a>
+                        <a href="images/synagoga3.jpeg" title="Orange">
+                            <img src="miniatury/synagoga3.jpeg" alt="Orange" />
+                        </a>
+                        <a href="images/synagoga4.jpeg" title="Orange">
+                            <img src="miniatury/synagoga4.jpeg" alt="Orange" />
+                        </a>
                     </div>
                 </div>
 
@@ -186,11 +309,19 @@
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. In augue mi, convallis in mauris vestibulum, viverra feugiat lorem. Ut id accumsan nunc, ac feugiat ante. Phasellus efficitur mi vitae odio vestibulum consectetur. Mauris aliquam enim eu ultricies varius. Phasellus ac vestibulum libero, in imperdiet elit. Mauris dictum elit vel mauris efficitur accumsan. Pellentesque quis risus bibendum, ullamcorper lectus nec, efficitur ipsum. Fusce consectetur, risus quis luctus rutrum, leo neque maximus sem, vel pellentesque sem urna et mauris.
                         Nunc luctus faucibus purus quis consectetur. Nunc id lectus ut diam vulputate vehicula finibus quis nisi. Fusce aliquam scelerisque diam, ut malesuada magna accumsan at. Donec euismod nisi in lacinia semper. Nulla eget libero id justo auctor molestie elementum in sem. Maecenas et pharetra ex. Suspendisse ac ultrices purus. Aliquam rutrum turpis commodo libero efficitur mattis.
                     </article>
-                    <div class="galeria">
-                        <img src="images/okraglak1.jpeg" alt="TODO">
-                        <img src="images/okraglak2.jpeg" alt="TODO">
-                        <img src="images/okraglak3.jpeg" alt="TODO">
-                        <img src="images/okraglak4.jpeg" alt="TODO">
+                    <div id="links10" class="galeria">
+                        <a href="images/okraglak1.jpeg" title="Banana">
+                            <img src="miniatury/okraglak1.jpeg" alt="Banana" />
+                        </a>
+                        <a href="images/okraglak2.jpeg" title="Apple">
+                            <img src="miniatury/okraglak2.jpeg" alt="Apple" />
+                        </a>
+                        <a href="images/okraglak3.jpeg" title="Orange">
+                            <img src="miniatury/okraglak3.jpeg" alt="Orange" />
+                        </a>
+                        <a href="images/okraglak4.jpeg" title="Orange">
+                            <img src="miniatury/okraglak4.jpeg" alt="Orange" />
+                        </a>
                     </div>
                 </div>
 
@@ -200,11 +331,19 @@
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. In augue mi, convallis in mauris vestibulum, viverra feugiat lorem. Ut id accumsan nunc, ac feugiat ante. Phasellus efficitur mi vitae odio vestibulum consectetur. Mauris aliquam enim eu ultricies varius. Phasellus ac vestibulum libero, in imperdiet elit. Mauris dictum elit vel mauris efficitur accumsan. Pellentesque quis risus bibendum, ullamcorper lectus nec, efficitur ipsum. Fusce consectetur, risus quis luctus rutrum, leo neque maximus sem, vel pellentesque sem urna et mauris.
                         Nunc luctus faucibus purus quis consectetur. Nunc id lectus ut diam vulputate vehicula finibus quis nisi. Fusce aliquam scelerisque diam, ut malesuada magna accumsan at. Donec euismod nisi in lacinia semper. Nulla eget libero id justo auctor molestie elementum in sem. Maecenas et pharetra ex. Suspendisse ac ultrices purus. Aliquam rutrum turpis commodo libero efficitur mattis.
                     </article>
-                    <div class="galeria">
-                        <img src="images/kolorki1.png" alt="TODO">
-                        <img src="images/kolorki2.png" alt="TODO">
-                        <img src="images/kolorki3.png" alt="TODO">
-                        <img src="images/kolorki4.png" alt="TODO">
+                    <div id="links11" class="galeria">
+                        <a href="images/kolorki1.png" title="Banana">
+                            <img src="miniatury/kolorki1.png" alt="Banana" />
+                        </a>
+                        <a href="images/kolorki2.png" title="Apple">
+                            <img src="miniatury/kolorki2.png" alt="Apple" />
+                        </a>
+                        <a href="images/kolorki3.png" title="Orange">
+                            <img src="miniatury/kolorki3.png" alt="Orange" />
+                        </a>
+                        <a href="images/kolorki4.png" title="Orange">
+                            <img src="miniatury/kolorki4.png" alt="Orange" />
+                        </a>
                     </div>
                 </div>
 
@@ -219,7 +358,105 @@
     </div>
     <a href="index.html"><img alt="symbol of an arrow facing up" src="images/arrow2.png" id="fixed-button"></a>
 
-
+    <script src="js/blueimp-gallery.min.js"></script>
+    <script>
+        document.getElementById('links0').onclick = function (event) {
+            event = event || window.event
+            var target = event.target || event.srcElement
+            var link = target.src ? target.parentNode : target
+            var options = { index: link, event: event }
+            var links = this.getElementsByTagName('a')
+            blueimp.Gallery(links, options)
+        }
+        document.getElementById('links1').onclick = function (event) {
+            event = event || window.event
+            var target = event.target || event.srcElement
+            var link = target.src ? target.parentNode : target
+            var options = { index: link, event: event }
+            var links = this.getElementsByTagName('a')
+            blueimp.Gallery(links, options)
+        }
+        document.getElementById('links2').onclick = function (event) {
+            event = event || window.event
+            var target = event.target || event.srcElement
+            var link = target.src ? target.parentNode : target
+            var options = { index: link, event: event }
+            var links = this.getElementsByTagName('a')
+            blueimp.Gallery(links, options)
+        }
+        document.getElementById('links3').onclick = function (event) {
+            event = event || window.event
+            var target = event.target || event.srcElement
+            var link = target.src ? target.parentNode : target
+            var options = { index: link, event: event }
+            var links = this.getElementsByTagName('a')
+            blueimp.Gallery(links, options)
+        }
+        document.getElementById('links4').onclick = function (event) {
+            event = event || window.event
+            var target = event.target || event.srcElement
+            var link = target.src ? target.parentNode : target
+            var options = { index: link, event: event }
+            var links = this.getElementsByTagName('a')
+            blueimp.Gallery(links, options)
+        }
+        document.getElementById('links5').onclick = function (event) {
+            event = event || window.event
+            var target = event.target || event.srcElement
+            var link = target.src ? target.parentNode : target
+            var options = { index: link, event: event }
+            var links = this.getElementsByTagName('a')
+            blueimp.Gallery(links, options)
+        }
+        document.getElementById('links6').onclick = function (event) {
+            event = event || window.event
+            var target = event.target || event.srcElement
+            var link = target.src ? target.parentNode : target
+            var options = { index: link, event: event }
+            var links = this.getElementsByTagName('a')
+            blueimp.Gallery(links, options)
+        }
+        document.getElementById('links7').onclick = function (event) {
+            event = event || window.event
+            var target = event.target || event.srcElement
+            var link = target.src ? target.parentNode : target
+            var options = { index: link, event: event }
+            var links = this.getElementsByTagName('a')
+            blueimp.Gallery(links, options)
+        }
+        document.getElementById('links8').onclick = function (event) {
+            event = event || window.event
+            var target = event.target || event.srcElement
+            var link = target.src ? target.parentNode : target
+            var options = { index: link, event: event }
+            var links = this.getElementsByTagName('a')
+            blueimp.Gallery(links, options)
+        }
+        document.getElementById('links9').onclick = function (event) {
+            event = event || window.event
+            var target = event.target || event.srcElement
+            var link = target.src ? target.parentNode : target
+            var options = { index: link, event: event }
+            var links = this.getElementsByTagName('a')
+            blueimp.Gallery(links, options)
+        }
+        document.getElementById('links10').onclick = function (event) {
+            event = event || window.event
+            var target = event.target || event.srcElement
+            var link = target.src ? target.parentNode : target
+            var options = { index: link, event: event }
+            var links = this.getElementsByTagName('a')
+            blueimp.Gallery(links, options)
+        }
+        document.getElementById('links11').onclick = function (event) {
+            event = event || window.event
+            var target = event.target || event.srcElement
+            var link = target.src ? target.parentNode : target
+            var options = { index: link, event: event }
+            var links = this.getElementsByTagName('a')
+            blueimp.Gallery(links, options)
+        }
+    </script>
 
 </body>
 
