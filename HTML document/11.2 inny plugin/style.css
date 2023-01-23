@@ -1,0 +1,15 @@
+#wrapper {
+    z-index: 4;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#inside {
+    margin-top: 10%;
+    z-index: 5;
+    width: 500px;
+    color: red;
+    background: yellow;
+    font-size: 100px;
+}
