@@ -1,0 +1,33 @@
+body {
+    background: #88a886;
+}
+
+#miniatury {
+    margin-left: 10%;
+}
+
+#miniatury img {
+    height: 400px;
+    width: 300px;
+}
+
+#duzy {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    height: 80%;
+}
+
+#powiekszony {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: none;
+}
