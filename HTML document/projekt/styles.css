@@ -134,7 +134,7 @@ footer {
     }
 
     #fixed-button {
-        width: 150px;
+        width: 100px;
         border-radius: 100px
     }
 
@@ -144,14 +144,27 @@ footer {
     }
 
     h1 {
-        font-size: 40px;
+        font-size: 42px;
     }
 
     h2 {
-        font-size: 35px;
+        font-size: 38px;
+    }
+
+    header {
+        font-size: 30px;
+    }
+
+    main {
+        font-size: 30px;
     }
 
     #background{
         background: #962f2f;
+    }
+
+    #centrum {
+        margin-left: 3%;
+        margin-right: 3%;
     }
 }

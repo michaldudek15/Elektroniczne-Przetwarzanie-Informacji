@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="">
     <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
@@ -362,12 +363,18 @@
                 Michał Dudek, student pierwszego roku Elektronicznego Przetwarzania Informacji na Uniwersytecie Jagiellońskim w Krakowie, 2023
             </p>
         </footer>
-        <a tabindex="0" href="index.html"><img alt="symbol of an arrow facing up" src="images/arrow2.png" id="fixed-button" ></a>
+        <img alt="symbol of an arrow facing up" src="images/arrow2.png" id="fixed-button" >
 
     </div>
 
     <script src="js/blueimp-gallery.min.js"></script>
     <script>
+
+        const btnScrollToTop = document.querySelector("#fixed-button");
+        btnScrollToTop.addEventListener("click", function() {
+           window.scrollTo(0,0);
+        });
+
         document.getElementById('links0').onclick = function (event) {
             event = event || window.event
             var target = event.target || event.srcElement
