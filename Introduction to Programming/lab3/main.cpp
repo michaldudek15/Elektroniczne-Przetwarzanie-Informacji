@@ -17,12 +17,12 @@ public:
     void zadanie7();
     void zadanie8();
     void zadanie9();
-    //void zadanie10();
-    //void zadanie11();
-    //void zadanie12();
-    //void zadanie13();
-    //void zadanie14();
-    //void zadanie15();
+    void zadanie10();
+    void zadanie11();
+    void zadanie12();
+    void zadanie13();
+    void zadanie14();
+    void zadanie15();
     //void zadanie16();
     //void zadanie17();
     //void zadanie18();
@@ -50,12 +50,12 @@ lab3::lab3() {
     zadania[6] = &lab3::zadanie7;
     zadania[7] = &lab3::zadanie8;
     zadania[8] = &lab3::zadanie9;
-    //zadania[9] = &lab3::zadanie10;
-    //zadania[10] = &lab3::zadanie11;
-    //zadania[11] = &lab3::zadanie12;
-    //zadania[12] = &lab3::zadanie13;
-    //zadania[13] = &lab3::zadanie14;
-    //zadania[14] = &lab3::zadanie15;
+    zadania[9] = &lab3::zadanie10;
+    zadania[10] = &lab3::zadanie11;
+    zadania[11] = &lab3::zadanie12;
+    zadania[12] = &lab3::zadanie13;
+    zadania[13] = &lab3::zadanie14;
+    zadania[14] = &lab3::zadanie15;
     //zadania[15] = &lab3::zadanie16;
     //zadania[16] = &lab3::zadanie17;
     //zadania[17] = &lab3::zadanie18;
@@ -174,6 +174,69 @@ void lab3::zadanie9() {
         cout << "nie udało ci się trafić :((" << endl;
     }
 
+}
+
+void lab3::zadanie10() {
+    int liczba;
+    cout << "podaj liczbę: ";
+    cin >> liczba;
+    if(liczba%3 == 0) {
+        cout << "jest podzielna przez 3" << endl;
+    }
+    if(liczba%5 == 0) {
+        cout << "jest podzielna przez 5" << endl;
+    }
+    if(liczba%7 == 0) {
+        cout << "jest podzielna przez 7" << endl;
+    }
+
+}
+
+void lab3::zadanie11() {
+    int i = 1;
+    while (i < 1001) {
+        cout << i << endl;
+        i++;
+    }
+}
+
+void lab3::zadanie12() {
+    int i = 1;
+    int granica;
+    cout << "do jakiej liczby chcesz policzyc? ";
+    cin >> granica;
+    while (i < granica+1) {
+        cout << i << endl;
+        i++;
+    }
+}
+
+void lab3::zadanie13() {
+    int i;
+    cout << "podaj od jakiej liczby zaczynamy liczenie: ";
+    cin >> i;
+    while (i > 0) {
+        cout << i << endl;
+        i--;
+    }
+}
+
+void lab3::zadanie14() {
+    int liczba;
+    cout << "ile X'ów chcesz wypisać? ";
+    cin >> liczba;
+    while (liczba > 0) {
+        cout << "X ";
+        liczba--;
+    }
+}
+
+void lab3::zadanie15() {
+    char i = 0;
+    while(i < 150) {
+        printf("%c, %d\n", i, i); // zakres char: [-128, 127]
+        i++;
+    }
 }
 
 int main() {
