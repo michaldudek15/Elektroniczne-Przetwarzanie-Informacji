@@ -7,15 +7,24 @@ public:
     zadanie zadania[30];
 
     lab3();
+    void call_by_index(int index);
     void zadanie1();
     void zadanie2();
     void zadanie3();
+    void zadanie4();
+    void zadanie5();
 };
 
 lab3::lab3() {
     zadania[0] = &lab3::zadanie1;
     zadania[1] = &lab3::zadanie2;
     zadania[2] = &lab3::zadanie3;
+    zadania[3] = &lab3::zadanie4;
+    zadania[4] = &lab3::zadanie5;
+}
+
+void lab3::call_by_index(int index) {
+    (this->*zadania[index])();
 }
 
 void lab3::zadanie1() {
@@ -50,6 +59,27 @@ void lab3::zadanie3() {
     cout << "do 100 kg brakuje ci " << 100 - waga << " kg" << endl;
 }
 
+void lab3::zadanie4() {
+    int liczba1, liczba2;
+    cout << "podaj pierwszą liczbę: ";
+    cin >> liczba1;
+    cout << "podaj drugą liczbę: ";
+    cin >> liczba2;
+
+    cout << "suma: " << liczba1 + liczba2 << endl;
+    cout << "różnica: " << liczba1 - liczba2 << endl;
+    cout << "iloczyn: " << liczba1 * liczba2 << endl;
+    cout << "iloraz: " << liczba1 / liczba2 << endl;
+
+}
+
+void lab3::zadanie5() {
+    char litera;
+    cout << "kod ASCII jakiej litery chcesz sprawdzić? ";
+    cin >> litera;
+    printf("%d", litera);
+}
+
 int main() {
     lab3 o;
 
@@ -57,8 +87,8 @@ int main() {
     cout << "które zadanie pokazać? ";
     cin >> choice;
 
-    (o.*o.zadania[--choice])();
-
+   // (o.*o.zadania[--choice])();
+    o.call_by_index(--choice);
 
 
     return 0;
