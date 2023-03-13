@@ -266,7 +266,7 @@ int main() {
     cout << "które zadanie pokazać? ";
     cin >> choice;
 
-   // (o.*o.zadania[--choice])();
+    // (o.*o.zadania[--choice])();
     o.call_by_index(--choice);
 
 

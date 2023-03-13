@@ -14,15 +14,6 @@
 # EXTERNAL cache entries
 ########################
 
-//Value Computed by CMake
-1_3_BINARY_DIR:STATIC=/Users/michaldudek/Library/Mobile Documents/com~apple~CloudDocs/uni/Elektroniczne-Przetwarzanie-Informacji/Introduction to Programming/lab3/cmake-build-debug
-
-//Value Computed by CMake
-1_3_IS_TOP_LEVEL:STATIC=ON
-
-//Value Computed by CMake
-1_3_SOURCE_DIR:STATIC=/Users/michaldudek/Library/Mobile Documents/com~apple~CloudDocs/uni/Elektroniczne-Przetwarzanie-Informacji/Introduction to Programming/lab3
-
 //Path to a program.
 CMAKE_ADDR2LINE:FILEPATH=CMAKE_ADDR2LINE-NOTFOUND
 
@@ -155,7 +146,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=1_3
+CMAKE_PROJECT_NAME:STATIC=lab3
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=/Library/Developer/CommandLineTools/usr/bin/ranlib
@@ -218,6 +209,15 @@ CMAKE_STRIP:FILEPATH=/Library/Developer/CommandLineTools/usr/bin/strip
 // during the make.  This is useful for debugging only. With Visual
 // Studio IDE projects all commands are done without /nologo.
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
+
+//Value Computed by CMake
+lab3_BINARY_DIR:STATIC=/Users/michaldudek/Library/Mobile Documents/com~apple~CloudDocs/uni/Elektroniczne-Przetwarzanie-Informacji/Introduction to Programming/lab3/cmake-build-debug
+
+//Value Computed by CMake
+lab3_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+lab3_SOURCE_DIR:STATIC=/Users/michaldudek/Library/Mobile Documents/com~apple~CloudDocs/uni/Elektroniczne-Przetwarzanie-Informacji/Introduction to Programming/lab3
 
 
 ########################
