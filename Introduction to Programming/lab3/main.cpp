@@ -1,4 +1,5 @@
 #include <iostream>
+#include <unistd.h>
 using namespace std;
 
 class lab3 {
@@ -23,8 +24,8 @@ public:
     void zadanie13();
     void zadanie14();
     void zadanie15();
-    //void zadanie16();
-    //void zadanie17();
+    void zadanie16();
+    void zadanie17();
     //void zadanie18();
     //void zadanie19();
     //void zadanie20();
@@ -56,8 +57,8 @@ lab3::lab3() {
     zadania[12] = &lab3::zadanie13;
     zadania[13] = &lab3::zadanie14;
     zadania[14] = &lab3::zadanie15;
-    //zadania[15] = &lab3::zadanie16;
-    //zadania[16] = &lab3::zadanie17;
+    zadania[15] = &lab3::zadanie16;
+    zadania[16] = &lab3::zadanie17;
     //zadania[17] = &lab3::zadanie18;
     //zadania[18] = &lab3::zadanie19;
     //zadania[19] = &lab3::zadanie20;
@@ -232,10 +233,29 @@ void lab3::zadanie14() {
 }
 
 void lab3::zadanie15() {
-    char i = 0;
-    while(i < 150) {
+    char i = 120;
+    while(true) {
         printf("%c, %d\n", i, i); // zakres char: [-128, 127]
         i++;
+        usleep(500000);
+    }
+}
+
+void lab3::zadanie16() {
+    int i = 2147483641; // zakres int: [-2147483648, 2147483647]
+    while(true) {
+        printf("%d\n", i);
+        i++;
+        usleep(500000);
+    }
+}
+
+void lab3::zadanie17() {
+    unsigned int i = 4294967290; // zakres unsigned int: [0, 4294967295]
+    while(true) {
+        printf("%u\n", i);
+        i++;
+        usleep(500000);
     }
 }
 
