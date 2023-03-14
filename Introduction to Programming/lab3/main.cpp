@@ -26,8 +26,8 @@ public:
     void zadanie15();
     void zadanie16();
     void zadanie17();
-    //void zadanie18();
-    //void zadanie19();
+    void zadanie18();
+    void zadanie19();
     //void zadanie20();
     //void zadanie21();
     //void zadanie22();
@@ -59,8 +59,8 @@ lab3::lab3() {
     zadania[14] = &lab3::zadanie15;
     zadania[15] = &lab3::zadanie16;
     zadania[16] = &lab3::zadanie17;
-    //zadania[17] = &lab3::zadanie18;
-    //zadania[18] = &lab3::zadanie19;
+    zadania[17] = &lab3::zadanie18;
+    zadania[18] = &lab3::zadanie19;
     //zadania[19] = &lab3::zadanie20;
     //zadania[20] = &lab3::zadanie21;
     //zadania[21] = &lab3::zadanie22;
@@ -256,6 +256,22 @@ void lab3::zadanie17() {
         printf("%u\n", i);
         i++;
         usleep(500000);
+    }
+}
+
+void lab3::zadanie18() {
+    int i = 97;
+    while (i < 123) {
+        printf("%d: %c\n", i, i);
+        i++;
+    }
+}
+
+void lab3::zadanie19() {
+    int i = 0;
+    while (i < 257) {
+        printf("%c, %d\n", i, i);
+        i++;
     }
 }
 
