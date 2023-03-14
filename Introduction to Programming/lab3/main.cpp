@@ -32,10 +32,10 @@ public:
     //void zadanie21();
     //void zadanie22();
     //void zadanie23();
-    //void zadanie24();
+    void zadanie24();
     //void zadanie25();
     //void zadanie26();
-    //void zadanie27();
+    void zadanie27();
     //void zadanie28();
     //void zadanie29();
     //void zadanie30();
@@ -65,10 +65,10 @@ lab3::lab3() {
     //zadania[20] = &lab3::zadanie21;
     //zadania[21] = &lab3::zadanie22;
     //zadania[22] = &lab3::zadanie23;
-    //zadania[23] = &lab3::zadanie24;
+    zadania[23] = &lab3::zadanie24;
     //zadania[24] = &lab3::zadanie25;
     //zadania[25] = &lab3::zadanie26;
-    //zadania[26] = &lab3::zadanie27;
+    zadania[26] = &lab3::zadanie27;
     //zadania[27] = &lab3::zadanie28;
     //zadania[28] = &lab3::zadanie29;
     //zadania[29] = &lab3::zadanie30;
@@ -168,11 +168,11 @@ void lab3::zadanie9() {
     cout << "jaką liczbę wybierasz? ";
     cin >> liczba;
 
-    if (liczba == ustalona) {
-        cout << "brawo, wygrywasz!" << endl;
+    if (liczba < ustalona) {
+        cout << "przegrywasz!" << endl;
     }
     else {
-        cout << "nie udało ci się trafić :((" << endl;
+        cout << "wygrywasz!" << endl;
     }
 
 }
@@ -233,7 +233,7 @@ void lab3::zadanie14() {
 }
 
 void lab3::zadanie15() {
-    char i = 120;
+    unsigned char i = 120;
     while(true) {
         printf("%c, %d\n", i, i); // zakres char: [-128, 127]
         i++;
@@ -273,6 +273,44 @@ void lab3::zadanie19() {
         printf("%c, %d\n", i, i);
         i++;
     }
+}
+
+void lab3::zadanie24() {
+    int wartosc = 37;
+    int wybor;
+    bool flag = true;
+    do {
+        cout << "podaj liczbę z zakresu [0, 100]: ";
+        cin >> wybor;
+        if(wybor == wartosc) {
+            cout << "WYGRYWASZ!" << endl;
+            flag = false;
+        }
+        else if (wybor < wartosc){
+            cout << "musisz celować wyżej" << endl;
+        }
+        else {
+            cout << "musisz celować niżej" << endl;
+        }
+    }
+    while (flag);
+}
+
+void lab3::zadanie27() {
+    int a = 5;
+    int b = 9;
+
+    cout << "a: " << a << endl;
+    cout << "b: " << b << endl << endl;
+
+    a = a + b;
+    b = a - b;
+    a = a - b;
+
+    cout << "a: " << a << endl;
+    cout << "b: " << b << endl;
+
+
 }
 
 int main() {
