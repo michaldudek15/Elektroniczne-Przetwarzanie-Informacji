@@ -1,5 +1,6 @@
 #include <iostream>
 #include <unistd.h>
+#include <cmath>
 using namespace std;
 
 class lab3 {
@@ -28,17 +29,17 @@ public:
     void zadanie17();
     void zadanie18();
     void zadanie19();
-    //void zadanie20();
-    //void zadanie21();
-    //void zadanie22();
-    //void zadanie23();
+    void zadanie20();
+    void zadanie21();
+    void zadanie22();
+    void zadanie23();
     void zadanie24();
-    //void zadanie25();
-    //void zadanie26();
+    void zadanie25();
+    void zadanie26();
     void zadanie27();
-    //void zadanie28();
-    //void zadanie29();
-    //void zadanie30();
+    void zadanie28();
+    void zadanie29();
+    void zadanie30();
 };
 
 lab3::lab3() {
@@ -61,17 +62,17 @@ lab3::lab3() {
     zadania[16] = &lab3::zadanie17;
     zadania[17] = &lab3::zadanie18;
     zadania[18] = &lab3::zadanie19;
-    //zadania[19] = &lab3::zadanie20;
-    //zadania[20] = &lab3::zadanie21;
-    //zadania[21] = &lab3::zadanie22;
-    //zadania[22] = &lab3::zadanie23;
+    zadania[19] = &lab3::zadanie20;
+    zadania[20] = &lab3::zadanie21;
+    zadania[21] = &lab3::zadanie22;
+    zadania[22] = &lab3::zadanie23;
     zadania[23] = &lab3::zadanie24;
-    //zadania[24] = &lab3::zadanie25;
-    //zadania[25] = &lab3::zadanie26;
+    zadania[24] = &lab3::zadanie25;
+    zadania[25] = &lab3::zadanie26;
     zadania[26] = &lab3::zadanie27;
-    //zadania[27] = &lab3::zadanie28;
-    //zadania[28] = &lab3::zadanie29;
-    //zadania[29] = &lab3::zadanie30;
+    zadania[27] = &lab3::zadanie28;
+    zadania[28] = &lab3::zadanie29;
+    zadania[29] = &lab3::zadanie30;
 }
 
 void lab3::call_by_index(int index) {
@@ -233,7 +234,7 @@ void lab3::zadanie14() {
 }
 
 void lab3::zadanie15() {
-    unsigned char i = 120;
+    int i = 120;
     while(true) {
         printf("%c, %d\n", i, i); // zakres char: [-128, 127]
         i++;
@@ -275,6 +276,36 @@ void lab3::zadanie19() {
     }
 }
 
+void lab3::zadanie20() {
+    string square = "■";
+    string rectangle = "█";
+    cout << rectangle << rectangle << rectangle << rectangle << endl;
+    cout << rectangle << rectangle << rectangle << rectangle <<endl;
+
+}
+
+void lab3::zadanie21() {
+    string sponge = "▒";
+    cout << sponge << sponge << sponge << sponge << sponge << endl;
+    cout << sponge << sponge << sponge << sponge << sponge << endl;
+}
+
+void lab3::zadanie22() {
+    cout << "|͞͞ ͞ ͞ ͞ ͞|" << endl;
+    cout << "|    |" << endl;
+    cout << "|    |" << endl;
+    cout << "|____|" << endl;
+}
+
+void lab3::zadanie23() {
+    int x = 5;
+    printf("%d\n", x);
+    //printf("%d\n", x);
+    printf("%p\n", &x);
+
+
+}
+
 void lab3::zadanie24() {
     int wartosc = 37;
     int wybor;
@@ -296,6 +327,38 @@ void lab3::zadanie24() {
     while (flag);
 }
 
+void lab3::zadanie25() {
+    int a, b, c;
+    cout << "podaj trzy boki oddzielone spacjami: " ;
+    cin >> a >> b >> c;
+
+    if ( a + b > c && a + c > b && b + c > a) cout << "można\n";
+    else cout << "nie można\n";
+
+}
+
+void lab3::zadanie26() {
+    int a, b, c;
+    cout << "podaj oddzielone spacjami parametry a, b i c funkcji: ";
+    cin >> a >> b >> c;
+    float delta = (b*b - 4*a*c);
+    cout << "delta wynosi: " << delta << endl;
+    if ( a == 0 ) {
+        cout << "\nto nie równanie kwadratowe, parametr a musi być różny od 0!\n";
+    }
+    else if ( delta == 0 ) {
+        cout << "\ndelta jest równa 0, więc istnieje jedno rozwiązanie: " << ( -b) / (2*a) << endl;
+    }
+    else if ( delta > 0) {
+        cout << "\npierwiastki tego równania to: " << ( -b - sqrt(delta) )/ ( 2 * a ) << " oraz " << ( -b + sqrt(delta) )/ ( 2 * a ) << endl;
+    }
+    else {
+        cout << "\nbrak rozwiązań!" << endl;
+    }
+
+
+}
+
 void lab3::zadanie27() {
     int a = 5;
     int b = 9;
@@ -303,13 +366,63 @@ void lab3::zadanie27() {
     cout << "a: " << a << endl;
     cout << "b: " << b << endl << endl;
 
-    a = a + b;
+    a += b;
     b = a - b;
-    a = a - b;
+    a -= b;
 
     cout << "a: " << a << endl;
     cout << "b: " << b << endl;
+}
 
+void lab3::zadanie28() {
+    int a, b;
+    cout << "podaj dwie liczby nieujemne: ";
+    cin >> a >> b;
+
+    while( a != b)
+        if ( a > b) a -= b;
+        else b -= a;
+    cout << "NWD: " << a;
+
+}
+
+void lab3::zadanie29() {
+    int n;
+    cout << "podaj liczbę: ";
+    cin >> n;
+
+    if (n <= 1) cout << "nie jest pierwsza!" << endl;
+
+    int i = 2;
+    bool flag = true;
+    while (i <= sqrt(n)) {
+        if (n % i == 0) flag = false;
+        i++;
+    }
+    if (!flag) cout << "liczba nie jest pierwsza" << endl;
+    else cout << "liczba jest pierwsza" << endl;
+}
+
+void lab3::zadanie30() {
+    int n;
+    cout << "podaj wysokość drzewka: ";
+    cin >> n;
+
+    int i = 0;
+    int j = 0;
+    while ( i < n) {
+        while( j < (n*2 -1) ) {
+            if ( j < (n-1) - i || j > (n-1) + i) {
+                cout << ".";
+            }
+            else cout << "X";
+
+            j++;
+        }
+        j = 0;
+        cout << endl;
+        i++;
+    }
 
 }
 
