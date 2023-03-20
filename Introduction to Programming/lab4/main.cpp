@@ -8,13 +8,13 @@ public:
 
     lab4();
     void call_by_index(int index);
-    //void zadanie1();
-    //void zadanie2();
-    //void zadanie3();
-    //void zadanie4();
-    //void zadanie5();
-    //void zadanie6();
-    //void zadanie7();
+    void zadanie1();
+    void zadanie2();
+    void zadanie3();
+    void zadanie4();
+    void zadanie5();
+    void zadanie6();
+    void zadanie7();
     //void zadanie8();
     //void zadanie9();
     //void zadanie10();
@@ -42,40 +42,118 @@ public:
 };
 
 lab4::lab4() {
-    //zadania[0] = &lab3::zadanie1;
-    //zadania[1] = &lab3::zadanie2;
-    //zadania[2] = &lab3::zadanie3;
-    //zadania[3] = &lab3::zadanie4;
-    //zadania[4] = &lab3::zadanie5;
-    //zadania[5] = &lab3::zadanie6;
-    //zadania[6] = &lab3::zadanie7;
-    //zadania[7] = &lab3::zadanie8;
-    //zadania[8] = &lab3::zadanie9;
-    //zadania[9] = &lab3::zadanie10;
-    //zadania[10] = &lab3::zadanie11;
-    //zadania[11] = &lab3::zadanie12;
-    //zadania[12] = &lab3::zadanie13;
-    //zadania[13] = &lab3::zadanie14;
-    //zadania[14] = &lab3::zadanie15;
-    //zadania[15] = &lab3::zadanie16;
-    //zadania[16] = &lab3::zadanie17;
-    //zadania[17] = &lab3::zadanie18;
-    //zadania[18] = &lab3::zadanie19;
-    //zadania[19] = &lab3::zadanie20;
-    //zadania[20] = &lab3::zadanie21;
-    //zadania[21] = &lab3::zadanie22;
-    //zadania[22] = &lab3::zadanie23;
-    //zadania[23] = &lab3::zadanie24;
-    //zadania[24] = &lab3::zadanie25;
-    //zadania[25] = &lab3::zadanie26;
-    //zadania[26] = &lab3::zadanie27;
-    //zadania[27] = &lab3::zadanie28;
-    //zadania[28] = &lab3::zadanie29;
-    //zadania[29] = &lab3::zadanie30;
+    zadania[0] = &lab4::zadanie1;
+    zadania[1] = &lab4::zadanie2;
+    zadania[2] = &lab4::zadanie3;
+    zadania[3] = &lab4::zadanie4;
+    zadania[4] = &lab4::zadanie5;
+    zadania[5] = &lab4::zadanie6;
+    zadania[6] = &lab4::zadanie7;
+    //zadania[7] = &lab4::zadanie8;
+    //zadania[8] = &lab4::zadanie9;
+    //zadania[9] = &lab4::zadanie10;
+    //zadania[10] = &lab4::zadanie11;
+    //zadania[11] = &lab4::zadanie12;
+    //zadania[12] = &lab4::zadanie13;
+    //zadania[13] = &lab4::zadanie14;
+    //zadania[14] = &lab4::zadanie15;
+    //zadania[15] = &lab4::zadanie16;
+    //zadania[16] = &lab4::zadanie17;
+    //zadania[17] = &lab4::zadanie18;
+    //zadania[18] = &lab4::zadanie19;
+    //zadania[19] = &lab4::zadanie20;
+    //zadania[20] = &lab4::zadanie21;
+    //zadania[21] = &lab4::zadanie22;
+    //zadania[22] = &lab4::zadanie23;
+    //zadania[23] = &lab4::zadanie24;
+    //zadania[24] = &lab4::zadanie25;
+    //zadania[25] = &lab4::zadanie26;
+    //zadania[26] = &lab4::zadanie27;
+    //zadania[27] = &lab4::zadanie28;
+    //zadania[28] = &lab4::zadanie29;
+    //zadania[29] = &lab4::zadanie30;
 }
 
 void lab4::call_by_index(int index) {
     (this->*zadania[index])();
+}
+
+void lab4::zadanie1() {
+    string imie;
+    cout << "podaj swoje imie: ";
+    cin >> imie;
+    cout << "Witaj " << imie;
+}
+
+void lab4::zadanie2() {
+    string wyraz1, wyraz2;
+    cout << "podaj dwa wyrazy: ";
+    cin >> wyraz1 >> wyraz2;
+    cout << wyraz1 << " " << wyraz2 << endl;
+}
+
+void lab4::zadanie3() {
+    int wartosci[5];
+    cout << "podaj piec wartości tablicy:\n";
+    for (int i = 0; i < 5; i++) {
+        cin >> wartosci[i];
+    }
+    int min = wartosci[0];
+    for (int j = 1; j < 5; j++) {
+        if (wartosci[j] < min) min = wartosci[j];
+    }
+    cout << "minimalna wartosc: " << min;
+}
+
+void lab4::zadanie4() {
+    int wartosci[5];
+    cout << "podaj piec wartości tablicy:\n";
+    for (int i = 0; i < 5; i++) {
+        cin >> wartosci[i];
+    }
+    int max = wartosci[0];
+    for (int j = 1; j < 5; j++) {
+        if (wartosci[j] > max) max = wartosci[j];
+    }
+    cout << "maksymalna wartosc: " << max;
+}
+
+void lab4::zadanie5() {
+    int liczby[2];
+    cout << "podaj dwie wartosci do tablicy:'n";
+    cin >> liczby[0];
+    cin >> liczby[1];
+    cout << "suma: " << liczby[0] + liczby[1];
+    cout << "roznica: " << liczby[0] - liczby[1];
+    cout << "iloczyn: " << liczby[0] * liczby[1];
+    cout << "iloraz: " << liczby[0] / liczby[1] << "," << liczby[0] % liczby[1];
+}
+
+void lab4::zadanie6() {
+    int wartosci[5];
+    cout << "podaj piec wartości tablicy:\n";
+    for (int i = 0; i < 5; i++) {
+        cin >> wartosci[i];
+    }
+    for (int i = 0; i < 5; i++) {
+        if(wartosci[i]%2 == 0) wartosci[i] = 0;
+    }
+    for (int i = 0; i < 5; i++) {
+        cout << wartosci[i] << endl;
+    }
+}
+
+void lab4::zadanie7() {
+    int wartosci[10];
+    cout << "podaj dziesiec wartości tablicy:\n";
+    for (int i = 0; i < 10; i++) {
+        cin >> wartosci[i];
+    }
+    int suma = 0;
+    for (int i = 0; i < 10; i++) {
+        suma += wartosci[i];
+    }
+    cout << "suma wartosci z tablicy wynosi: " << suma;
 }
 
 int main() {
