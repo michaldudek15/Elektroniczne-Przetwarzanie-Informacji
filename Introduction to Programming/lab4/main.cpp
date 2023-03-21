@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 using namespace std;
 
 class lab4 {
@@ -24,20 +25,29 @@ public:
     //void zadanie14();
     //void zadanie15();
     //void zadanie16();
-    //void zadanie17();
-    //void zadanie18();
+    void zadanie17();
+    void zadanie18();
     //void zadanie19();
-    //void zadanie20();
+    void zadanie20();
     //void zadanie21();
     //void zadanie22();
-    //void zadanie23();
+    void zadanie23();
     //void zadanie24();
     //void zadanie25();
     //void zadanie26();
-    //void zadanie27();
+    void zadanie27();
     //void zadanie28();
     //void zadanie29();
     //void zadanie30();
+    //void zadanie31();
+    //void zadanie32();
+    //void zadanie33();
+    //void zadanie34();
+    //void zadanie35();
+    //void zadanie36();
+    void zadanie37();
+    //void zadanie38();
+    //void zadanie39();
 
 };
 
@@ -58,20 +68,29 @@ lab4::lab4() {
     //zadania[13] = &lab4::zadanie14;
     //zadania[14] = &lab4::zadanie15;
     //zadania[15] = &lab4::zadanie16;
-    //zadania[16] = &lab4::zadanie17;
-    //zadania[17] = &lab4::zadanie18;
+    zadania[16] = &lab4::zadanie17;
+    zadania[17] = &lab4::zadanie18;
     //zadania[18] = &lab4::zadanie19;
-    //zadania[19] = &lab4::zadanie20;
+    zadania[19] = &lab4::zadanie20;
     //zadania[20] = &lab4::zadanie21;
     //zadania[21] = &lab4::zadanie22;
-    //zadania[22] = &lab4::zadanie23;
+    zadania[22] = &lab4::zadanie23;
     //zadania[23] = &lab4::zadanie24;
     //zadania[24] = &lab4::zadanie25;
     //zadania[25] = &lab4::zadanie26;
-    //zadania[26] = &lab4::zadanie27;
+    zadania[26] = &lab4::zadanie27;
     //zadania[27] = &lab4::zadanie28;
     //zadania[28] = &lab4::zadanie29;
     //zadania[29] = &lab4::zadanie30;
+    //zadania[30] = &lab4::zadanie31;
+    //zadania[31] = &lab4::zadanie32;
+    //zadania[32] = &lab4::zadanie33;
+    //zadania[33] = &lab4::zadanie34;
+    //zadania[34] = &lab4::zadanie35;
+    //zadania[35] = &lab4::zadanie36;
+    zadania[36] = &lab4::zadanie37;
+    //zadania[37] = &lab4::zadanie38;
+    //zadania[38] = &lab4::zadanie39;
 }
 
 void lab4::call_by_index(int index) {
@@ -120,13 +139,13 @@ void lab4::zadanie4() {
 
 void lab4::zadanie5() {
     int liczby[2];
-    cout << "podaj dwie wartosci do tablicy:'n";
+    cout << "podaj dwie wartosci do tablicy:\n";
     cin >> liczby[0];
     cin >> liczby[1];
-    cout << "suma: " << liczby[0] + liczby[1];
-    cout << "roznica: " << liczby[0] - liczby[1];
-    cout << "iloczyn: " << liczby[0] * liczby[1];
-    cout << "iloraz: " << liczby[0] / liczby[1] << "," << liczby[0] % liczby[1];
+    cout << "suma: " << liczby[0] + liczby[1] << endl;
+    cout << "roznica: " << liczby[0] - liczby[1] << endl;
+    cout << "iloczyn: " << liczby[0] * liczby[1] << endl;
+    cout << "iloraz: " << liczby[0] / liczby[1] << " reszta: " << liczby[0] % liczby[1];
 }
 
 void lab4::zadanie6() {
@@ -154,6 +173,67 @@ void lab4::zadanie7() {
         suma += wartosci[i];
     }
     cout << "suma wartosci z tablicy wynosi: " << suma;
+}
+
+void lab4::zadanie17() {
+    string slowo;
+    cout << "podaj slowo: ";
+    cin >> slowo;
+    for (int i = 0; i<slowo.length(); i++) {
+        if(slowo[i] > 96 && slowo[i] < 123) slowo[i] -= 32;
+    }
+    cout << "slowo wielkimi literami: " << slowo;
+}
+
+void lab4::zadanie18() {
+    string slowo;
+    cout << "podaj slowo: ";
+    cin >> slowo;
+    for (int i = 0; i<slowo.length(); i++) {
+        if(slowo[i] > 64 && slowo[i] < 91) slowo[i] += 32;
+    }
+    cout << "slowo malymi literami: " << slowo;
+}
+
+void lab4::zadanie20() {
+    string slowo;
+    cout << "podaj slowo: ";
+    cin >> slowo;
+    for (int i = slowo.length()-1; i >= 0; i--) {
+        cout << slowo[i];
+    }
+}
+
+void lab4::zadanie23() {
+    string wyraz;
+    cout << "podaj wyraz: ";
+    cin >> wyraz;
+    string dlugiWyraz = wyraz + wyraz;
+    cout << "podwojony wyraz: " << dlugiWyraz;
+}
+
+void lab4::zadanie27() {
+    fstream plik;
+    plik.open("imie.txt", ios::out);
+    if(!plik) {
+        cout << "blad tworzenia pliku";
+    }
+    else {
+        cout << "zapisuje dane do pliku";
+        plik << "Michał";
+        plik.close();
+    }
+}
+
+void lab4::zadanie37() {
+    int tab[6] = {0, 0, 0, 0, 0, 0};
+    srand(time(NULL));
+    for (int i = 0; i < 1000; i++) {
+        tab[rand()%6]++;
+    }
+    for (int i = 0; i < 6; i++) {
+        cout << i+1 << " oczek wyrzucono tyle razy: " << tab[i] << endl;
+    }
 }
 
 int main() {
