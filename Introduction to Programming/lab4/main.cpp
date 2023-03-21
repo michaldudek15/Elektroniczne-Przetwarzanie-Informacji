@@ -303,7 +303,22 @@ void lab4::zadanie37() {
 }
 
 void lab4::zadanie38() {
-
+    int tab[6] = {0, 0, 0, 0, 0, 0};
+    srand(time(NULL));
+    for (int i = 0; i < 1000; i++) {
+        tab[rand()%6]++;
+    }
+    for (int i = 0; i < 6; i++) {
+        cout << i+1 << " oczek wyrzucono tyle razy: " << tab[i] << endl;
+    }
+    double oczekiwana;
+    oczekiwana += tab[0]*1;
+    oczekiwana += tab[1]*2;
+    oczekiwana += tab[2]*3;
+    oczekiwana += tab[3]*4;
+    oczekiwana += tab[4]*5;
+    oczekiwana += tab[5]*6;
+    cout << "wartosc oczekiwana: " << oczekiwana/1000.0;
 }
 
 int main() {
