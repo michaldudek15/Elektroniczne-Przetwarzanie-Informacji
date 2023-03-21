@@ -16,10 +16,10 @@ public:
     void zadanie5();
     void zadanie6();
     void zadanie7();
-    //void zadanie8();
-    //void zadanie9();
-    //void zadanie10();
-    //void zadanie11();
+    void zadanie8();
+    void zadanie9();
+    void zadanie10();
+    void zadanie11();
     //void zadanie12();
     //void zadanie13();
     //void zadanie14();
@@ -46,7 +46,7 @@ public:
     //void zadanie35();
     //void zadanie36();
     void zadanie37();
-    //void zadanie38();
+    void zadanie38();
     //void zadanie39();
 
 };
@@ -59,10 +59,10 @@ lab4::lab4() {
     zadania[4] = &lab4::zadanie5;
     zadania[5] = &lab4::zadanie6;
     zadania[6] = &lab4::zadanie7;
-    //zadania[7] = &lab4::zadanie8;
-    //zadania[8] = &lab4::zadanie9;
-    //zadania[9] = &lab4::zadanie10;
-    //zadania[10] = &lab4::zadanie11;
+    zadania[7] = &lab4::zadanie8;
+    zadania[8] = &lab4::zadanie9;
+    zadania[9] = &lab4::zadanie10;
+    zadania[10] = &lab4::zadanie11;
     //zadania[11] = &lab4::zadanie12;
     //zadania[12] = &lab4::zadanie13;
     //zadania[13] = &lab4::zadanie14;
@@ -89,7 +89,7 @@ lab4::lab4() {
     //zadania[34] = &lab4::zadanie35;
     //zadania[35] = &lab4::zadanie36;
     zadania[36] = &lab4::zadanie37;
-    //zadania[37] = &lab4::zadanie38;
+    zadania[37] = &lab4::zadanie38;
     //zadania[38] = &lab4::zadanie39;
 }
 
@@ -175,6 +175,72 @@ void lab4::zadanie7() {
     cout << "suma wartosci z tablicy wynosi: " << suma;
 }
 
+void lab4::zadanie8() {
+    int tabliczka[10][10];
+
+    for (int i = 1; i<=10;i++)
+        for (int j = 1; j<=10; j++) tabliczka[i-1][j-1] = i*j;
+
+    for (int i = 0; i < 10; i++) {
+        for (int j = 0; j < 10;j++) cout << tabliczka[i][j] << "\t";
+        cout << endl;
+    }
+}
+
+void lab4::zadanie9() {
+    int tablica[10] = {-1, -1 ,-1 ,-1 ,-1 ,-1 ,-1 ,-1 ,-1 ,-1};
+    cout << "podaj wartości tablicy (jeśli chcesz zakończyć, to wpisz -1):\n";
+    for (int i = 0 ; i < 10 ; i++){
+        cin >> tablica[i];
+        if(tablica[i] == -1) break;
+    }
+    int licznik = 0;
+    float suma = 0.0;
+    for (int i = 0; i < 10 ; i++) {
+        if(tablica[i]==-1) break;
+        else {
+            licznik++;
+            suma += tablica[i];
+        }
+    }
+    cout << "ilosc wartosci w tablicy: " << licznik << "\nsrednia wartosc w tablicy: " << suma / licznik << endl;
+}
+
+void lab4::zadanie10() {
+    int x,y;
+    cout << "podaj wymiary prostokata [szerokosc wysokosc]: ";
+    cin >> x >> y;
+
+    for (int i = 0; i < y; i++) {
+        for (int j = 0; j < x; j++) cout << "X" << " ";
+        cout << endl;
+    }
+}
+
+void lab4::zadanie11() {
+    int wiek;
+    cout << "podaj wiek: ";
+    cin >> wiek;
+
+    int wybor;
+    if(wiek<18) wybor = 0;
+    else if(wiek < 60) wybor = 1;
+    else wybor = 2;
+
+    switch (wybor){
+        case 0:
+            cout << "jestes mlody" << endl;
+            break;
+        case 1:
+            cout << "jestes dorosly" << endl;
+            break;
+        case 2:
+            cout << "jestes stary" << endl;
+            break;
+    }
+
+}
+
 void lab4::zadanie17() {
     string slowo;
     cout << "podaj slowo: ";
@@ -236,6 +302,10 @@ void lab4::zadanie37() {
     }
 }
 
+void lab4::zadanie38() {
+
+}
+
 int main() {
     lab4 o;
 
@@ -243,5 +313,6 @@ int main() {
     cout << "które zadanie pokazać? ";
     cin >> choice;
     o.call_by_index(--choice);
+
     return 0;
 }
