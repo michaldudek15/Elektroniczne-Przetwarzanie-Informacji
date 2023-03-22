@@ -20,11 +20,11 @@ public:
     void zadanie9();
     void zadanie10();
     void zadanie11();
-    //void zadanie12();
-    //void zadanie13();
-    //void zadanie14();
-    //void zadanie15();
-    //void zadanie16();
+    void zadanie12();
+    void zadanie13();
+    void zadanie14();
+    void zadanie15();
+    void zadanie16();
     void zadanie17();
     void zadanie18();
     //void zadanie19();
@@ -44,7 +44,7 @@ public:
     //void zadanie33();
     //void zadanie34();
     //void zadanie35();
-    //void zadanie36();
+    void zadanie36();
     void zadanie37();
     void zadanie38();
     //void zadanie39();
@@ -63,11 +63,11 @@ lab4::lab4() {
     zadania[8] = &lab4::zadanie9;
     zadania[9] = &lab4::zadanie10;
     zadania[10] = &lab4::zadanie11;
-    //zadania[11] = &lab4::zadanie12;
-    //zadania[12] = &lab4::zadanie13;
-    //zadania[13] = &lab4::zadanie14;
-    //zadania[14] = &lab4::zadanie15;
-    //zadania[15] = &lab4::zadanie16;
+    zadania[11] = &lab4::zadanie12;
+    zadania[12] = &lab4::zadanie13;
+    zadania[13] = &lab4::zadanie14;
+    zadania[14] = &lab4::zadanie15;
+    zadania[15] = &lab4::zadanie16;
     zadania[16] = &lab4::zadanie17;
     zadania[17] = &lab4::zadanie18;
     //zadania[18] = &lab4::zadanie19;
@@ -87,7 +87,7 @@ lab4::lab4() {
     //zadania[32] = &lab4::zadanie33;
     //zadania[33] = &lab4::zadanie34;
     //zadania[34] = &lab4::zadanie35;
-    //zadania[35] = &lab4::zadanie36;
+    zadania[35] = &lab4::zadanie36;
     zadania[36] = &lab4::zadanie37;
     zadania[37] = &lab4::zadanie38;
     //zadania[38] = &lab4::zadanie39;
@@ -238,7 +238,92 @@ void lab4::zadanie11() {
             cout << "jestes stary" << endl;
             break;
     }
+}
 
+void lab4::zadanie12(){
+    int znak;
+    cout << "podaj liczbe odpowiadającą twojemu znakowi zodiaku:\n"
+            "1 - wodnik\n"
+            "2 - ryby\n"
+            "3 - baran\n"
+            "4 - byk\n";
+    cin >> znak;
+    switch (znak){
+        case 1:
+            cout << "wodnik: pamiętaj, że czasami warto zaryzykować" << endl;
+            break;
+        case 2:
+            cout << "ryby: uważaj komu wierzysz" << endl;
+            break;
+        case 3:
+            cout << "baran: czeka cię niespodziewane spotkanie" << endl;
+            break;
+        case 4:
+            cout << "byk: czas wprowadzić w życie zmiany, które masz w planach od dawna " << endl;
+            break;
+        default: cout << "error";
+    }
+}
+
+void lab4::zadanie13() {
+    string wyraz;
+    cout << "podaj wyraz: ";
+    cin >> wyraz;
+    int i = 0;
+    while (wyraz[i]!='\0') {
+        i++;
+    }
+    cout << "wyraz " << wyraz << " ma " << i<< " liter";
+}
+
+void lab4::zadanie14() {
+    string imie;
+    cout << "podaj imie: ";
+    cin >> imie;
+
+    if(imie=="Kuba") cout << "to imię męskie";
+    else if (imie =="Barnaba") cout << "to imię męskie";
+    else if (imie =="Bonawentura") cout << "to imię męskie";
+    else if (imie =="Kosma") cout << "to imię męskie";
+    else if (imie =="Dyzma") cout << "to imię męskie";
+    else if (imie =="Jarema") cout << "to imię męskie";
+    else if (imie =="Lasota") cout << "to imię męskie";
+    else if (imie =="Niepełka") cout << "to imię męskie";
+    else if (imie =="Rokita") cout << "to imię męskie";
+    else if (imie =="Zawisza") cout << "to imię męskie";
+    else if (imie =="Żegota") cout << "to imię męskie";
+    else if (imie[imie.length()-1]=='a') cout << "to imię żeńskie";
+    else cout << "to imię męskie";
+}
+
+void lab4::zadanie15() {
+    string wyraz1, wyraz2;
+    cout << "podaj pierwszy wyraz: ";
+    cin >> wyraz1;
+    cout << "podaj drugi wyraz: ";
+    cin >> wyraz2;
+
+    if (wyraz1.length()!=wyraz2.length()) cout << "te wyrazy nie są takie same";
+    bool flag = 0;
+    for (int i = 0; i<wyraz1.length(); i++){
+        if(wyraz1[i]!=wyraz2[i]) {
+            cout << "to nie ten sam wyraz";
+            flag = 1;
+            break;
+        }
+    }
+    if (!flag) cout << "to te same wyrazy";
+}
+
+void lab4::zadanie16() {
+    string wyraz;
+    cout << "podaj wyraz: ";
+    cin >> wyraz;
+
+    for (int i = 0; i < wyraz.length(); i++) {
+        wyraz[i] = '*';
+    }
+    cout << "cenzura: " << wyraz;
 }
 
 void lab4::zadanie17() {
@@ -289,6 +374,23 @@ void lab4::zadanie27() {
         plik << "Michał";
         plik.close();
     }
+}
+
+void lab4::zadanie36() {
+    int liczba;
+    cout << "podaj liczbe: ";
+    cin >> liczba;
+
+    int i = 1;
+    int sum = 0;
+    while(i < liczba) {
+        if (liczba%i==0) sum+=i;
+        i++;
+    }
+
+    if(sum==liczba) cout << liczba << " jest doskonala";
+    else cout << liczba << " nie jest doskonala";
+
 }
 
 void lab4::zadanie37() {
