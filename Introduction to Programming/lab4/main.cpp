@@ -1,11 +1,12 @@
 #include <iostream>
 #include <fstream>
+#include <cmath>
 using namespace std;
 
 class lab4 {
 public:
     typedef void (lab4::*zadanie)();
-    zadanie zadania[30];
+    zadanie zadania[39];
 
     lab4();
     void call_by_index(int index);
@@ -27,27 +28,27 @@ public:
     void zadanie16();
     void zadanie17();
     void zadanie18();
-    //void zadanie19();
+    void zadanie19();
     void zadanie20();
-    //void zadanie21();
-    //void zadanie22();
+    void zadanie21();
+    void zadanie22();
     void zadanie23();
-    //void zadanie24();
-    //void zadanie25();
-    //void zadanie26();
+    void zadanie24();
+    void zadanie25();
+    void zadanie26();
     void zadanie27();
-    //void zadanie28();
-    //void zadanie29();
-    //void zadanie30();
-    //void zadanie31();
-    //void zadanie32();
-    //void zadanie33();
-    //void zadanie34();
-    //void zadanie35();
+    void zadanie28();
+    void zadanie29();
+    void zadanie30();
+    void zadanie31();
+    void zadanie32();
+    void zadanie33();
+    void zadanie34();
+    void zadanie35();
     void zadanie36();
     void zadanie37();
     void zadanie38();
-    //void zadanie39();
+    void zadanie39();
 
 };
 
@@ -70,27 +71,27 @@ lab4::lab4() {
     zadania[15] = &lab4::zadanie16;
     zadania[16] = &lab4::zadanie17;
     zadania[17] = &lab4::zadanie18;
-    //zadania[18] = &lab4::zadanie19;
+    zadania[18] = &lab4::zadanie19;
     zadania[19] = &lab4::zadanie20;
-    //zadania[20] = &lab4::zadanie21;
-    //zadania[21] = &lab4::zadanie22;
+    zadania[20] = &lab4::zadanie21;
+    zadania[21] = &lab4::zadanie22;
     zadania[22] = &lab4::zadanie23;
-    //zadania[23] = &lab4::zadanie24;
-    //zadania[24] = &lab4::zadanie25;
-    //zadania[25] = &lab4::zadanie26;
+    zadania[23] = &lab4::zadanie24;
+    zadania[24] = &lab4::zadanie25;
+    zadania[25] = &lab4::zadanie26;
     zadania[26] = &lab4::zadanie27;
-    //zadania[27] = &lab4::zadanie28;
-    //zadania[28] = &lab4::zadanie29;
-    //zadania[29] = &lab4::zadanie30;
-    //zadania[30] = &lab4::zadanie31;
-    //zadania[31] = &lab4::zadanie32;
-    //zadania[32] = &lab4::zadanie33;
-    //zadania[33] = &lab4::zadanie34;
-    //zadania[34] = &lab4::zadanie35;
+    zadania[27] = &lab4::zadanie28;
+    zadania[28] = &lab4::zadanie29;
+    zadania[29] = &lab4::zadanie30;
+    zadania[30] = &lab4::zadanie31;
+    zadania[31] = &lab4::zadanie32;
+    zadania[32] = &lab4::zadanie33;
+    zadania[33] = &lab4::zadanie34;
+    zadania[34] = &lab4::zadanie35;
     zadania[35] = &lab4::zadanie36;
     zadania[36] = &lab4::zadanie37;
     zadania[37] = &lab4::zadanie38;
-    //zadania[38] = &lab4::zadanie39;
+    zadania[38] = &lab4::zadanie39;
 }
 
 void lab4::call_by_index(int index) {
@@ -346,6 +347,17 @@ void lab4::zadanie18() {
     cout << "slowo malymi literami: " << slowo;
 }
 
+void lab4::zadanie19() {
+    string slowo;
+    cout << "podaj slowo: ";
+    cin >> slowo;
+    for(int i = 0; i < slowo.length(); i++) {
+        if(slowo[i] > 64 && slowo[i] < 91) slowo[i] += 32;
+        else if(slowo[i] > 96 && slowo[i] < 123) slowo[i] -= 32;
+    }
+    cout << "slowo po przemianie: " << slowo;
+}
+
 void lab4::zadanie20() {
     string slowo;
     cout << "podaj slowo: ";
@@ -355,12 +367,80 @@ void lab4::zadanie20() {
     }
 }
 
+void lab4::zadanie21() {
+    string slowo;
+    cout << "podaj slowo: ";
+    cin >> slowo;
+    int i;
+    for (i = 0; i < 10 ; i++) {
+        if (slowo[i] == '\0') {
+            break;
+        }
+    }
+    for (int j = i/2; j < 10; j++) {
+        slowo[j]='\0';
+    }
+    cout << slowo;
+}
+
+void lab4::zadanie22() {
+    string slowo;
+    cout << "podaj slowo: ";
+    cin >> slowo;
+
+    char kopia[slowo.length()];
+    for (int i = 0; i<slowo.length(); i++){
+        kopia[i] = slowo[i];
+    }
+    cout << slowo << endl;
+    cout << kopia << endl;
+
+}
+
 void lab4::zadanie23() {
     string wyraz;
     cout << "podaj wyraz: ";
     cin >> wyraz;
     string dlugiWyraz = wyraz + wyraz;
     cout << "podwojony wyraz: " << dlugiWyraz;
+}
+
+void lab4::zadanie24() {
+    string wyraz;
+    int wynik = 0;
+    cout << "podaj liczbę (kilkucyfrową): ";
+    cin >> wyraz;
+    int l = 0;
+    for (int i = wyraz.length()-1; i>=0; i--) {
+        wynik += (wyraz[i] - 48) * pow(10, l);
+        l++;
+    }
+    cout << "wynik to: " << wynik;
+}
+
+void lab4::zadanie25() {
+    int liczba;
+    cout << "podaj liczbe: ";
+    cin >> liczba;
+    int licznik = liczba > 0 ? (int) log10( liczba) + 1 : 1;
+    char wynik[licznik];
+    cout << "licznik: " << licznik << endl;
+    for (int i = licznik-1; i >= 0; i--) {
+        wynik[i] = (liczba%10) + 48;
+        liczba /= 10;
+    }
+    cout << wynik;
+}
+
+void lab4::zadanie26() {
+    int liczba;
+    cout << "podaj liczbe: ";
+    cin >> liczba;
+    cout << liczba << " dzieli sie przez:\n";
+    for (int i = 2 ; i <= liczba; i++) {
+        if(liczba%i==0) cout << i << endl;
+    }
+
 }
 
 void lab4::zadanie27() {
@@ -376,6 +456,131 @@ void lab4::zadanie27() {
     }
 }
 
+void lab4::zadanie28() {
+    fstream plik;
+    plik.open("sprobuj_usunac.txt", ios::out);
+    if(!plik) {
+        cout << "blad tworzenia bliku";
+    }
+    while(true);
+    // u mnie się da usunąć
+}
+
+void lab4::zadanie29(){
+    string nazwa;
+    cout << "podaj nazwe pliku: ";
+    cin >> nazwa;
+    ifstream plik(nazwa); // odczyt.txt
+    if(plik.is_open())
+        cout << plik.rdbuf();
+    plik.close();
+}
+
+void lab4::zadanie30() {
+    ofstream plik("zapis.txt");
+    int tab[5] = {1, 2, 3, 4, 5};
+    if(plik.is_open()) {
+        for (int i = 0; i < 5; i++) {
+            plik << tab[i] << " ";
+        }
+    }
+    plik.close();
+}
+
+void lab4::zadanie31() {
+    ifstream plik("odczyt.txt");
+    string bufor;
+    string tekst[10];
+    int i = 0;
+    if(plik.is_open()) {
+        while(getline(plik, bufor)){
+            tekst[i] = bufor;
+            i++;
+        }
+    }
+    for ( int j = 0; j < 10 ; j++){
+        cout << tekst[j] << endl;
+    }
+}
+
+void lab4::zadanie32() {
+    string nazwa;
+    // /Users/michaldudek/pulpit.txt
+    cout << "podaj sciezke do pliku: ";
+    cin >> nazwa;
+
+    char znak;
+    ifstream plik(nazwa);
+    int licznik = 0;
+
+    while (1) {
+        plik >> znak;
+        if(plik.eof()) goto koniec;
+        licznik++;
+    }
+    koniec:
+    cout << "\nten plik ma " << licznik << " znakow";
+    plik.close();
+}
+
+void lab4::zadanie33() {
+
+    string nazwa;
+    cout << "podaj sciezke do pliku: ";
+    cin >> nazwa;
+
+    char znak;
+    int licznik = 0;
+    ifstream plik(nazwa);
+
+    while(1) {
+        plik >> znak;
+        if(plik.eof()) break;
+        licznik++;
+        if(licznik%2==1) cout << znak << endl;
+    }
+}
+
+void lab4::zadanie34() {
+    string nazwa;
+    cout << "podaj sciezke do pliku: ";
+    cin >> nazwa;
+
+    ifstream plik(nazwa);
+    string bufor;
+    bool flag = true;
+
+    while(getline(plik, bufor)){
+        if(flag) {
+            cout << bufor << endl;
+        }
+        flag = !flag;
+    }
+    plik.close();
+}
+
+void lab4::zadanie35() {
+    string odczyt, zapis;
+    cout << "podaj sciezke pliku do odczytu: ";
+    cin >> odczyt;
+    cout << "podaj nazwe pliku do zapisu: ";
+    cin >> zapis;
+
+    ifstream doOdczytu(odczyt);
+    ofstream doZapisu(zapis);
+
+    string bufor;
+
+    getline(doOdczytu, bufor);
+    doZapisu << bufor;
+
+    while (getline(doOdczytu, bufor))
+        doZapisu << "\n" << bufor;
+    doOdczytu.close();
+    doZapisu.close();
+
+}
+
 void lab4::zadanie36() {
     int liczba;
     cout << "podaj liczbe: ";
@@ -387,10 +592,8 @@ void lab4::zadanie36() {
         if (liczba%i==0) sum+=i;
         i++;
     }
-
     if(sum==liczba) cout << liczba << " jest doskonala";
     else cout << liczba << " nie jest doskonala";
-
 }
 
 void lab4::zadanie37() {
@@ -413,7 +616,7 @@ void lab4::zadanie38() {
     for (int i = 0; i < 6; i++) {
         cout << i+1 << " oczek wyrzucono tyle razy: " << tab[i] << endl;
     }
-    double oczekiwana;
+    double oczekiwana = 0;
     oczekiwana += tab[0]*1;
     oczekiwana += tab[1]*2;
     oczekiwana += tab[2]*3;
@@ -422,6 +625,29 @@ void lab4::zadanie38() {
     oczekiwana += tab[5]*6;
     cout << "wartosc oczekiwana: " << oczekiwana/1000.0;
 }
+
+void lab4::zadanie39() {
+    int tab[10];
+    cout << "podaj wartosci do tablicy: ";
+    for (int k = 0; k < 10; k++ ){
+        cin >> tab[k];
+        // 9 2 4 5 8 4 3 9 1 5
+    }
+    int tmp;
+    for (int i = 0; i < 9 ; i++ ) {
+        for (int j = 0; j < (9-i); j++) {
+            if( tab[j] > tab[j+1] ) {
+                //swap
+                tmp = tab[j+1];
+                tab[j+1] = tab[j];
+                tab[j] = tmp;
+            }
+        }
+    }
+    for (int k = 0; k < 10; k++ ) {
+        cout << tab[k] << endl;
+    }
+    }
 
 int main() {
     lab4 o;
