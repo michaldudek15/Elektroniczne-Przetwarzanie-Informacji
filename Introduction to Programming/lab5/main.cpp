@@ -84,11 +84,11 @@ void lab5::zadanie3(){
         string nazwisko;
     };
 
-    lista maciek;
-    maciek.imie = "maciej";
-    maciek.nazwisko = "kowalski";
+    lista osoba;
+    osoba.imie = "maciej";
+    osoba.nazwisko = "kowalski";
 
-    cout << maciek.imie << endl << maciek.nazwisko;
+    cout << osoba.imie << endl << osoba.nazwisko;
 }
 
 void lab5::zadanie4(){
