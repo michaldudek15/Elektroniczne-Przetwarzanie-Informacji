@@ -432,7 +432,6 @@ int main() {
     int choice;
     cout << "które zadanie pokazać? ";
     cin >> choice;
-
     // (o.*o.zadania[--choice])();
     o.call_by_index(--choice);
 
