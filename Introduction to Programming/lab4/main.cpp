@@ -410,9 +410,17 @@ void lab4::zadanie24() {
     int wynik = 0;
     cout << "podaj liczbę (kilkucyfrową): ";
     cin >> wyraz;
-    for (int i = wyraz.length()-1, power = 0; i>=0; i--, power++) {
+
+    // my first solution
+    /*for (int i = wyraz.length()-1, power = 0; i>=0; i--, power++) {
         wynik += (wyraz[i] - 48) * pow(10, power);
-    }
+    }*/
+
+    // solution using horner's algorithm
+    wynik = wyraz[0] - '0';
+    for(int i = 1; i <wyraz.length(); i++)
+        wynik = wynik*10 + wyraz[i] - '0';
+
     cout << "wynik to: " << wynik;
 }
 
