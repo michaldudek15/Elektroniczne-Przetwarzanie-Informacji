@@ -69,6 +69,120 @@ void lab5::call_by_index(int index) {
     (this->*zadania[index])();
 }
 
+void lab5::zadanie1(){
+    int *tab = new int[10000];
+}
+
+void lab5::zadanie2(){
+    while(true) int *a = new int;
+}
+
+void lab5::zadanie3(){
+
+    struct lista {
+        string imie;
+        string nazwisko;
+    };
+
+    lista maciek;
+    maciek.imie = "maciej";
+    maciek.nazwisko = "kowalski";
+
+    cout << maciek.imie << endl << maciek.nazwisko;
+}
+
+void lab5::zadanie4(){
+
+}
+
+void lab5::zadanie5(){
+
+}
+
+void lab5::zadanie6(){
+
+}
+
+void lab5::zadanie7(){
+
+}
+
+void lab5::zadanie8(){
+
+}
+
+void lab5::zadanie9(){
+
+}
+
+void lab5::zadanie10(){
+
+}
+
+void lab5::zadanie11(){
+
+}
+
+void lab5::zadanie12(){
+
+}
+
+void lab5::zadanie13(){
+
+}
+
+void lab5::zadanie14(){
+
+}
+
+void lab5::zadanie15(){
+
+}
+
+void lab5::zadanie16(){
+
+}
+
+void lab5::zadanie17(){
+
+}
+
+void lab5::zadanie18(){
+
+}
+
+void lab5::zadanie19(){
+
+}
+
+void lab5::zadanie20(){
+
+}
+
+void lab5::zadanie21(){
+
+}
+
+void lab5::zadanie22(){
+
+}
+
+void lab5::zadanie23(){
+
+}
+
+void lab5::zadanie24(){
+
+}
+
+void lab5::zadanie25(){
+
+}
+
+void lab5::zadanie26(){
+
+}
+
 int main() {
 
     lab5 o;
