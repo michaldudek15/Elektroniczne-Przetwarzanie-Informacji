@@ -416,7 +416,7 @@ void lab4::zadanie24() {
         wynik += (wyraz[i] - 48) * pow(10, power);
     }*/
 
-    // solution using horner's algorithm
+    // solution with horner's algorithm
     wynik = wyraz[0] - '0';
     for(int i = 1; i <wyraz.length(); i++)
         wynik = wynik*10 + wyraz[i] - '0';
