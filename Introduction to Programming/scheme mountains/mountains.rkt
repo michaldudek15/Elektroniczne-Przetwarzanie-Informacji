@@ -4,7 +4,7 @@
 ; Michał Dudek
 ; Maja Flaczek
 ; 7 marca 2023
-; żeby narysować należy wpisać komendę start
+; żeby narysować należy wpisać start
 
 (define (warstwa1 n)
   (let ( [m (- n 1) ]
