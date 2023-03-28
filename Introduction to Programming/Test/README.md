@@ -1,7 +1,7 @@
 # zadanie testowe
 ## dodawanie
 ## zadanie
-dodaj dwie liczby.
+dodaj dwie liczby
 ## wejście 
 w pierwszej linii standardowego wejścia znajdują się dwie liczby odzielone spacją A i B, (0≤ A , B ≤1000000)
 ## wyjście
