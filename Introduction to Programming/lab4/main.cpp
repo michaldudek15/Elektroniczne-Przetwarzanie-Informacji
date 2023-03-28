@@ -410,10 +410,8 @@ void lab4::zadanie24() {
     int wynik = 0;
     cout << "podaj liczbę (kilkucyfrową): ";
     cin >> wyraz;
-    int l = 0;
-    for (int i = wyraz.length()-1; i>=0; i--) {
-        wynik += (wyraz[i] - 48) * pow(10, l);
-        l++;
+    for (int i = wyraz.length()-1, power = 0; i>=0; i--, power++) {
+        wynik += (wyraz[i] - 48) * pow(10, power);
     }
     cout << "wynik to: " << wynik;
 }
@@ -422,7 +420,11 @@ void lab4::zadanie25() {
     int liczba;
     cout << "podaj liczbe: ";
     cin >> liczba;
-    int licznik = liczba > 0 ? (int) log10( liczba) + 1 : 1;
+    //int licznik = liczba > 0 ? (int) log10( liczba) + 1 : 1;
+    int licznik;
+    if(liczba > 0) licznik = (int) log10(liczba) + 1;
+    else licznik = 1;
+
     char wynik[licznik];
     cout << "licznik: " << licznik << endl;
     for (int i = licznik-1; i >= 0; i--) {
@@ -637,7 +639,7 @@ void lab4::zadanie39() {
     for (int i = 0; i < 9 ; i++ ) {
         for (int j = 0; j < (9-i); j++) {
             if( tab[j] > tab[j+1] ) {
-                //swap
+                // swap
                 tmp = tab[j+1];
                 tab[j+1] = tab[j];
                 tab[j] = tmp;
@@ -647,7 +649,7 @@ void lab4::zadanie39() {
     for (int k = 0; k < 10; k++ ) {
         cout << tab[k] << endl;
     }
-    }
+}
 
 int main() {
     lab4 o;
