@@ -93,29 +93,139 @@ void lab5::zadanie3(){
 
 void lab5::zadanie4(){
 
+    struct wyniki {
+        string pseudonim;
+        string gra;
+        int wynik;
+    };
 }
 
 void lab5::zadanie5(){
 
+    struct wyniki {
+        string pseudonim;
+        string gra;
+        int wynik;
+    };
+
+    wyniki pierwszy;
+    pierwszy.pseudonim = "gracz1";
+    pierwszy.gra = "gra1";
+    pierwszy.wynik = 129;
+
+    pierwszy.pseudonim = "gracz2";
+    pierwszy.gra = "gra2";
+    pierwszy.wynik = 94;
+
+    pierwszy.pseudonim = "gracz3";
+    pierwszy.gra = "gra3";
+    pierwszy.wynik = 11;
+
+    pierwszy.pseudonim = "gracz4";
+    pierwszy.gra = "gra1";
+    pierwszy.wynik = 57;
+}
+
+int fibonacci(int n) {
+    if (n == 0) return 0;
+    else if (n == 1 || n == 2) return 1;
+    else return fibonacci(n-1) + fibonacci(n-2);
 }
 
 void lab5::zadanie6(){
+    int argument;
+    cout << "podaj argument: ";
+    cin >> argument;
+    cout << fibonacci(argument);
+}
 
+int min(int tab[]) {
+    int min = tab[0];
+
+    for (int i = 1; i < 5; i++) {
+        if(tab[i] < min) min = tab[i];
+    }
+    return min;
 }
 
 void lab5::zadanie7(){
+    int tab[5];
+    cout << "podaj 5 wartości tablicy:\n";
+
+    for (int i = 0; i < 5; i++) {
+        cin >> tab[i];
+    }
+
+    cout << "najmniejsza podana wartość: " << min(tab);
 
 }
 
-void lab5::zadanie8(){
+int max(int tab[]) {
+    int max = tab[0];
 
+    for (int i = 1; i < 5; i++) {
+        if(tab[i] > max) max = tab[i];
+    }
+    return max;
+}
+
+void lab5::zadanie8(){
+    int tab[5];
+    cout << "podaj 5 wartości tablicy:\n";
+
+    for (int i = 0; i < 5; i++) {
+        cin >> tab[i];
+    }
+
+    cout << "najwieksza podana wartość: " << max(tab);
+}
+
+int minIndex(int tab[]){
+    int min = tab[0];
+    int wynik = 0;
+
+    for (int i = 1; i < 5; i++) {
+        if(tab[i] < min) {
+            min = tab[i];
+            wynik = i;
+        }
+    }
+    return wynik;
 }
 
 void lab5::zadanie9(){
 
+    int tab[5];
+    cout << "podaj 5 wartości tablicy:\n";
+
+    for (int i = 0; i < 5; i++) {
+        cin >> tab[i];
+    }
+
+    cout << "indeks najmniejszej wartosci: " << minIndex(tab);
 }
 
 void lab5::zadanie10(){
+
+    int tab[10] = {11, 42, 234, 643, 234, 8, 123, 432, 23, 76};
+
+    cout << "tablica: ";
+    for (int i = 0; i < 10; i++) {
+        cout << tab[i] << "\t";
+    }
+
+    int wybor;
+    cout << "\npodaj wartosc do wyszukania: ";
+    cin >> wybor;
+
+    bool flag = false;
+
+    for (int i = 0; i < 10; i++) {
+        if(tab[i] == wybor) flag = true;
+    }
+
+    if(flag) cout << "znaleziono wartosc" << endl;
+    else cout << "nie znaleziono wartosci" << endl;
 
 }
 
@@ -141,6 +251,20 @@ void lab5::zadanie15(){
 
 void lab5::zadanie16(){
 
+    int tab1[5], tab2[5];
+
+    cout << "podaj wartosci do pierwszej tablicy:\n";
+    for (int i = 0; i < 5; i++) {
+        cin >> tab1[i];
+    }
+
+    cout << "podaj wartosci do drugiej tablicy:\n";
+    for (int i = 0; i < 5; i++) {
+        cin >> tab2[i];
+    }
+
+
+
 }
 
 void lab5::zadanie17(){
@@ -160,6 +284,29 @@ void lab5::zadanie20(){
 }
 
 void lab5::zadanie21(){
+
+    int tab[10] = {11, 42, 234, 643, 234, 8, 123, 432, 23, 76};
+
+    cout << "tablica przed usunieciem";
+    for (int i = 0; i < 10; i++) {
+        cout << tab[i] << "\t";
+    }
+
+    cout << "\nktory element chcesz usunac? ";
+    int wybor;
+    cin >> wybor;
+
+    for (int i = 0; i < 10; i++) {
+         if (tab[i] == wybor) {
+             for (int j = i; j<10; j++) tab[j] = tab[j+1];
+             tab[9] = 0;
+         }
+    }
+
+    cout << "tablica po usunieciu";
+    for (int i = 0; i < 10; i++) {
+        cout << tab[i] << "\t";
+    }
 
 }
 
