@@ -230,14 +230,55 @@ void lab5::zadanie10(){
 }
 
 void lab5::zadanie11(){
+    cout << "podaj napis: ";
+    string napis;
+    cin >> napis;
+
+    int i = 0;
+        while(napis[i] != 0) i++;
+    cout << "napis ma długość: " << i << endl;
 
 }
 
 void lab5::zadanie12(){
 
+    string ciag1, ciag2;
+    cout << "podaj pierwszy ciag: ";
+    cin >> ciag1;
+    cout << "podaj drugi ciag: ";
+    cin >> ciag2;
+
+    int i = 0;
+    bool flag = 1;
+    if (ciag1.length()!=ciag2.length()) flag = 0;
+    while(ciag1[i] != 0 && flag) {
+        if (ciag1[i] != ciag2[i] ) flag = 0;
+        i++;
+    }
+    if (flag) cout << "ciagi są takie same" << endl;
+    else cout << "ciagi nie sa takie same" << endl;
 }
 
 void lab5::zadanie13(){
+    int tab1[5], tab2[5];
+    cout << "podaj wartosci pierwszej tablicy:\n";
+    for(int i = 0; i<5; i++) {
+        cin >> tab1[i];
+    }
+    cout << "podaj wartosci drugiej tablicy:\n";
+    for(int i = 0; i<5; i++) {
+        cin >> tab2[i];
+    }
+
+    bool flag = 1;
+    for (int i = 0; i<5; i++) {
+        if(tab1[i] != tab2[i] ) {
+            flag = 0;
+            break;
+        }
+    }
+    if (flag) cout << "tablice są takie same";
+    else cout << "tablice nie są takie same";
 
 }
 
