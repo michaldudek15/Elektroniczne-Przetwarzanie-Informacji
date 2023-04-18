@@ -282,17 +282,32 @@ void lab5::zadanie13(){
 
 }
 
-void lab5::zadanie14(){
+int* tabPointer(int tab[], int size){
+    int copy[size];
+
+    for (int i = 0; i < size; i++) {
+        copy[i] = tab[i];
+    }
+    return copy;
 
 }
 
-void lab5::zadanie15(){
+void lab5::zadanie14(){
+    int tab[5];
+    cout << "podaj wartosci tablicy:\n";
+    for ( int i = 0; i < 5; i++) {
+        cin >> tab[i];
+    }
+    cout << "adres kopii tablicy to: " << tabPointer(tab,5);
+}
 
+void lab5::zadanie15(){
+    cout << "nie do końca rozumiem polecenie" << endl;
 }
 
 void lab5::zadanie16(){
 
-    int tab1[5], tab2[5];
+    int tab1[5], tab2[5], tab3[5];
 
     cout << "podaj wartosci do pierwszej tablicy:\n";
     for (int i = 0; i < 5; i++) {
@@ -303,21 +318,95 @@ void lab5::zadanie16(){
     for (int i = 0; i < 5; i++) {
         cin >> tab2[i];
     }
-
-
-
+    int k = 0;
+    for (int i = 0; i < 5; i++) {
+        for (int j = 0; j < 5; j++) {
+            if ( tab1[i] == tab2[j]) {
+                cout << tab1[i] << endl;
+                tab3[k] = tab1[i];
+                k++;
+            }
+        }
+    }
 }
 
 void lab5::zadanie17(){
+
+    int tab1[5], tab2[5];
+    cout << "podaj wartosci do pierwszej tablicy:\n";
+    for (int i = 0; i < 5; i++) {
+        cin >> tab1[i];
+    }
+    cout << "podaj wartosci do drugiej tablicy:\n";
+    for (int i = 0; i < 5; i++) {
+        cin >> tab2[i];
+    }
+    int k = 0;
+    for (int i = 0; i < 5; i++) {
+        for (int j = 0; j < 5; j++) {
+            if ( tab1[i] == tab2[j]) {
+                cout << "usuwam: " << tab1[i] << endl;
+                tab1[i] = 0;
+            }
+        }
+    }
+
+    for (int i = 0; i < 5; i++) {
+        cout << tab1[i] << "\t";
+    }
 
 }
 
 void lab5::zadanie18(){
 
+    int tab1[5], tab2[5];
+    int tab3[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+
+    cout << "podaj wartosci do pierwszej tablicy:\n";
+    for (int i = 0; i < 5; i++) {
+        cin >> tab1[i];
+    }
+
+    cout << "podaj wartosci do drugiej tablicy:\n";
+    for (int i = 0; i < 5; i++) {
+        cin >> tab2[i];
+    }
+    int k = 5;
+
+    for ( int i = 0; i < 5 ; i++) {
+        tab3[i] = tab1[i];
+    }
+
+    for (int i = 0; i < 5; i++) {
+        bool flag = 1;
+        for (int j = 0; j < k; j++) {
+            if(tab2[i] == tab3[j])  {
+                flag = 0;
+            }
+        }
+        if (flag) {
+            tab3[k] = tab2[i];
+            k++;
+        }
+
+    }
+
+    for (int i = 0; i<10; i++){
+        cout << tab3[i] << "\t";
+    }
+
+}
+
+void increment(int &k){
+    k++;
 }
 
 void lab5::zadanie19(){
-
+    cout << "podaj wartosc: ";
+    int n;
+    cin >> n;
+    increment(n);
+    cout << "wynik: " << n;
 }
 
 void lab5::zadanie20(){
