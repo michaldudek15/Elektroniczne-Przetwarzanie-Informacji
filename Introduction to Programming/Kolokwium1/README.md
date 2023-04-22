@@ -1,1 +1,1 @@
-![polecenie.png](..%2F..%2F..%2F..%2F..%2F..%2F..%2FDesktop%2Fpolecenie.png)
+![polecenie.png](polecenie.png)
