@@ -28,7 +28,6 @@ void check (int tab[], int size) {
 
 int main() {
 
-
     int sesje = 0;
     cin >> sesje;
 
@@ -38,7 +37,6 @@ int main() {
         cin >> size;
 
         int tab[size];
-
         for (int i = 0; i < size; i++) {
             cin >> tab[i];
         }
@@ -48,12 +46,6 @@ int main() {
 
         sesje--;
     }
-
-
-
-
-
-
 
     return 0;
 }
