@@ -3,8 +3,8 @@
 
 using namespace std;
 
+// funkcja szukajaca wzniesien
 bool next (int teren[], int &step, int rozmiar) {
-
    if (teren[step] < teren[step + 1]) {
        step++;
        return true;
