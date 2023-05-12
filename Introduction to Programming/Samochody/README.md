@@ -1,1 +1,1 @@
-![Screenshot 2023-05-12 at 12.41.48 PM.png](..%2F..%2F..%2F..%2F..%2F..%2F..%2FDesktop%2FScreenshot%202023-05-12%20at%2012.41.48%20PM.png)
+![Screenshot 2023-05-12 at 12.41.48 PM.png](Screenshot%202023-05-12%20at%2012.41.48%20PM.png)
