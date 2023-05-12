@@ -23,7 +23,7 @@ int main() {
         cin >> teren[i];
     }
 
-    // stworzenie tablicy wzniesien'
+    // stworzenie tablicy wzniesien
     int step = 0;
     int check[rozmiar];
     for (int i = 0; i < rozmiar; i++) {
