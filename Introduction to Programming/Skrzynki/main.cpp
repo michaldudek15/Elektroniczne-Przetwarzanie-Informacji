@@ -8,6 +8,7 @@ void rozbij (bool opened[], int liczbaKluczy[], int liczbaSkrzynek, int &rozbici
     int max = 0;
     int indeks = 0;
 
+    // do rozbicia wybieram skrzynke, w ktorej jest najwiecej kluczy
     for (int i = 0; i < liczbaSkrzynek; i++) {
 
         if (!opened[i]) {
@@ -19,10 +20,11 @@ void rozbij (bool opened[], int liczbaKluczy[], int liczbaSkrzynek, int &rozbici
     }
 
     opened[indeks] = true;
-    cout << "ROZBIJAM SKRZYNKE POD INDEKSEM:\t" << indeks << endl;
+    //cout << "ROZBIJAM SKRZYNKE POD INDEKSEM:\t" << indeks << endl;
     rozbicia++;
 }
 
+// sprawdzenie czy otworzylem wszystkie skrzynki
 bool koniec (bool opened[], int liczbaSkrzynek) {
     for (int i = 0; i < liczbaSkrzynek; i++) {
         if (!opened[i]) return false;
@@ -46,7 +48,7 @@ int main() {
         liczbaKluczy[i] = 0;
     }
 
-    // tablica sprawdzajaca czy skrzynka jest otwarte
+    // tablica do sprawdzenia czy skrzynka jest otwarte
     bool opened[liczbaSkrzynek];
     for (int i = 0; i < liczbaSkrzynek; i++) {
         opened[i] = false;
@@ -65,8 +67,7 @@ int main() {
     // jesli nie wszystkie są otwarte
     while (!koniec(opened,liczbaSkrzynek)) {
 
-
-        bool otworzylem = false;
+        bool otworzylemKluczem = false;
 
         for (int i = 0; i < liczbaSkrzynek; i++) {
             // jesli skrzynka nie jest otwarta, to sprawdz czy skrzynka z jej kluczem jest otwarta
@@ -74,32 +75,14 @@ int main() {
                 if (opened[ skrzynki[i] - 1 ]) {
 
                     opened[i] = true;
-                    otworzylem = true;
+                    otworzylemKluczem = true;
                     i = -1;
                 }
             }
         }
 
-        if (!otworzylem) rozbij(opened, liczbaKluczy, liczbaSkrzynek, rozbicia);
-
+        if (!otworzylemKluczem) rozbij(opened, liczbaKluczy, liczbaSkrzynek, rozbicia);
     }
-
-
-
-
-//    cout << "klucze w skrzynkach:\t";
-//    for (int i = 0; i < liczbaSkrzynek; i++) {
-//        cout << skrzynki[i] << "(" << liczbaKluczy[i] << ")" << "\t";
-//    }
-//
-//    cout << endl;
-//    cout << "otwarte skrzynki:\t\t";
-//    for (int i = 0; i < liczbaSkrzynek; i++) {
-//        cout << opened[i] << "\t\t";
-//    }
-//
-//    cout << endl;
-//    cout << "rozbicia:\t" << rozbicia;
 
     cout << rozbicia;
 
