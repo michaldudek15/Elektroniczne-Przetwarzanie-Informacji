@@ -1,6 +1,6 @@
 # podstawy
 
-1. Wypisz Witaj EPIcki świecie! .
+1. Wypisz Witaj EPIcki świecie!
 2. Narysuj kwadrat 5x5 z X.
 3. Wczytaj swoją wagę i podaj ile Ci brakuje do 100 kg.
 4. Wczytaj dwie liczby, podaj ich: sumę, różnicę, iloczyn i iloraz.

@@ -435,6 +435,5 @@ int main() {
     // (o.*o.zadania[--choice])();
     o.call_by_index(--choice);
 
-
     return 0;
 }
