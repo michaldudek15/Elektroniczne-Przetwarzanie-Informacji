@@ -37,5 +37,5 @@
 35. PLIKI: podaj dwie nazwy pliku, zrób jego kopie
 36. Sprawdź czy liczba jest doskonała.
 37. Zasymuluj 1000 rzutów kostką do gry.
-38. Policz w programie jaka jest wartość oczekiwana 1000 rzutów z w/w zadania.
+38. Policz w programie jaka jest wartość oczekiwana 1000 rzutów z zadania 37.
 39. Wczytaj liczby do tablicy a następnie je posortuj.
