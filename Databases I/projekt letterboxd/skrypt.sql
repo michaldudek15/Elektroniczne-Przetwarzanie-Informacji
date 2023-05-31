@@ -445,7 +445,7 @@ INSERT INTO Lista (login,nazwa_listy, opis) VALUES
     ("PiotrSzymański2022", "Na profilu", null),
     ("PiotrSzymański2022", "Ulubione", null);
 
--- 10. Dodanie_do_listy
+-- 11. Dodanie_do_listy
 CREATE TABLE Dodanie_do_listy(
     id_listy INT NOT NULL,
     login VARCHAR(20) NOT NULL,
