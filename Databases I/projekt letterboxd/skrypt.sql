@@ -302,7 +302,7 @@ CREATE TABLE Twórca_filmu(
 	tytuł VARCHAR(255) NOT NULL,
 	rok_produkcji INT NOT NULL,
    	id_osoba INT NOT NULL,
-	stanowisko VARCHAR(100 NOT NULL),
+	stanowisko VARCHAR(100) NOT NULL,
 	PRIMARY KEY(tytuł, rok_produkcji, id_osoba, stanowisko) -- jedna osoba przy produkcji jednego filmu moze pracowac na kilku stanowiskach oraz jedno stanowisko moze obsadzac kilka róznych osób
 );
 
