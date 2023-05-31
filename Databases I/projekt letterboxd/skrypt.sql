@@ -8,10 +8,10 @@ system inspirowany aplikacją Letterboxd
 -- 1. Użytkownik
 CREATE TABLE Użytkownik(
     login VARCHAR(20) NOT NULL,
-    hasło VARCHAR(32),
-    email VARCHAR(255),
-    PRIMARY KEY(login),
-    UNIQUE INDEX(login, email)
+    hasło VARCHAR(32) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    PRIMARY KEY(login), -- login jest kluczem, bo jednoznacznie wyznacza konkretnego uzytkownika
+    UNIQUE INDEX(login, email) -- ani login, ani email nie mogą się powtarzać
 );
 
 INSERT INTO Użytkownik VALUES
@@ -30,12 +30,12 @@ INSERT INTO Użytkownik VALUES
 CREATE TABLE Obserwacja (
   obserwujacy VARCHAR(255),
   obserwowany VARCHAR(255),
-  PRIMARY KEY (obserwujacy, obserwowany),
-  FOREIGN KEY (obserwujacy) REFERENCES użytkownik(login),
-  FOREIGN KEY (obserwowany) REFERENCES użytkownik(login)
+  PRIMARY KEY (obserwujacy, obserwowany), -- obserwujący i obserwowany jednoznacznie wyznaczają daną obserwację
+  FOREIGN KEY (obserwujacy) REFERENCES Użytkownik(login),
+  FOREIGN KEY (obserwowany) REFERENCES Użytkownik(login)
 );
 
-INSERT INTO obserwacja VALUES 
+INSERT INTO Obserwacja VALUES 
     ("AdrianKubiak1234","AnnaKowalska87"),
     ("JanNowak123","KarolinaWójcik19"),
     ("JanNowak123","MartaZielińska2023"),
@@ -47,9 +47,9 @@ INSERT INTO obserwacja VALUES
 CREATE TABLE Film(
 	tytuł VARCHAR(255) NOT NULL,
 	rok_produkcji YEAR NOT NULL,
-	czas_trwania INT,
+	czas_trwania INT NOT NULL,
    	opis TEXT(700),
-	PRIMARY KEY(tytuł, rok_produkcji)
+	PRIMARY KEY(tytuł, rok_produkcji) -- moze byc kilka filmow o takim samym tytule, oraz kilka filmow wydanych w jednym roku; jednak jednocześnie zdarza się to na tyle rzadko, ze mozna potraktowac te dwie kolumny jako klucz
 );
 
 INSERT INTO Film VALUES 
@@ -203,10 +203,10 @@ INSERT INTO Osoba_filmu(imię, nazwisko, bio) VALUES
 
 -- 5. Gatunek_filmu
 CREATE TABLE Gatunek_filmu(
-	tytuł VARCHAR(255),
-   	rok_produkcji INT,
-	nazwa VARCHAR(32),
-	PRIMARY KEY(tytuł, rok_produkcji, nazwa)
+	tytuł VARCHAR(255) NOT NULL,
+   	rok_produkcji INT NOT NULL,
+	nazwa VARCHAR(32) NOT NULL,
+	PRIMARY KEY(tytuł, rok_produkcji, nazwa) -- jeden film moze nalezec do kilku gatunkow 
 );
 
 INSERT INTO Gatunek_filmu VALUES 
@@ -240,10 +240,10 @@ INSERT INTO Gatunek_filmu VALUES
 
 -- 6. Motyw_filmu
 CREATE TABLE Motyw_filmu(
-	tytuł VARCHAR(255),
-   	rok_produkcji INT,
-	nazwa VARCHAR(100),
-	PRIMARY KEY(tytuł, rok_produkcji, nazwa)
+	tytuł VARCHAR(255) NOT NULL,
+   	rok_produkcji INT NOT NULL,
+	nazwa VARCHAR(100) NOT NULL,
+	PRIMARY KEY(tytuł, rok_produkcji, nazwa) -- jeden film moze nalezec do kilku motywow
 );
 
 INSERT INTO Motyw_filmu VALUES 
@@ -269,13 +269,13 @@ INSERT INTO Motyw_filmu VALUES
 
 -- 7. Kraj_filmu
 CREATE TABLE Kraj_filmu(
-	tytuł VARCHAR(255),
-   	rok_produkcji INT,
-	nazwa VARCHAR(32),
-	PRIMARY KEY(tytuł, rok_produkcji, nazwa)
+	tytuł VARCHAR(255) NOT NULL,
+   	rok_produkcji INT NOT NULL,
+	nazwa VARCHAR(32) NOT NULL,
+	PRIMARY KEY(tytuł, rok_produkcji, nazwa) -- jeden film moze byc produkowany w kilku krajach
 );
 
-INSERT INTO kraj_filmu VALUES 
+INSERT INTO Kraj_filmu VALUES 
 	("Eraserhead", 1977, "USA"),
 	("Persona", 1966, "Sweden"),
 	("Call Me by Your Name", 2017, "Brazil"),
@@ -299,11 +299,11 @@ INSERT INTO kraj_filmu VALUES
 
 -- 8. Twórca_filmu
 CREATE TABLE Twórca_filmu(
-	tytuł VARCHAR(255),
-	rok_produkcji INT,
-   	id_osoba INT,
-	stanowisko VARCHAR(100),
-	PRIMARY KEY(tytuł, rok_produkcji, id_osoba, stanowisko)
+	tytuł VARCHAR(255) NOT NULL,
+	rok_produkcji INT NOT NULL,
+   	id_osoba INT NOT NULL,
+	stanowisko VARCHAR(100 NOT NULL),
+	PRIMARY KEY(tytuł, rok_produkcji, id_osoba, stanowisko) -- jedna osoba przy produkcji jednego filmu moze pracowac na kilku stanowiskach oraz jedno stanowisko moze obsadzac kilka róznych osób
 );
 
 INSERT INTO Twórca_filmu VALUES 
@@ -366,16 +366,16 @@ INSERT INTO Twórca_filmu VALUES
 
 -- 9. Ocena
 CREATE TABLE Ocena(
-	tytuł VARCHAR(255),
-	rok_produkcji INT,
-	login VARCHAR(20),
+	tytuł VARCHAR(255) NOT NULL,
+	rok_produkcji INT NOT NULL,
+	login VARCHAR(20) NOT NULL,
 	ocena ENUM("1","2","3","4","5"),
    	komentarz TEXT(5000),
 	data DATE,
-	PRIMARY KEY(tytuł, rok_produkcji, login)
+	PRIMARY KEY(tytuł, rok_produkcji, login) -- jeden film moze miec jedna ocene od konkretnego uzytkownika
 );
 
-INSERT INTO ocena VALUES 
+INSERT INTO Ocena VALUES 
 	("Persona", 1966, "MagdaKaczmarek555", "5", "so this is how men feel after watching fight club", '2023-05-19'),
 	("Asterix & Obelix: Mission Cleopatra", 2002, "PiotrSzymański2022", "4", "alain chabat really said let me make an impact on french cinema real quick", '2023-04-05'),
 	("Call My by Your Name", 2017, "KamilLewandowski77", "5", "my mum: wait is he gay", '2023-01-21'),
@@ -385,13 +385,13 @@ INSERT INTO ocena VALUES
 -- 10. Lista
 CREATE TABLE Lista(
 	id_listy INT AUTO_INCREMENT NOT NULL UNIQUE,
-    login VARCHAR(20),
+    login VARCHAR(20) NOT NULL,
     nazwa_listy VARCHAR(32),
     opis TEXT(2000),
-    PRIMARY KEY (id_listy)
+    PRIMARY KEY (id_listy) -- kazda lista ma inny identyfikator, a ich nazwy mogą się powtarzać, a jedna osoba moze miec kilka list
 );
 
-INSERT INTO lista (login,nazwa_listy, opis) VALUES 
+INSERT INTO Lista (login,nazwa_listy, opis) VALUES 
     ("AdrianKubiak1234", "Do obejrzenia", null),
     ("AdrianKubiak1234", "Obejrzane", null),
     ("AdrianKubiak1234", "Na profilu", null),
@@ -448,13 +448,13 @@ INSERT INTO lista (login,nazwa_listy, opis) VALUES
 -- 10. Dodanie_do_listy
 CREATE TABLE Dodanie_do_listy(
     id_listy INT NOT NULL,
-    login VARCHAR(20),
-    tytuł VARCHAR(255),
-    rok_produkcji INT,
-    PRIMARY KEY (id_listy,tytuł,rok_produkcji)
+    login VARCHAR(20) NOT NULL,
+    tytuł VARCHAR(255) NOT NULL,
+    rok_produkcji INT NOT NULL,
+    PRIMARY KEY (id_listy,tytuł,rok_produkcji, login) -- nie jest to optymalne, ale z racji ze jest to relacja miedzy trzema encjami, to klucz kazdej encji musi byc kluczem tej relacji
 );
 
-INSERT INTO dodanie_do_listy VALUES 
+INSERT INTO Dodanie_do_listy VALUES 
 	(10,"DamianJankowski22","Eraserhead", 1977),
 	(10,"DamianJankowski22","Twin Peaks: Fire Walk with Me", 1992),
 	(10,"DamianJankowski22","Mulholland Drive", 2001),
