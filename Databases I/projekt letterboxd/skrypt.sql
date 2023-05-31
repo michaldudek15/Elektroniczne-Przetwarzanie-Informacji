@@ -47,7 +47,7 @@ INSERT INTO Obserwacja VALUES
 CREATE TABLE Film(
 	tytuł VARCHAR(255) NOT NULL,
 	rok_produkcji YEAR NOT NULL,
-	czas_trwania INT NOT NULL,
+	czas_trwania INT NOT NULL, -- nie moze byc filmu, ktory nie trwa
    	opis TEXT(700),
 	PRIMARY KEY(tytuł, rok_produkcji) -- moze byc kilka filmow o takim samym tytule, oraz kilka filmow wydanych w jednym roku; jednak jednocześnie zdarza się to na tyle rzadko, ze mozna potraktowac te dwie kolumny jako klucz
 );
