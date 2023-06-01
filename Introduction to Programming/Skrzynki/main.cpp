@@ -1,90 +1,65 @@
 //Michał Dudek
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
-void rozbij (bool opened[], int liczbaKluczy[], int liczbaSkrzynek, int &rozbicia) {
+class UnionFind {
+private:
+    vector<int> parent;
 
-    int max = 0;
-    int indeks = 0;
-
-    // do rozbicia wybieram skrzynke, w ktorej jest najwiecej kluczy
-    for (int i = 0; i < liczbaSkrzynek; i++) {
-
-        if (!opened[i]) {
-            if (liczbaKluczy[i] >= max) {
-                max = liczbaKluczy[i];
-                indeks = i;
-            }
+public:
+    explicit UnionFind(int n) {
+        parent.resize(n + 1);
+        for (int i = 1; i <= n; i++) {
+            parent[i] = i;
         }
     }
 
-    opened[indeks] = true;
-    //cout << "ROZBIJAM SKRZYNKE POD INDEKSEM:\t" << indeks << endl;
-    rozbicia++;
-}
-
-// sprawdzenie czy otworzylem wszystkie skrzynki
-bool koniec (bool opened[], int liczbaSkrzynek) {
-    for (int i = 0; i < liczbaSkrzynek; i++) {
-        if (!opened[i]) return false;
+    // znalezienie reprezentanta zbioru
+    int find(int x) {
+        if (parent[x] != x) {
+            parent[x] = find(parent[x]);
+        }
+        return parent[x];
     }
-    return true;
+
+    // polaczenie zbiorow
+    void unionSets(int x, int y) {
+        int rootX = find(x);
+        int rootY = find(y);
+
+        if (rootX != rootY) {
+            parent[rootY] = rootX;
+        }
+    }
+};
+
+int znajdzKlasy(int liczbaSkrzynek, const vector<int>& klucze) {
+    UnionFind uf(liczbaSkrzynek);
+    int rozbicia = liczbaSkrzynek;
+
+    for (int i = 0; i < liczbaSkrzynek; i++) {
+        int klucz = klucze[i];
+        if (uf.find(i + 1) != uf.find(klucz)) {
+            uf.unionSets(i + 1, klucz);
+            rozbicia--;
+        }
+    }
+    return rozbicia;
 }
 
 int main() {
-
-    // wczytanie danych
     int liczbaSkrzynek;
     cin >> liczbaSkrzynek;
-    int skrzynki[liczbaSkrzynek];
+
+    vector<int> klucze(liczbaSkrzynek);
     for (int i = 0; i < liczbaSkrzynek; i++) {
-        cin >> skrzynki[i];
+        cin >> klucze[i];
     }
 
-    // tablica z iloscia kluczy w skrzynkach
-    int liczbaKluczy[liczbaSkrzynek];
-    for (int i = 0; i < liczbaSkrzynek; i++) {
-        liczbaKluczy[i] = 0;
-    }
-
-    // tablica do sprawdzenia czy skrzynka jest otwarte
-    bool opened[liczbaSkrzynek];
-    for (int i = 0; i < liczbaSkrzynek; i++) {
-        opened[i] = false;
-    }
-
-    // policzenie liczby kluczy w skrzynkach
-    for (int i = 0; i < liczbaSkrzynek; i++) {
-        liczbaKluczy [skrzynki[i] - 1 ]++;
-    }
-
-    int rozbicia = 0;
-
-    // rozbicie pierwszej skrzynki
-    rozbij(opened, liczbaKluczy, liczbaSkrzynek, rozbicia);
-
-    // jesli nie wszystkie są otwarte
-    while (!koniec(opened,liczbaSkrzynek)) {
-
-        bool otworzylemKluczem = false;
-
-        for (int i = 0; i < liczbaSkrzynek; i++) {
-            // jesli skrzynka nie jest otwarta, to sprawdz czy skrzynka z jej kluczem jest otwarta
-            if (!opened[i]) {
-                if (opened[ skrzynki[i] - 1 ]) {
-
-                    opened[i] = true;
-                    otworzylemKluczem = true;
-                    i = -1;
-                }
-            }
-        }
-
-        if (!otworzylemKluczem) rozbij(opened, liczbaKluczy, liczbaSkrzynek, rozbicia);
-    }
-
-    cout << rozbicia;
+    int rozbicia = znajdzKlasy(liczbaSkrzynek, klucze);
+    cout << rozbicia << endl;
 
     return 0;
 }
