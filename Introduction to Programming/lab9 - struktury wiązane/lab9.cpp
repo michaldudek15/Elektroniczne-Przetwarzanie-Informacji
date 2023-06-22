@@ -2,27 +2,36 @@
 
 using namespace std;
 
-struct Mysz {
-    string imie;
+struct Kwadrat {
+    int* szerokosc;
+    int wysokosc;
+
 };
 
-struct Kot {
-    string imie;
-    Mysz* ganianaMysz;
+struct Prostokat {
+    int* szerokosc;
+    int wysokosc;
 };
-
-
 
 int main() {
 
-    Kot burek;
-    Mysz CJ;
 
-    CJ.imie = "C.J.";
-    burek.imie = "Burrek";
-    burek.ganianaMysz = &CJ;
+    Kwadrat kwadrat1;
+    Prostokat prostokat1;
 
-    cout << burek.ganianaMysz->imie << endl;
+    int* x;
+    int wartosc;
+
+    x = &wartosc;
+    *x = 5;
+
+    kwadrat1.szerokosc = x;
+    prostokat1.szerokosc = x;
+
+    cout << &kwadrat1.szerokosc;
+    cout << endl;
+    cout << &prostokat1.szerokosc;
+
 
 
     return 0;
