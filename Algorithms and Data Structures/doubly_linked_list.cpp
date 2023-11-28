@@ -5,13 +5,18 @@ using namespace std;
 
 struct Node {
     Node* next;
+    Node* previous;
     int data;
 };
 
 void insertFront(Node* &head, int data) {
     Node* newNode = new Node;
     newNode->data = data;
+    newNode->previous = NULL;
     newNode->next = head;
+
+    if (head != NULL) head->previous = newNode;
+
     head = newNode;
 }
 
@@ -20,6 +25,7 @@ void deleteNode(Node* &head, Node *p) {
 
     if(p == head) {
         head = head->next;
+        head->previous = NULL;
         delete p;
     }
 
@@ -30,6 +36,7 @@ void deleteNode(Node* &head, Node *p) {
             previous = previous->next;
         }
         previous->next = p->next;
+        p->previous = previous;
         delete p;
     }
 }
@@ -75,14 +82,13 @@ int main() {
     srand(time(NULL));
 
     for (int i = 0; i < 20; i++) {
-        insertFront(lista, rand() % 20);
+        insertFront(lista, rand()%20);
     }
 
     cout << endl;
     print(lista);
 
     int value;
-   
     cout << "what do you want to delete? ";
     cin >> value;
     cout << endl;
@@ -94,6 +100,6 @@ int main() {
 
     cout << "size of list: " << size(lista) << endl;
     print(lista);
-   
+
     return 0;
 }
