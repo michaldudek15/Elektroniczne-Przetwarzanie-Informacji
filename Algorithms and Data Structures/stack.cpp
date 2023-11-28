@@ -20,9 +20,6 @@ class Stack {
         Stack() {
             top = -1;
         };
-        ~Stack() {
-            delete []tab;
-        };
 };
 
 bool Stack::isEmpty() {
@@ -35,7 +32,7 @@ bool Stack::isFull() {
 
 int Stack::peek() {
     if (isEmpty()) {
-        cout << "stack is empty";
+        cout << "stack is empty" << endl;
         return 0;
     }
     else {
@@ -45,7 +42,7 @@ int Stack::peek() {
 
 int Stack::pop() {
     if (isEmpty()) {
-        cout << "stack is empty";
+        cout << "stack is empty" << endl;
         return 0;
     }
     else {
@@ -55,12 +52,12 @@ int Stack::pop() {
 
 bool Stack::push (int newData) {
     if (isFull()) {
-        cout << "stack is full";
+        cout << "stack is full" << endl;
         return false;
     }
     else {
         tab[++top] = newData;
-        cout << newData << " pushed into stack";
+        cout << newData << " pushed into stack" << endl;
         return true;
     }
 }
@@ -70,7 +67,11 @@ int main() {
     Stack stos;
     stos.push(5);
     stos.push(19);
-    stos.peek();
+    cout << stos.peek() << endl;
+    stos.pop();
+    cout << stos.peek() << endl;
+    stos.pop();
+    cout << stos.peek() << endl;
 
 
 
