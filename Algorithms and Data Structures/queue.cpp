@@ -10,7 +10,7 @@ class Queue {
 
     public:
         int data[sizeLimit];
-        int front();
+        int front(); 
         void enqueue(int newItem);
         void dequeue();
         bool isEmpty();
@@ -23,11 +23,17 @@ class Queue {
 };
 
 int Queue::front() {
+    /*
+    peek at the first element in queue
+    */
     if (isEmpty()) return 0;
     else return data[first];
 }
 
 void Queue::enqueue(int newItem) {
+    /*
+    add element at the end of queue
+    */
     if (isFull()) {
         cout << "queue is full" << endl;
         return;
@@ -38,6 +44,9 @@ void Queue::enqueue(int newItem) {
 }
 
 void Queue::dequeue() {
+    /*
+    remove element from the front of queue
+    */
     if (isEmpty()) {
         cout << "queue is empty" << endl;
         return;
