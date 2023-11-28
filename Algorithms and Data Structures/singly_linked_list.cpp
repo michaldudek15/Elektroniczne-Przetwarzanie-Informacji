@@ -81,10 +81,9 @@ int main() {
     cout << endl;
     print(lista);
 
-
     int value;
    
-     cout << "what do you want to delete? ";
+    cout << "what do you want to delete? ";
     cin >> value;
     cout << endl;
 
