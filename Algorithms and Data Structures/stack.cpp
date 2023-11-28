@@ -1,15 +1,14 @@
 #include <iostream>
 using namespace std;
 
-#define MAX 1000
+#define sizeLimit 1000
 
 class Stack {
     private: 
-        int top;
-        int currentSize;
+        int top; //index of element at the top of stack
 
     public:
-        int tab[MAX];
+        int tab[sizeLimit]; //array with data kept in stack
 
         bool isEmpty();
         bool isFull();
@@ -27,10 +26,13 @@ bool Stack::isEmpty() {
 }
 
 bool Stack::isFull() {
-    return (top == MAX - 1);
+    return (top == sizeLimit - 1);
 }
 
 int Stack::peek() {
+    /*
+    check element at the top of stack
+    */
     if (isEmpty()) {
         cout << "stack is empty" << endl;
         return 0;
@@ -41,6 +43,9 @@ int Stack::peek() {
 }
 
 int Stack::pop() {
+    /*
+    delete and return element at the top of stack
+    */
     if (isEmpty()) {
         cout << "stack is empty" << endl;
         return 0;
@@ -51,6 +56,9 @@ int Stack::pop() {
 }
 
 bool Stack::push (int newData) {
+    /* 
+    add new element above current top element
+    */
     if (isFull()) {
         cout << "stack is full" << endl;
         return false;
@@ -72,9 +80,10 @@ int main() {
     cout << stos.peek() << endl;
     stos.pop();
     cout << stos.peek() << endl;
-
-
-
+    stos.push(25);
+    cout << stos.peek() << endl;
+    stos.pop();
+    cout << stos.peek() << endl;
 
     return 0;
 }
