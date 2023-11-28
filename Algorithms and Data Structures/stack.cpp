@@ -84,6 +84,7 @@ int main() {
     cout << stos.peek() << endl;
     stos.pop();
     cout << stos.peek() << endl;
+    stos.pop();
 
     return 0;
 }
