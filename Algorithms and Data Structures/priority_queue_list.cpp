@@ -7,15 +7,15 @@ using namespace std;
 const int MAX = 2147483647;
 const int MIN = -2147483647;
 
-struct listEl {
-    listEl* next;
+struct elementsList {
+    elementsList* next;
     int priority, data;
 };
 
 class PriorityQueue {
     private:
-        listEl* head;
-        listEl* tail;
+        elementsList* head;
+        elementsList* tail;
 
     public:
         PriorityQueue();      
@@ -34,9 +34,8 @@ PriorityQueue::PriorityQueue() {
 }
 
 PriorityQueue::~PriorityQueue() {
-    while (head) {
+    while (head) 
         deleteElement();
-    }
 }
 
 bool PriorityQueue::empty() {
@@ -44,68 +43,64 @@ bool PriorityQueue::empty() {
 }
 
 int PriorityQueue::findMaxData() {
-    if (head) {
+    if (head) 
         return head->data;
-    }
-    else {
+
+    else 
         return MAX;
-    }
 }
 
 int PriorityQueue::findMinData() {
-    if (head) {
+    if (head) 
         return head->data;
-    }
-    else {
-        return MIN;
-    }
+
+    else return 
+        MIN;
 }
 
 int PriorityQueue::findMaxPriority() {
-    if (!head) {
+    if (!head) 
         return MAX;
-    }
-    else {
+
+    else 
         return head->priority;
-    }
 }
 
 int PriorityQueue::findMinPriority() {
-     if (!head) {
+    if (!head) 
         return MIN;
-    }
-    else {
+
+    else
         return head->priority;
-    }
 }
 
 void PriorityQueue::insert(int priority, int v) {
     int counter = 0;
-    listEl* p;
-    listEl* r;
-    p = new listEl;
+    elementsList* p;
+    elementsList* r;
+    p = new elementsList;
     p->next = NULL;
     p->priority = priority;
     p->data = v;
 
-    if(!head) {
+    if(!head) 
         head = tail = p;
-    }
+
     else if (head->priority > priority) {
         p->next = head;
         head = p;
     }
+
     else {
         r = head;
         
-        while ((r->next) && ++counter && (r->next->priority <= priority)) {
+        while ((r->next) && ++counter && (r->next->priority <= priority))
             r = r->next;
-        }
         p->next = r->next;
         r->next = p;
-        if (!p->next) {
+
+        if (!p->next) 
             tail = p;
-        }
     }
     cout << "counter: " << counter << endl;
 }
@@ -114,9 +109,8 @@ void PriorityQueue::deleteElement() {
     if (head) {
         head = head->next;
 
-        if(!head) {
+        if(!head)
             tail = NULL;
-        }
     }
 }
 
