@@ -86,14 +86,14 @@ void PriorityQueue::insert(int priority, int v) {
     if(!head) 
         head = tail = p;
 
-    else if (head->priority > priority) {
+    else if (++counter && (head->priority > priority)) {
         p->next = head;
         head = p;
     }
 
     else {
         r = head;
-        
+
         while ((r->next) && ++counter && (r->next->priority <= priority))
             r = r->next;
         p->next = r->next;
