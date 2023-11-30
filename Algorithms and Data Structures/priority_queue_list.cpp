@@ -80,6 +80,7 @@ int PriorityQueue::findMinPriority() {
 }
 
 void PriorityQueue::insert(int priority, int v) {
+    int counter = 0;
     listEl* p;
     listEl* r;
     p = new listEl;
@@ -97,7 +98,7 @@ void PriorityQueue::insert(int priority, int v) {
     else {
         r = head;
         
-        while ((r->next) && (r->next->priority <= priority)) {
+        while ((r->next) && ++counter && (r->next->priority <= priority)) {
             r = r->next;
         }
         p->next = r->next;
@@ -106,6 +107,7 @@ void PriorityQueue::insert(int priority, int v) {
             tail = p;
         }
     }
+    cout << "counter: " << counter << endl;
 }
 
 void PriorityQueue::deleteElement() {
