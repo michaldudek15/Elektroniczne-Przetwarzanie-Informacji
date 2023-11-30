@@ -29,7 +29,7 @@ class PriorityQueue {
         int nodes;
 
     public:
-            QueueEl T[maxSize];
+        QueueEl T[maxSize];
         PriorityQueue();
         ~PriorityQueue();
         bool empty();
