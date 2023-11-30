@@ -5,6 +5,7 @@
 using namespace std;
 
 const int MAX = 2147483647;
+const int MIN = -2147483647;
 
 struct listEl {
     listEl* next;
@@ -19,11 +20,13 @@ class PriorityQueue {
     public:
         PriorityQueue();      
         ~PriorityQueue();     
-        bool empty (void);
-        int findmaxdata (void);
-        int findmaxpriority (void);
-        void insert (int priority, int v);
-        void deletemax (void);
+        bool empty();
+        int findMaxData();
+        int findMinData();
+        int findMaxPriority();
+        int findMinPriority();
+        void insert(int priority, int v);
+        void deleteElement();
 };
 
 PriorityQueue::PriorityQueue() {
@@ -32,7 +35,7 @@ PriorityQueue::PriorityQueue() {
 
 PriorityQueue::~PriorityQueue() {
     while (head) {
-        deletemax();
+        deleteElement();
     }
 }
 
@@ -40,7 +43,7 @@ bool PriorityQueue::empty() {
     return !head;
 }
 
-int PriorityQueue::findmaxdata() {
+int PriorityQueue::findMaxData() {
     if (head) {
         return head->data;
     }
@@ -49,9 +52,27 @@ int PriorityQueue::findmaxdata() {
     }
 }
 
-int PriorityQueue::findmaxpriority() {
+int PriorityQueue::findMinData() {
+    if (head) {
+        return head->data;
+    }
+    else {
+        return MIN;
+    }
+}
+
+int PriorityQueue::findMaxPriority() {
     if (!head) {
         return MAX;
+    }
+    else {
+        return head->priority;
+    }
+}
+
+int PriorityQueue::findMinPriority() {
+     if (!head) {
+        return MIN;
     }
     else {
         return head->priority;
@@ -69,14 +90,14 @@ void PriorityQueue::insert(int priority, int v) {
     if(!head) {
         head = tail = p;
     }
-    else if (head->priority < priority) {
+    else if (head->priority > priority) {
         p->next = head;
         head = p;
     }
     else {
         r = head;
         
-        while ((r->next) && (r->next->priority >= priority)) {
+        while ((r->next) && (r->next->priority <= priority)) {
             r = r->next;
         }
         p->next = r->next;
@@ -87,7 +108,7 @@ void PriorityQueue::insert(int priority, int v) {
     }
 }
 
-void PriorityQueue::deletemax() {
+void PriorityQueue::deleteElement() {
     if (head) {
         head = head->next;
 
@@ -114,9 +135,14 @@ int main() {
 
     cout << "\n" << "kolejka priorytetowa w postaci element:priorytet\n";
 
+    // while (!Q.empty()) {
+    //     cout << Q.findMaxData() << "|" << Q.findMaxPriority() << endl;
+    //     Q.deleteElement();
+    // }
+
     while (!Q.empty()) {
-        cout << Q.findmaxdata() << "|" << Q.findmaxpriority() << endl;
-        Q.deletemax();
+        cout << Q.findMinData() << "|" << Q.findMinPriority() << endl;
+        Q.deleteElement();
     }
 
   return 0;
