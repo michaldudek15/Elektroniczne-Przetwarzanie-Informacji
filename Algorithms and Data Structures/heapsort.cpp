@@ -137,7 +137,7 @@ int main() {
 
     PriorityQueue Q2;
     globalCounter = 0;
-    cout << "wprowadzone posortowane rosnaca priorytety\n";
+    cout << "wprowadzone posortowane rosnaco priorytety\n";
     for (i = 1; i <= 100; i++) {
         v = i;
         p = i;
@@ -154,7 +154,7 @@ int main() {
 
     PriorityQueue Q3;
     globalCounter = 0;
-    cout << "wprowadzone posortowane malejaca priorytety\n";
+    cout << "wprowadzone posortowane malejaco priorytety\n";
     for (i = 100; i > 0; i--) {
         v = i;
         p = i;
