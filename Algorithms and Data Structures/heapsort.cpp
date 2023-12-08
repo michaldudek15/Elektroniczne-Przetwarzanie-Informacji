@@ -52,13 +52,17 @@ bool PriorityQueue::empty() {
 }
 
 int PriorityQueue::findmindata() {
-    if (nodes) return T[1].data;
-    else return intMax;
+    if (nodes) 
+        return T[1].data;
+    else 
+        return intMax;
 }
 
 int PriorityQueue::findminpriority() {
-    if (nodes) return T[1].priority;
-    else return intMax;
+    if (nodes) 
+        return T[1].priority;
+    else 
+        return intMax;
 }
 
 void PriorityQueue::insert(int priority, int data) {
