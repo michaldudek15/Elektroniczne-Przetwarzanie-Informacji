@@ -97,7 +97,7 @@ void DFS(int v) {
     cout << v << " ";
 
     for (int i = 0; i < N; i++) {
-        if (matrix[v][i] == 1 && visited[i] == false)
+        if (matrix[v][i] == 1 && !visited[i])
             DFS(i);
     }
 }
@@ -113,7 +113,7 @@ void BFS(int v) {
         cout << v << " ";
 
         for (int i = 0; i < N; i++) {
-            if (matrix[v][i] == 1 && visited[i] == false) {
+            if (matrix[v][i] == 1 && !visited[i]) {
                 kolejka.push(i);
                 visited[i] = true;
             }
