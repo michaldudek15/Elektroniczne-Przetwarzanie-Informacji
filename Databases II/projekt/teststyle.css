@@ -1,0 +1,42 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #EEF5DB;
+    font-size: 25px;
+}
+
+a {
+    text-decoration: none;
+}
+
+#kategorie {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 100px;   
+}
+
+#wyloguj {
+    color: #4285f4;
+    font-size: 25px;
+}
+
+.kategoria {
+    padding: 20px;
+    margin: 20px;
+    background-color: #FE5F55;
+    border-radius: 8px;
+    box-shadow: 0 0 30px rgba(171, 19, 110, 0.943);
+    max-width: 300px;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    font-size: 25px;
+    color: #ffffff;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.kategoria:hover {
+    background-color: #ba524b;
+
+}
