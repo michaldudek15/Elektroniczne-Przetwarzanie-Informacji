@@ -1,9 +1,6 @@
 #include <iostream>
 using namespace std;
 
-int const MAX = 15;
-
-
 void initKMPNextTable (string p, string wzorzec) {
 
     int KMPNext[p.length()+1];
@@ -12,9 +9,7 @@ void initKMPNextTable (string p, string wzorzec) {
 
     for (int i = 1; i <= p.length(); i++) {
         while ( (b > -1) && (wzorzec[b] != p[i-1] )) {
-    
             b = KMPNext[b];
-
         }
         ++b;
 
@@ -46,7 +41,6 @@ void initKMPNextTable (string p, string wzorzec) {
         if (KMPNext[i] == dlugoscWzorca) 
             cout << i - dlugoscWzorca << " ";
     }        
-
 }
 
 int main() {
@@ -57,7 +51,7 @@ int main() {
     cout << "tekst: " << s1 << endl;
     cout << "wzorzec: " << s2 << endl;
 
-    initKMPNextTable (s1, s2);
+    initKMPNextTable(s1, s2);
 
     return 0;
 }
