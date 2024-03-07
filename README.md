@@ -3,7 +3,7 @@
 ## semester III, winter 2023
 
 ### [Algorithms and Data Structures](https://github.com/michaldudek15/Elektroniczne-Przetwarzanie-Informacji/tree/main/Algorithms%20and%20Data%20Structures)
-### [Databases II](https://github.com/michaldudek15/Elektroniczne-Przetwarzanie-Informacji/tree/main/Databases%20II)
+### [Databases II](https://github.com/michaldudek15/Elektroniczne-Przetwarzanie-Informacji/tree/main/Databases-II)
 
 ## semester II, winter 2022
 
