@@ -1,2 +1,2 @@
 <?php
-    echo "hejka z ubuntu";
+    echo "test gita";
