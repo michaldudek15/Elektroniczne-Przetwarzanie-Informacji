@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block body %}
-    <h1>{{ 'title.record_view'|trans }}</h1>
+    <h1>{{ 'title.record_view'|trans({'%id%': record.id|default('')}) }}</h1>
     <a href="{{ url('record_index') }}">{{ 'label.back_to_record_list'|trans }}</a>
 
     {% if record is defined and record|length %}
