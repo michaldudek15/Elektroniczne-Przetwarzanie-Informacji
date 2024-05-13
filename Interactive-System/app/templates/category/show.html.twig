@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ 'title.category_details'|trans({'%id%': category.id|default('')}) }}
+{% endblock %}
+
+{% block body %}
+    <h1>{{ 'title.category_details'|trans({'%id%': category.id|default('')}) }}</h1>
+    {% if category is defined and category|length %}
+        <dl class="dl-horizontal">
+            <dt>{{ 'label.id'|trans }}</dt>
+            <dd>{{ category.id }}</dd>
+            <dt>{{ 'label.created_at'|trans }}</dt>
+            <dd>{{ category.createdAt|format_date('long') }}</dd>
+            <dt>{{ 'label.updated_at'|trans }}</dt>
+            <dd>{{ category.updatedAt|format_date('long') }}</dd>
+            <dt>{{ 'label.title'|trans }}</dt>
+            <dd>{{  category.title }}</dd>
+        </dl>
+        {% if tasks is defined and tasks|length %}
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>{{ 'label.id'|trans }}</th>
+                    <th>{{ 'label.title'|trans }}</th>
+                    <th>{{ 'label.created_at'|trans }}</th>
+                    <th>{{ 'label.updated_at'|trans }}</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for task in tasks %}
+                    <tr>
+                        <td>{{ task.id }}</td>
+                        <td><a href="{{ url('task_show', {id: task.id}) }}" class="no_underline">{{ task.title }}</a></td> {# TODO title attribute #}
+                        <td>{{ task.createdAt|format_date('long') }}</td>
+                        <td>{{ task.updatedAt|format_date('long') }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            {{ 'message.empty_list'|trans }}
+        {% endif %}
+        <p>
+            <a href="{{ url('category_index') }}" title="{{ 'action.back_to_list'|trans }}">
+                {{ 'action.back_to_list'|trans }}
+            </a>
+        </p>
+    {% else %}
+        <p>
+            {{ 'message.record_not_found'|trans }}
+        </p>
+    {% endif %}
+{% endblock %}
