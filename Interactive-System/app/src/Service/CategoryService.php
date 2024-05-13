@@ -6,6 +6,7 @@
 namespace App\Service;
 
 use App\Repository\CategoryRepository;
+use App\Entity\Category;
 use Knp\Component\Pager\Pagination\PaginationInterface;
 use Knp\Component\Pager\PaginatorInterface;
 
@@ -51,4 +52,19 @@ class CategoryService implements CategoryServiceInterface
             self::PAGINATOR_ITEMS_PER_PAGE
         );
     }
+    /**
+    * Save entity.
+    *
+    * @param Category $category Category entity
+    *
+    * @throws ORMException
+    * @throws OptimisticLockException
+    */
+    public function save(Category $category): void
+    {
+        assert($this->_em instanceof EntityManager);
+        $this->_em->persist($category);
+        $this->_em->flush();
+    }
+
 }
