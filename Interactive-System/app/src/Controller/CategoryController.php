@@ -24,7 +24,7 @@ class CategoryController extends AbstractController
      *
      * @param CategoryServiceInterface $categoryService Task service
      */
-    public function __construct(private readonly CategoryServiceInterface $taskService)
+    public function __construct(private readonly CategoryServiceInterface $categoryService)
     {
     }
 
