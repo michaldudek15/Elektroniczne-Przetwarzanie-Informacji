@@ -6,13 +6,15 @@
 namespace App\Controller;
 
 use App\Entity\Category;
+use App\Form\Type\CategoryType;
 use App\Service\CategoryServiceInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Attribute\MapQueryParameter;
 use Symfony\Component\Routing\Attribute\Route;
-use App\Form\Type\CategoryType;
+use Symfony\Contracts\Translation\TranslatorInterface;
+
 /**
  * Class CategoryController.
  */
@@ -22,9 +24,10 @@ class CategoryController extends AbstractController
     /**
      * Constructor.
      *
-     * @param CategoryServiceInterface $categoryService Task service
+     * @param CategoryServiceInterface $categoryService Category service
+     * @param TranslatorInterface      $translator  Translator
      */
-    public function __construct(private readonly CategoryServiceInterface $categoryService)
+    public function __construct(private readonly CategoryServiceInterface $categoryService, private readonly TranslatorInterface $translator)
     {
     }
 
