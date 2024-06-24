@@ -10,7 +10,7 @@
 ### [Algorithms and Data Structures](https://github.com/michaldudek15/Elektroniczne-Przetwarzanie-Informacji/tree/main/Algorithms-and-Data-Structures)
 ### [Databases II](https://github.com/michaldudek15/Elektroniczne-Przetwarzanie-Informacji/tree/main/Databases-II)
 
-## semester II, winter 2022
+## semester II, summer 2022
 
 ### [Introduction to Programming](https://github.com/michaldudek15/Elektroniczne-Przetwarzanie-Informacji/tree/main/Introduction-to-Programming)
 ### [Introduction to Programming - project | Turing machine simulator](https://github.com/michaldudek15/symulator-maszyny-Turinga)
