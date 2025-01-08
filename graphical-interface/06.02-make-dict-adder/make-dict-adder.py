@@ -1,9 +1,8 @@
 def make_dict_adder():
+    dictionary = {}
     def add(key, value):
-        if not hasattr(add, "dictionary"):
-            add.dictionary = {}
-        add.dictionary[key] = value
-        return add.dictionary
+        dictionary[key] = value
+        return dictionary
     return add
 
 
