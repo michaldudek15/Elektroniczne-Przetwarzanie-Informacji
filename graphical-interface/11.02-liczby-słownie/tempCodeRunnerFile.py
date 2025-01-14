@@ -57,7 +57,7 @@ def liczba_slownie(n):
                 if not (indeksJednostekLubNastek == 1 and indeksGrupy > 0): # przypadek jedności cyfry calej grupy (np. milion, tysiąc)
                     slownie.append(jednostki[indeksJednostekLubNastek])
 
-        if indeksGrupy > 0: # dodanie nazwy grupy
+        if indeksGrupy > 0:
             if trzyCyfry == 1:
                 slownie.append(grupy[indeksGrupy][0])
             elif 2 <= trzyCyfry % 10 <= 4 and (trzyCyfry % 100 < 10 or trzyCyfry % 100 >= 20):
