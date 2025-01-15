@@ -1,5 +1,5 @@
-# Mapa transliteracji z rosyjskiego na łaciński
-translit_map = {
+# mapa transliteracji z rosyjskiego na łaciński
+mapaZnakow = {
     'А': 'A', 'а': 'a', 
     'Б': 'B', 'б': 'b', 
     'В': 'V', 'в': 'v',
@@ -35,20 +35,20 @@ translit_map = {
     'Ъ': '’', 'ъ': '’'
 }
 
-def transliterate_ru_to_lat(text):
+def transliteracja(text):
     """
     transliteruje tekst zapiasny alfabetem rosyjskim na alfabet łaciński
     """
     result = []
     for char in text:
-        result.append(translit_map.get(char, char))
+        result.append(mapaZnakow.get(char, char))
     return ''.join(result)
 
 
 with open("ru.txt", "r", encoding="utf-8") as file:
-    input_text = file.read()
+    input = file.read()
 
-transliterated_text = transliterate_ru_to_lat(input_text)
+wynik = transliteracja(input)
 
 with open("transliteracja.txt", "w", encoding="utf-8") as file:
-    file.write(transliterated_text)
+    file.write(wynik)
