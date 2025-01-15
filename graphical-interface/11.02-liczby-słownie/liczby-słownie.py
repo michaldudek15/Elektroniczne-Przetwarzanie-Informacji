@@ -1,6 +1,6 @@
 def liczba_slownie(n):
     """
-    zamienia liczbę na odpowiadający jej ciąg liter w języku polskim
+    zamienia liczbę na odpowiadające jej wyrazy w języku polskim
     """
     jednostki = ["", "jeden", "dwa", "trzy", "cztery", "pięć", "sześć", "siedem", "osiem", "dziewięć"]
     nastki = ["", "jedenaście", "dwanaście", "trzynaście", "czternaście", "piętnaście", "szesnaście", "siedemnaście", "osiemnaście", "dziewiętnaście"]
