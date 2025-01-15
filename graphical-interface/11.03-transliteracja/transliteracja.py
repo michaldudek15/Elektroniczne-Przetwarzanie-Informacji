@@ -37,7 +37,7 @@ mapaZnakow = {
 
 def transliteracja(tekstRosyjski):
     """
-    transliteruje tekst zapiasny alfabetem rosyjskim na alfabet łaciński
+    transliteruje tekst zapiasny w języku rosyjskim na alfabet łaciński
     """
     wynik = []
     for char in tekstRosyjski:
