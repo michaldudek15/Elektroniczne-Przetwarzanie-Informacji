@@ -39,10 +39,10 @@ def transliteracja(text):
     """
     transliteruje tekst zapiasny alfabetem rosyjskim na alfabet łaciński
     """
-    result = []
+    wynik = []
     for char in text:
-        result.append(mapaZnakow.get(char, char))
-    return ''.join(result)
+        wynik.append(mapaZnakow.get(char, char))
+    return ''.join(wynik)
 
 
 with open("ru.txt", "r", encoding="utf-8") as file:
