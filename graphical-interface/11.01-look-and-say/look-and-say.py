@@ -1,4 +1,7 @@
 def sequence_gen(function, *args):
+    """
+    generator sekwencji, jako argumenty przyjmuje funkcję i dowolną liczbę pierwszych wyrazów ciągu
+    """
     previous = list(args)
 
     for value in previous:
