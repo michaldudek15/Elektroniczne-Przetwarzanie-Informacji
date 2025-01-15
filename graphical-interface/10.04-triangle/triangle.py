@@ -1,32 +1,3 @@
-"""
-Proszę skopiować kod klasy _Vector_ z zadania 10.2 oraz klasy _Point_ z zadania 10.3.
-
-
-Proszę dodać klasę _Triangle_. Trójkąt ma wypisywać wszystkie swoje punkty i udostępniać metody obliczające jego pole powierzchni i obwód. 
-
-A = Point(0, 0, 0)
-B = Point(1, 0, 0)
-C = Point(0, 1, 0)
-
-t = Triangle(A, B, C)
-print(t)
-# triangle: (0.00, 0.00, 0.00), (1.00, 0.00, 0.00), (0.00, 1.00, 0.00)
-
-print(t.perimeter())
-# 3.414213562373095
-
-print(t.area())
-# 0.4999999999999999
-
-**Wszystkie klasy** powinny umożliwiać porównywanie przy pomocy '==' i '!='. 
-
-Dwa punkty są równe, gdy maja wszystkie współrzędne o równych wartościach. 
-
-Dwa trójkąty są równe, gdy zawierają punkty parami równe, obojętnie w jakiej kolejności.
-
-**Wszystkie metody** powinny być udokumentowane.
-"""
-
 class Vector:
     """
     wektor w trójwymiarowej przestrzeni euklidesowej
