@@ -35,12 +35,12 @@ mapaZnakow = {
     'Ъ': '’', 'ъ': '’'
 }
 
-def transliteracja(text):
+def transliteracja(tekstRosyjski):
     """
     transliteruje tekst zapiasny alfabetem rosyjskim na alfabet łaciński
     """
     wynik = []
-    for char in text:
+    for char in tekstRosyjski:
         wynik.append(mapaZnakow.get(char, char))
     return ''.join(wynik)
 
